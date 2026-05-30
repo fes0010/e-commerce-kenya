@@ -1,0 +1,244 @@
+version: '3.8'
+
+# ============================================================================
+# Bagisto E-Commerce - Dokploy Production Stack
+# ============================================================================
+# This Docker Compose file is optimized for Dokploy deployment with:
+# - MySQL 8.0 database
+# - Redis for caching and sessions
+# - Elasticsearch for product search
+# - Nginx web server
+# - PHP-FPM 8.2
+# - Queue worker for background jobs
+# - Scheduler for cron jobs
+# ============================================================================
+
+services:
+  # ─── Application (PHP-FPM + Nginx) ────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: docker/production/Dockerfile
+    image: bagisto-app:latest
+    container_name: bagisto-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./storage:/var/www/html/storage
+      - ./public:/var/www/html/public
+      - ./bootstrap/cache:/var/www/html/bootstrap/cache
+    environment:
+      - APP_ENV=${APP_ENV:-production}
+      - APP_DEBUG=${APP_DEBUG:-false}
+      - APP_URL=${APP_URL}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - ELASTICSEARCH_HOST=${ELASTICSEARCH_HOST:-elasticsearch}
+      - ELASTICSEARCH_PORT=${ELASTICSEARCH_PORT:-9200}
+    networks:
+      - bagisto-network
+    depends_on:
+      - redis
+      - elasticsearch
+    ports:
+      - "80:80"
+      - "443:443"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ─── Queue Worker ──────────────────────────────────────────────────────────
+  queue:
+    build:
+      context: .
+      dockerfile: docker/production/Dockerfile
+    image: bagisto-app:latest
+    container_name: bagisto-queue
+    restart: unless-stopped
+    working_dir: /var/www/html
+    command: php artisan queue:work --sleep=3 --tries=3 --max-time=3600
+    volumes:
+      - ./storage:/var/www/html/storage
+    environment:
+      - APP_ENV=${APP_ENV:-production}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+    networks:
+      - bagisto-network
+    depends_on:
+      - app
+      - redis
+
+  # ─── Scheduler (Cron) ──────────────────────────────────────────────────────
+  scheduler:
+    build:
+      context: .
+      dockerfile: docker/production/Dockerfile
+    image: bagisto-app:latest
+    container_name: bagisto-scheduler
+    restart: unless-stopped
+    working_dir: /var/www/html
+    command: >
+      sh -c "while true; do
+        php artisan schedule:run --verbose --no-interaction &
+        sleep 60
+      done"
+    volumes:
+      - ./storage:/var/www/html/storage
+    environment:
+      - APP_ENV=${APP_ENV:-production}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST:-redis}
+    networks:
+      - bagisto-network
+    depends_on:
+      - app
+
+  # ─── Redis Cache & Session Store ───────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: bagisto-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-null}
+    volumes:
+      - redis-data:/data
+    networks:
+      - bagisto-network
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Elasticsearch Search Engine ───────────────────────────────────────────
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: bagisto-elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - bagisto-network
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ─── Kibana (Optional - for Elasticsearch monitoring) ──────────────────────
+  # kibana:
+  #   image: docker.elastic.co/kibana/kibana:8.11.0
+  #   container_name: bagisto-kibana
+  #   restart: unless-stopped
+  #   environment:
+  #     - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+  #   networks:
+  #     - bagisto-network
+  #   ports:
+  #     - "5601:5601"
+  #   depends_on:
+  #     - elasticsearch
+
+  # ─── Mailpit (Development Email Testing) ───────────────────────────────────
+  # Uncomment for development/staging environments
+  # mailpit:
+  #   image: axllent/mailpit:latest
+  #   container_name: bagisto-mailpit
+  #   restart: unless-stopped
+  #   networks:
+  #     - bagisto-network
+  #   ports:
+  #     - "8025:8025"
+  #     - "1025:1025"
+
+# ─── Networks ───────────────────────────────────────────────────────────────
+networks:
+  bagisto-network:
+    driver: bridge
+    name: bagisto-network
+
+# ─── Volumes ────────────────────────────────────────────────────────────────
+volumes:
+  redis-data:
+    driver: local
+  elasticsearch-data:
+    driver: local
+
+# ============================================================================
+# DEPLOYMENT INSTRUCTIONS FOR DOKPLOY
+# ============================================================================
+#
+# 1. Push your code to a Git repository (GitHub, GitLab, etc.)
+#
+# 2. In Dokploy:
+#    - Create a new application
+#    - Connect your Git repository
+#    - Set the branch (e.g., main or production)
+#    - Choose "Docker Compose" as deployment method
+#    - Point to this file: docker-compose.dokploy.yml
+#
+# 3. Configure Environment Variables in Dokploy:
+#    - Copy all variables from .env.dokploy
+#    - Set them in Dokploy's environment variable section
+#    - Ensure sensitive values are properly secured
+#
+# 4. Configure Domain & SSL:
+#    - Add your domain in Dokploy
+#    - Enable automatic SSL certificate (Let's Encrypt)
+#    - Configure DNS to point to your Dokploy server
+#
+# 5. Database Setup:
+#    - Use existing MySQL service (10.0.1.29:3306)
+#    - Or create a new MySQL service in Dokploy
+#    - Update DB_HOST in environment variables
+#
+# 6. Deploy:
+#    - Click "Deploy" in Dokploy
+#    - Monitor the build and deployment logs
+#    - Run migrations after first deployment:
+#      docker exec bagisto-app php artisan migrate --force
+#
+# 7. Post-Deployment:
+#    - Clear caches: docker exec bagisto-app php artisan optimize
+#    - Index products: docker exec bagisto-app php artisan indexer:index
+#    - Test the application thoroughly
+#
+# 8. Monitoring:
+#    - Check container logs in Dokploy dashboard
+#    - Monitor resource usage (CPU, Memory, Disk)
+#    - Set up alerts for critical issues
+#
+# ============================================================================
