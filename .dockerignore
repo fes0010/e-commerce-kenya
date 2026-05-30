@@ -37,6 +37,9 @@ storage
 # --- Vendor (installed in image via composer) ---
 vendor
 
-# --- Env files ---
+# --- Env files (keep .env.example for build) ---
 .env
-.env.*
+.env.dokploy
+.env.local
+.env.production
+!.env.example
