@@ -1,0 +1,42 @@
+# --- Git ---
+.git
+.gitignore
+
+# --- IDE ---
+.idea
+.vscode
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Node ---
+node_modules
+
+# --- Tests ---
+tests
+phpunit.xml
+
+# --- CI/CD ---
+.github
+.gitlab-ci.yml
+
+# --- Docker ---
+docker-compose*.yml
+
+# --- Documentation ---
+*.md
+!LICENSE.md
+docs
+
+# --- Storage (mounted at runtime) ---
+storage
+
+# --- Vendor (installed in image via composer) ---
+vendor
+
+# --- Env files ---
+.env
+.env.*
