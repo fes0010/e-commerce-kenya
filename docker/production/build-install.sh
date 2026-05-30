@@ -39,6 +39,14 @@ mysql -h 127.0.0.1 -u root < /docker-entrypoint-initdb.d/init.sql
 # Install Bagisto
 cd /var/www/bagisto
 
+# Ensure cache directories exist with proper permissions
+echo "[build-install] Setting up cache directories..."
+mkdir -p storage/framework/{cache/data,sessions,views,testing}
+mkdir -p storage/logs
+mkdir -p storage/app/public
+mkdir -p bootstrap/cache
+chmod -R 0777 storage bootstrap/cache
+
 echo "[build-install] Generating application key..."
 php artisan key:generate --force --no-interaction
 

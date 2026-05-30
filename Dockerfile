@@ -150,7 +150,8 @@ RUN mkdir -p storage/framework/{cache/data,sessions,views,testing} \
     && mkdir -p storage/logs \
     && mkdir -p storage/app/public \
     && mkdir -p bootstrap/cache \
-    && chown -R www-data:www-data storage bootstrap/cache
+    && chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
 COPY docker/production/mysql-init.sql /docker-entrypoint-initdb.d/init.sql
 COPY docker/production/build-install.sh /tmp/build-install.sh
