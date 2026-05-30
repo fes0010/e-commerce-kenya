@@ -27,6 +27,7 @@ services:
       - ./storage:/var/www/html/storage
       - ./public:/var/www/html/public
       - ./bootstrap/cache:/var/www/html/bootstrap/cache
+      - mysql-data:/var/lib/mysql
     environment:
       - APP_ENV=${APP_ENV:-production}
       - APP_DEBUG=${APP_DEBUG:-false}
@@ -195,6 +196,8 @@ volumes:
   redis-data:
     driver: local
   elasticsearch-data:
+    driver: local
+  mysql-data:
     driver: local
 
 # ============================================================================
