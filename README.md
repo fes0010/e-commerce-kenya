@@ -1,185 +1,422 @@
-<p align="center">
-  <a href="http://www.bagisto.com">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bagisto/temp-media/0b0984778fae92633f57e625c5494ead1fe320c3/dark-logo-P5H7MBtx.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://bagisto.com/wp-content/themes/bagisto/images/logo.png">
-      <img src="https://bagisto.com/wp-content/themes/bagisto/images/logo.png" alt="Bagisto logo">
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-    <a href="https://packagist.org/packages/bagisto/bagisto"><img src="https://poser.pugx.org/bagisto/bagisto/d/total.svg" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/bagisto/bagisto"><img src="https://poser.pugx.org/bagisto/bagisto/v/stable.svg" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/bagisto/bagisto"><img src="https://poser.pugx.org/bagisto/bagisto/license.svg" alt="License"></a>
-    <a href="#backers"><img src="https://opencollective.com/bagisto/backers/badge.svg" alt="Backers on Open Collective"></a>
-    <a href="#sponsors"><img src="https://opencollective.com/bagisto/sponsors/badge.svg" alt="Sponsors on Open Collective"></a>
-    <a href="https://www.codetriage.com/bagisto/bagisto"><img src="https://www.codetriage.com/bagisto/bagisto/badges/users.svg" alt="Open Source Helpers"></a>
-</p>
-
-<p align="center">
-    <a href="https://twitter.com/intent/follow?screen_name=bagistoshop"><img src="https://img.shields.io/twitter/follow/bagistoshop?style=social"></a>
-    <a href="https://www.youtube.com/channel/UCbrfqnhyiDv-bb9QuZtonYQ"><img src="https://img.shields.io/youtube/channel/subscribers/UCbrfqnhyiDv-bb9QuZtonYQ?style=social"></a>
-</p>
-
-<p align="center">
-    ➡️ <a href="https://bagisto.com/en/">Website</a> | <a href="https://devdocs.bagisto.com/">Documentation</a> | <a href="https://devdocs.bagisto.com/2.3/introduction/installation.html#installation">Installation Guide</a> | <a href="https://devdocs.bagisto.com/2.3/introduction/docker.html">Docker Installation</a>  | <a href="https://forums.bagisto.com/">Forums</a> | <a href="https://www.facebook.com/groups/bagisto/">Community</a> ⬅️
-</p>
-
-<p align="center">
-    <img src="https://flagicons.lipis.dev/flags/4x3/sa.svg" alt="Arabic" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/bd.svg" alt="Bengali" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/es-ct.svg" alt="Catalan" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="English" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Spanish" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/ir.svg" alt="Persian" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="French" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/il.svg" alt="Hebrew" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/in.svg" alt="Hindi" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/id.svg" alt="Indonesian" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/jp.svg" alt="Japanese" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/nl.svg" alt="Dutch" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/pl.svg" alt="Polish" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/br.svg" alt="Portuguese (Brazil)" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/ro.svg" alt="Romanian" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/ru.svg" alt="Russian" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/lk.svg" alt="Sinhalese" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/tr.svg" alt="Turkish" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/ua.svg" alt="Ukrainian" width="24" style="display:block; margin:6px auto;">
-    <img src="https://flagicons.lipis.dev/flags/4x3/cn.svg" alt="Chinese (Simplified)" width="24" style="display:block; margin:6px auto;">
-</p>
-
-<a href="https://www.youtube.com/watch?v=OHbte7hdxYU">
-    <img class="flag-img" src="https://raw.githubusercontent.com/bagisto/temp-media/master/bagisto-featured.png" alt="Chinese" width="100%">
-</a>
-
-# Introduction
-
-Bagisto is an opensource [laravel eCommerce](https://www.bagisto.com/) framework built on some of the hottest technologies such as [Laravel](https://laravel.com/) (a [PHP](https://secure.php.net/) framework) and [Vue.js](https://vuejs.org/) a progressive Javascript framework.
-
-Bagisto can help you cut down your time, cost, and workforce for building online stores or migrating from physical stores to the ever-demanding online world. Your business—whether small or huge—can benefit. The best part, it's straightforward to set it up!
-
-![Repo Stats](https://raw.githubusercontent.com/bagisto/temp-media/master/stats.webp)
-
-# Getting Started
-
-![Getting Started](https://raw.githubusercontent.com/bagisto/temp-media/master/geting-starded.png)
-
-[Install Bagisto](https://devdocs.bagisto.com/2.3/introduction/installation.html#install-using-gui-installer) with or without Composer (Check [Requirement Details](https://bagisto.com/en/download/))
-
-Follow the [Getting Started with Bagisto](https://www.youtube.com/watch?v=s_DhQrjK8Tw&list=PLe30vg_FG4OS3BU8rHUKQZ2mnX45xwSMc) Tutorial
-
-You can browse through the Free [Live Demo](https://demo.bagisto.com/)
-
-## ☁️ Cloud Installation via Amazon AMI
-
-You can also deploy Bagisto quickly using our pre-configured Amazon Machine Image (AMI) available on the AWS Marketplace:
-
-👉 [**Launch Bagisto on AWS**](https://aws.amazon.com/marketplace/pp/prodview-r3xv62axcqkpa)
-
-This AMI allows you to get started with Bagisto on a cloud environment without manual setup. Ideal for scalable production or testing environments.
-
-# Accelerate Your Online Store Launch with the Bagisto Starter Pack!
-
-Empower your e-commerce journey with the [Bagisto Starter Pack](https://store.webkul.com/bagisto-starter-pack.html), streamlining setup and integration for a seamless online store launch. Get ready to unlock success in the digital marketplace! 
-
-# Open Source B2B eCommerce Platform
-
-The [B2B eCommerce Platform](https://bagisto.com/en/b2b-commerce-platform/) enhances your Bagisto store with advanced Business-to-Business (B2B) features. It enables company-based purchasing, multi-user access, quote negotiation, and procurement management — empowering businesses to handle B2B workflows efficiently within a single platform.
-
-![Bagisto B2B Ecommerce Image](https://github.com/bagisto/temp-media/blob/master/intro-banner.webp)
-
-# Multi Vendor Marketplace
-
-[Multi Vendor Marketplace](https://bagisto.com/en/laravel-multi-vendor-marketplace/) transforms a standard store into a complete marketplace, allowing the admin to manage sellers, commissions, product approvals, and order handling, while giving vendors a dedicated dashboard to manage their catalog, orders, and transactions.
-
-![Multi Vendor Marketplace Image](https://github.com/bagisto/temp-media/blob/master/multi-vendor-marketplace.webp)
-
-# Multi Tenant eCommerce
-
-[Multi Tenant eCommerce](https://bagisto.com/en/laravel-multi-tenant-saas/) in Bagisto allows businesses to build a SaaS-based marketplace platform where multiple vendors or merchants can create and manage their own individual stores under a single system.
-
-![Multi Tenant eCommerce Image](https://github.com/bagisto/temp-media/blob/master/multi-tenant.webp)
-
-# POS 
-
-[Point of Sale](https://bagisto.com/en/laravel-pos/) system manages retail operations efficiently, handling inventory management and fast customer checkout for your store.
-
-![POS Image](https://github.com/bagisto/temp-media/blob/master/pos.webp)
-
-# Headless Commerce
-
-The power of headless laravel commerce now comes to Bagisto enabling you to experience seamless and easily scalable storefront performance. Backed by some of the hottest tech stacks, Bagisto commerce can now be used to build powerful headless commerce solutions offering blazing-fast speed and easy customization powered by Next.js
-
-## Next.js Commerce
-
-![Next.js Logo](https://raw.githubusercontent.com/bagisto/temp-media/master/next.png)
-
-Develop and deploy your next headless commerce storefronts with Next JS and Bagisto: [https://github.com/bagisto/nextjs-commerce](https://github.com/bagisto/nextjs-commerce)
-
-# Open Source Mobile eCommerce
-
-Revolutionize Your Online Store with Bagisto's Open Source eCommerce Mobile 
-
-![Mobile View Example Screens](https://raw.githubusercontent.com/bagisto/temp-media/master/open-source-ecommerce-mobile.png)
-
-Mobile eCommerce powered by Flutter & Laravel: https://github.com/bagisto/opensource-ecommerce-mobile-app
-
-# AI Powered eCommerce
-
-You can integrate popular large language models like GPT-5, Gemini 3, Mistral, and LLaMA 4, Grok (xAI),GLM 4.6,Kimi-K2, Qwen 3, Deepseek etc to build [AI-powered eCommerce](https://bagisto.com/en/extensions/laravel-chatbot-using-openai-chatgpt-llm/) applications with Bagisto. Some of the popular use cases where you can make use of LLMs to build AI apps are chatbot, automated product descriptions, customer support, search, and recommendations.
-
-![AI Powered eCommerce Examples](https://raw.githubusercontent.com/bagisto/temp-media/master/ai_powered_ecommerce.png)
-
-You can incorporate LLM API with your bagisto applications to send and receive queries and ensure proper error handling and rate limiting to prevent overuse of the API
-
-# Decentralised eCommerce
-
-Build [decentralised applications](https://bagisto.com/en/services/blockchain-commerce/) with Bagisto on popular blockchains like Ethereum and Solana by integrating smart contracts with the eCommerce platform. You can have decentralised marketplaces, [NFT marketplaces](https://bagisto.com/en/nft-marketplace/), and decentralised e-signing with the laravel eCommerce system.
-
-![Decentralized Ecommerce Example Screens](https://raw.githubusercontent.com/bagisto/temp-media/master/decentralised-ecommerce.png)
-
-# Commerce For Every Need
-
-![Commerce Store Examples](https://raw.githubusercontent.com/bagisto/temp-media/master/every-need.png)
-
-With Bagisto, you can easily create use cases for various commerce needs like Marketplaces, PWA, Native Mobile Apps, Multi-Tenants systems, Blockchain and many more.
-
-# Built In Extensions
-
-![200+ Prebuilt Extensions](https://raw.githubusercontent.com/bagisto/temp-media/master/built_in_extension.png)
-
-Make use of 100+ Bagisto pre-built extensions from [Bagisto Extension Markeptlace](https://bagisto.com/en/extensions/)
-
-# Community
-
-![Forum and Facebook Communities](https://raw.githubusercontent.com/bagisto/temp-media/master/community.png)
-
-Get Bagisto support on [Facebook Group](https://www.facebook.com/groups/bagisto) and [Forum](https://forums.bagisto.com/)
-Would like to help us build the most developer-friendly E-Commerce platform? Start by reading our [Contributing Guide](https://github.com/bagisto/bagisto/blob/master/.github/CONTRIBUTING.md)!
-
-# License
-Bagisto is a fully open-source Laravel eCommerce framework that will always remain free under the [MIT License](https://github.com/bagisto/bagisto/blob/2.4/LICENSE).
-
-# Security Vulnerabilities
-If you think that you have found a security issue in Bagisto, please do not use the issue tracker and do not post it publicly. Instead, all security issues must be sent to [mailto:support@bagisto.com](mailto:support@bagisto.com).
-
-# Contributors
-
-This project is on [Open Collective](https://opencollective.com/bagisto), and it exists thanks to the people who contribute.
-
-<a href="https://github.com/bagisto/bagisto/graphs/contributors"><img src="https://opencollective.com/bagisto/contributors.svg?width=890&button=false"/></a>
-
-# Backers
-
-Thank you to all our backers! 🙏
-
-<a href="https://opencollective.com/bagisto" target="_blank"><img src="https://opencollective.com/bagisto/backers.svg?width=890"></a>
-
-# Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-<a href="https://opencollective.com/bagisto" target="_blank"><img src="https://opencollective.com/bagisto/sponsors.svg?width=890&isActive=true"></a>
+# E-Commerce Kenya 🇰🇪
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Bagisto](https://img.shields.io/badge/Bagisto-2.4.x-orange.svg)](https://bagisto.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4.svg)](https://php.net)
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20.svg)](https://laravel.com)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1.svg)](https://mysql.com)
+
+> **Full-featured e-commerce platform for Kenya** built on Bagisto 2.4.x with multi-vendor support, payment gateway integration, and production-ready Dokploy deployment configuration.
+
+---
+
+## 🚀 Features
+
+### Core E-Commerce Features
+- ✅ **Multi-Vendor Marketplace** - Support for multiple sellers
+- ✅ **Product Management** - Simple, configurable, grouped, bundled, and booking products
+- ✅ **Order Management** - Complete order lifecycle management
+- ✅ **Customer Management** - Customer accounts, wishlists, and reviews
+- ✅ **Inventory Management** - Stock tracking and management
+- ✅ **Category Management** - Nested category tree structure
+- ✅ **Cart & Checkout** - Full-featured shopping cart and checkout flow
+
+### Payment Gateways
+- 💳 **PayPal** - PayPal Standard and Express Checkout
+- 💳 **Stripe** - Credit card processing
+- 💳 **Razorpay** - Indian payment gateway
+- 💳 **PayU** - Payment gateway for emerging markets
+- 💳 **Cash on Delivery** - COD support
+- 💳 **Money Transfer** - Bank transfer support
+
+### Shipping Methods
+- 📦 **Flat Rate Shipping**
+- 📦 **Free Shipping**
+- 📦 **Table Rate Shipping**
+- 📦 **Custom Shipping Methods**
+
+### Marketing & SEO
+- 🎯 **Cart Price Rules** - Promotional discounts
+- 🎯 **Catalog Price Rules** - Bulk pricing rules
+- 🎯 **SEO Optimization** - Meta tags, URL rewrites, sitemap
+- 🎯 **Email Marketing** - Newsletter subscriptions
+- 🎯 **Social Sharing** - Social media integration
+
+### Advanced Features
+- 🤖 **AI Integration** - MagicAI features powered by Laravel AI SDK
+- 🔍 **Elasticsearch** - Fast product search
+- 📊 **Analytics & Reporting** - Sales reports and analytics
+- 🌍 **Multi-Language** - 21 languages supported
+- 💱 **Multi-Currency** - Multiple currency support
+- 📱 **Responsive Design** - Mobile-friendly interface
+- 🔐 **Security** - GDPR compliance, secure payments
+- 📧 **Email Notifications** - Order confirmations, shipping updates
+
+---
+
+## 📋 Requirements
+
+### Server Requirements
+- **PHP**: 8.2 or higher
+- **MySQL**: 8.0 or higher
+- **Redis**: 7.x (for caching and sessions)
+- **Elasticsearch**: 7.17 or higher (for search)
+- **Composer**: 2.x
+- **Node.js**: 18.x or higher
+- **NPM**: 9.x or higher
+
+### PHP Extensions
+- BCMath
+- Ctype
+- cURL
+- DOM
+- Fileinfo
+- Filter
+- GD
+- Hash
+- Intl
+- JSON
+- Mbstring
+- OpenSSL
+- PCRE
+- PDO
+- Session
+- Tokenizer
+- XML
+
+---
+
+## 🛠️ Installation
+
+### Local Development
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/fes0010/e-commerce-kenya.git
+cd e-commerce-kenya
+```
+
+2. **Install PHP dependencies**
+```bash
+composer install
+```
+
+3. **Install Node.js dependencies**
+```bash
+npm install
+```
+
+4. **Configure environment**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. **Update database configuration in `.env`**
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=bagisto
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+6. **Run migrations and seeders**
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+7. **Build frontend assets**
+```bash
+# Admin panel
+cd packages/Webkul/Admin && npm install && npm run build
+
+# Shop frontend
+cd ../Shop && npm install && npm run build
+
+# Installer
+cd ../Installer && npm install && npm run build
+```
+
+8. **Start development server**
+```bash
+php artisan serve
+```
+
+Visit `http://localhost:8000` to access the application.
+
+---
+
+## 🐳 Dokploy Deployment
+
+This project includes production-ready Dokploy deployment configuration.
+
+### Quick Deploy
+
+1. **Review deployment documentation**
+```bash
+cat DOKPLOY-DEPLOYMENT.md
+```
+
+2. **Configure environment variables**
+```bash
+cp .env.dokploy .env
+# Edit .env with your production values
+```
+
+3. **Deploy to Dokploy**
+- Create new application in Dokploy
+- Connect this GitHub repository
+- Set deployment file: `docker-compose.dokploy.yml`
+- Configure environment variables
+- Deploy!
+
+### Deployment Files
+- `docker-compose.dokploy.yml` - Docker Compose configuration
+- `.env.dokploy` - Production environment template
+- `DOKPLOY-DEPLOYMENT.md` - Complete deployment guide
+- `routes/health.php` - Health check endpoints
+
+### Health Check Endpoints
+- `/health` - Overall health status
+- `/health/ready` - Readiness probe
+- `/health/live` - Liveness probe
+
+---
+
+## 📚 Documentation
+
+### Project Documentation
+- [Deployment Guide](DOKPLOY-DEPLOYMENT.md) - Complete Dokploy deployment instructions
+- [Agent Instructions](AGENTS.md) - Development guidelines and architecture
+- [Changelog](CHANGELOG.md) - Version history and changes
+- [Contributing](CONTRIBUTING.md) - How to contribute
+- [Security](SECURITY.md) - Security policies
+- [Upgrade Guide](UPGRADE.md) - Version upgrade instructions
+
+### Bagisto Documentation
+- [Official Documentation](https://devdocs.bagisto.com)
+- [API Documentation](https://devdocs.bagisto.com/2.x/api/)
+- [Package Development](https://devdocs.bagisto.com/2.x/packages/)
+
+---
+
+## 🏗️ Architecture
+
+### Package Structure
+```
+packages/Webkul/
+├── Admin/              # Admin panel
+├── Shop/               # Customer storefront
+├── Core/               # Core functionality
+├── Product/            # Product management
+├── Sales/              # Order management
+├── Checkout/           # Cart and checkout
+├── Customer/           # Customer management
+├── Category/           # Category management
+├── Attribute/          # EAV attributes
+├── Payment/            # Payment methods
+├── Paypal/             # PayPal integration
+├── Stripe/             # Stripe integration
+├── Razorpay/           # Razorpay integration
+├── PayU/               # PayU integration
+├── Shipping/           # Shipping methods
+├── Inventory/          # Stock management
+├── CartRule/           # Cart promotions
+├── CatalogRule/        # Catalog pricing
+├── Tax/                # Tax calculation
+├── DataGrid/           # Admin data tables
+├── DataTransfer/       # Import/export
+├── CMS/                # Content management
+├── Marketing/          # SEO and marketing
+├── Theme/              # Theme management
+├── MagicAI/            # AI features
+├── Notification/       # Notifications
+├── BookingProduct/     # Booking products
+├── User/               # Admin users
+├── Installer/          # Installation wizard
+├── SocialLogin/        # OAuth login
+├── Sitemap/            # XML sitemap
+├── GDPR/               # GDPR compliance
+└── RMA/                # Returns management
+```
+
+### Technology Stack
+- **Backend**: Laravel 12.x, PHP 8.2+
+- **Frontend**: Vue.js 3, Tailwind CSS, Vite
+- **Database**: MySQL 8.0+
+- **Cache**: Redis 7.x
+- **Search**: Elasticsearch 7.17+
+- **Queue**: Redis
+- **Session**: Redis
+- **File Storage**: Local / S3
+
+---
+
+## 🧪 Testing
+
+### Run Tests
+```bash
+# All tests
+php artisan test --compact
+
+# Specific package
+php artisan test --compact packages/Webkul/Admin/tests
+
+# With coverage
+php artisan test --coverage
+```
+
+### Code Style
+```bash
+# Fix code style
+vendor/bin/pint
+
+# Check only
+vendor/bin/pint --test
+```
+
+### E2E Tests
+```bash
+# Admin E2E tests
+cd packages/Webkul/Admin
+npx playwright test --config=tests/e2e-pw/playwright.config.ts
+
+# Shop E2E tests
+cd packages/Webkul/Shop
+npx playwright test --config=tests/e2e-pw/playwright.config.ts
+```
+
+---
+
+## 🔧 Development
+
+### Commands
+```bash
+# Clear caches
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
+# Optimize for production
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+# Index products
+php artisan indexer:index
+
+# Run queue worker
+php artisan queue:work
+
+# Run scheduler
+php artisan schedule:work
+```
+
+### Database
+```bash
+# Run migrations
+php artisan migrate
+
+# Rollback migrations
+php artisan migrate:rollback
+
+# Seed database
+php artisan db:seed
+
+# Fresh install
+php artisan migrate:fresh --seed
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Code Standards
+- Follow PSR-12 coding standards
+- Write tests for new features
+- Update documentation
+- Run `vendor/bin/pint` before committing
+
+---
+
+## 🔐 Security
+
+If you discover a security vulnerability, please email security@example.com. All security vulnerabilities will be promptly addressed.
+
+See [SECURITY.md](SECURITY.md) for more information.
+
+---
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+### Third-Party Licenses
+- **Bagisto**: MIT License
+- **Laravel**: MIT License
+- **Vue.js**: MIT License
+
+---
+
+## 🙏 Acknowledgments
+
+- [Bagisto](https://bagisto.com) - The amazing e-commerce framework
+- [Laravel](https://laravel.com) - The PHP framework
+- [Webkul](https://webkul.com) - Bagisto creators
+- [ECC](https://github.com/affaan-m/ECC) - AI-assisted development tools
+
+---
+
+## 📞 Support
+
+- **Documentation**: [DOKPLOY-DEPLOYMENT.md](DOKPLOY-DEPLOYMENT.md)
+- **Issues**: [GitHub Issues](https://github.com/fes0010/e-commerce-kenya/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/fes0010/e-commerce-kenya/discussions)
+- **Bagisto Forums**: [forums.bagisto.com](https://forums.bagisto.com)
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] M-Pesa payment integration (Kenya)
+- [ ] Airtel Money integration (Kenya)
+- [ ] Kenya Post shipping integration
+- [ ] KRA tax compliance
+- [ ] Mobile app (React Native)
+- [ ] Progressive Web App (PWA)
+- [ ] Advanced analytics dashboard
+- [ ] Multi-warehouse support
+- [ ] Subscription products
+- [ ] Affiliate program
+
+---
+
+## 📊 Project Status
+
+- **Version**: 2.4.x
+- **Status**: Active Development
+- **Last Updated**: May 30, 2026
+- **Maintainer**: [@fes0010](https://github.com/fes0010)
+
+---
+
+<div align="center">
+
+**Made with ❤️ for Kenya**
+
+[Report Bug](https://github.com/fes0010/e-commerce-kenya/issues) · [Request Feature](https://github.com/fes0010/e-commerce-kenya/issues) · [Documentation](DOKPLOY-DEPLOYMENT.md)
+
+</div>
