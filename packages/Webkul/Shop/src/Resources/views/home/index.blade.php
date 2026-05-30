@@ -58,7 +58,126 @@
                     @endpush
                 @endif
 
-                <!-- render html -->
+                <!-- Structured images mode -->
+                @if (! empty($data['images']) && is_array($data['images']))
+                    @php
+                        $layout = $data['layout'] ?? 'grid';
+                        $text = $data['text'] ?? '';
+                    @endphp
+
+                    <section class="static-content-section container mx-auto px-4 py-6">
+                        @if ($layout === 'grid')
+                            <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+                                @foreach ($data['images'] as $image)
+                                    @if (! empty($image['url']))
+                                        <div class="text-center">
+                                            @if (! empty($image['link']))
+                                                <a href="{{ $image['link'] }}">
+                                            @endif
+                                            <img
+                                                src="{{ $image['url'] }}"
+                                                alt="{{ $image['alt'] ?? '' }}"
+                                                class="w-full rounded-lg object-cover"
+                                                loading="lazy"
+                                            />
+                                            @if (! empty($image['caption']))
+                                                <p class="mt-1 text-xs text-gray-500">{{ $image['caption'] }}</p>
+                                            @endif
+                                            @if (! empty($image['link']))
+                                                </a>
+                                            @endif
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+
+                        @elseif ($layout === 'slider')
+                            <div class="relative overflow-hidden rounded-lg">
+                                @php $first = $data['images'][0] ?? null; @endphp
+                                @if ($first && ! empty($first['url']))
+                                    @if (! empty($first['link']))
+                                        <a href="{{ $first['link'] }}">
+                                    @endif
+                                    <img
+                                        src="{{ $first['url'] }}"
+                                        alt="{{ $first['alt'] ?? '' }}"
+                                        class="h-64 w-full object-cover"
+                                    />
+                                    @if (! empty($first['caption']))
+                                        <div class="absolute bottom-0 left-0 right-0 bg-black/50 p-2 text-center text-sm text-white">
+                                            {{ $first['caption'] }}
+                                        </div>
+                                    @endif
+                                    @if (! empty($first['link']))
+                                        </a>
+                                    @endif
+                                @endif
+                            </div>
+
+                        @elseif ($layout === 'masonry')
+                            <div class="columns-2 gap-4 md:columns-3 lg:columns-4">
+                                @foreach ($data['images'] as $image)
+                                    @if (! empty($image['url']))
+                                        <div class="mb-4 break-inside-avoid">
+                                            @if (! empty($image['link']))
+                                                <a href="{{ $image['link'] }}">
+                                            @endif
+                                            <img
+                                                src="{{ $image['url'] }}"
+                                                alt="{{ $image['alt'] ?? '' }}"
+                                                class="w-full rounded-lg"
+                                                loading="lazy"
+                                            />
+                                            @if (! empty($image['caption']))
+                                                <p class="mt-1 text-center text-xs text-gray-500">{{ $image['caption'] }}</p>
+                                            @endif
+                                            @if (! empty($image['link']))
+                                                </a>
+                                            @endif
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+
+                        @elseif ($layout === 'banner')
+                            @php $first = $data['images'][0] ?? null; @endphp
+                            @if ($first && ! empty($first['url']))
+                                <div class="relative">
+                                    @if (! empty($first['link']))
+                                        <a href="{{ $first['link'] }}">
+                                    @endif
+                                    <img
+                                        src="{{ $first['url'] }}"
+                                        alt="{{ $first['alt'] ?? '' }}"
+                                        class="h-64 w-full rounded-lg object-cover"
+                                    />
+                                    @if (! empty($first['caption']) || $text)
+                                        <div class="absolute inset-0 flex items-center justify-center rounded-lg bg-black/40">
+                                            <div class="p-4 text-center text-white">
+                                                @if (! empty($first['caption']))
+                                                    <h3 class="mb-2 text-lg font-bold">{{ $first['caption'] }}</h3>
+                                                @endif
+                                                @if ($text)
+                                                    <p>{!! nl2br(e($text)) !!}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if (! empty($first['link']))
+                                        </a>
+                                    @endif
+                                </div>
+                            @endif
+                        @endif
+
+                        <!-- Text content below images -->
+                        @if ($text && $layout !== 'banner')
+                            <div class="mt-4 whitespace-pre-line text-gray-700">{!! nl2br(e($text)) !!}</div>
+                        @endif
+                    </section>
+                @endif
+
+                <!-- Legacy HTML mode (backward compatible) -->
                 @if (! empty($data['html']))
                     {!! $data['html'] !!}
                 @endif
