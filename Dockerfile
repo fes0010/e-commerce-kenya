@@ -146,7 +146,7 @@ RUN cp .env.example .env \
 #
 # The MySQL data directory (/var/lib/mysql) is baked into this layer.
 # ---------------------------------------------------------------------------
-RUN mkdir -p storage/framework/{cache,sessions,views,testing} \
+RUN mkdir -p storage/framework/{cache/data,sessions,views,testing} \
     && mkdir -p storage/logs \
     && mkdir -p storage/app/public \
     && mkdir -p bootstrap/cache \
