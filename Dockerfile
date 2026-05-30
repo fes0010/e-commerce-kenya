@@ -146,6 +146,12 @@ RUN cp .env.example .env \
 #
 # The MySQL data directory (/var/lib/mysql) is baked into this layer.
 # ---------------------------------------------------------------------------
+RUN mkdir -p storage/framework/{cache,sessions,views,testing} \
+    && mkdir -p storage/logs \
+    && mkdir -p storage/app/public \
+    && mkdir -p bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
+
 COPY docker/production/mysql-init.sql /docker-entrypoint-initdb.d/init.sql
 COPY docker/production/build-install.sh /tmp/build-install.sh
 RUN chmod +x /tmp/build-install.sh && bash /tmp/build-install.sh && rm /tmp/build-install.sh
