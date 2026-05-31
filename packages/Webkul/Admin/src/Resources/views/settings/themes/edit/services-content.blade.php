@@ -45,7 +45,14 @@
                     v-if="servicesContent.services.length"
                     v-for="(service_details, index) in servicesContent.services"
                 >
-                    <!-- Hidden Inputs -->
+                    <!-- Hidden Input -->
+                    <input
+                        type="file"
+                        class="hidden"
+                        :name="'{{ $currentLocale->code }}[options]['+ index +'][service_details]'"
+                        :ref="'imageInput_' + index"
+                    />
+
                     <input
                         type="hidden"
                         :name="'{{ $currentLocale->code }}[options]['+ index +'][title]'"
@@ -63,12 +70,6 @@
                         :name="'{{ $currentLocale->code }}[options]['+ index +'][service_icon]'"
                         :value="service_details.service_icon"
                     />
-
-                    <input
-                        type="hidden"
-                        :name="'{{ $currentLocale->code }}[options]['+ index +'][image]'"
-                        :value="service_details.image"
-                    />
                 
                     <!-- Service Details Listing -->
                     <div 
@@ -78,28 +79,6 @@
                         }"
                     >
                         <div class="flex gap-2.5">
-                            <!-- Service Image Preview -->
-                            <div class="flex-shrink-0">
-                                <img
-                                    v-if="service_details.image"
-                                    :src="service_details.image"
-                                    class="h-16 w-16 rounded-lg object-cover"
-                                    :alt="service_details.title"
-                                />
-                                <div
-                                    v-else-if="service_details.service_icon"
-                                    class="flex h-16 w-16 items-center justify-center rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800"
-                                >
-                                    <span :class="service_details.service_icon + ' text-2xl text-gray-400'"></span>
-                                </div>
-                                <div
-                                    v-else
-                                    class="flex h-16 w-16 items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-800"
-                                >
-                                    <span class="icon-image text-xl text-gray-300"></span>
-                                </div>
-                            </div>
-
                             <div class="grid place-content-start gap-1.5">
                                 <p class="text-gray-600 dark:text-gray-300">
                                     <div> 
@@ -121,19 +100,11 @@
                                     </div>
                                 </p>
 
-                                <p class="text-gray-600 dark:text-gray-300" v-if="service_details.service_icon">
+                                <p class="text-gray-600 dark:text-gray-300">
                                     @lang('admin::app.settings.themes.edit.services-content.service-icon'): 
 
                                     <span class="text-gray-600 transition-all dark:text-gray-300">
                                         @{{ service_details.service_icon }}
-                                    </span>
-                                </p>
-
-                                <p class="text-gray-600 dark:text-gray-300" v-if="service_details.image">
-                                    @lang('admin::app.settings.themes.edit.services-content.service-image'): 
-
-                                    <span class="text-blue-600 transition-all hover:underline">
-                                        @{{ service_details.image.split('/').pop() }}
                                     </span>
                                 </p>
                             </div>
@@ -191,7 +162,6 @@
                 <form 
                     @submit="handleSubmit($event, saveServices)"
                     ref="createServiceForm"
-                    enctype="multipart/form-data"
                 >
                     <x-admin::modal ref="addServiceModal">
                         <!-- Modal Header -->
@@ -244,75 +214,20 @@
                                 <x-admin::form.control-group.error control-name="{{ $currentLocale->code }}[description]" />
                             </x-admin::form.control-group>
 
-                            <!-- Service Image Upload -->
+                            <!-- Services Icon -->
                             <x-admin::form.control-group>
-                                <x-admin::form.control-group.label>
-                                    @lang('admin::app.settings.themes.edit.services-content.service-image')
-                                </x-admin::form.control-group.label>
-
-                                <div class="flex items-center gap-4">
-                                    <!-- Image Preview -->
-                                    <div
-                                        v-if="selectedService.image"
-                                        class="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700"
-                                    >
-                                        <img
-                                            :src="selectedService.image"
-                                            class="h-full w-full object-cover"
-                                            :alt="selectedService.title"
-                                        />
-                                        <button
-                                            type="button"
-                                            class="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600"
-                                            @click="selectedService.image = ''"
-                                        >
-                                            <span class="icon-delete text-xs"></span>
-                                        </button>
-                                    </div>
-
-                                    <label
-                                        class="secondary-button cursor-pointer"
-                                        for="service-image-upload"
-                                    >
-                                        <span class="icon-add"></span>
-                                        <span v-if="selectedService.image">
-                                            @lang('admin::app.settings.themes.edit.services-content.replace-image')
-                                        </span>
-                                        <span v-else>
-                                            @lang('admin::app.settings.themes.edit.services-content.upload-image')
-                                        </span>
-                                    </label>
-                                    <input
-                                        type="file"
-                                        id="service-image-upload"
-                                        class="hidden"
-                                        accept="image/*"
-                                        @change="uploadServiceImage($event)"
-                                    />
-                                </div>
-
-                                <p class="mt-1 text-xs text-gray-500">
-                                    @lang('admin::app.settings.themes.edit.services-content.image-hint')
-                                </p>
-                            </x-admin::form.control-group>
-
-                            <!-- Services Icon (CSS class) -->
-                            <x-admin::form.control-group>
-                                <x-admin::form.control-group.label>
+                                <x-admin::form.control-group.label class="required">
                                     @lang('admin::app.settings.themes.edit.services-content.service-icon-class')
                                 </x-admin::form.control-group.label>
 
                                 <x-admin::form.control-group.control
                                     type="text"
                                     name="{{ $currentLocale->code }}[service_icon]"
+                                    rules="required"
                                     v-model="selectedService.service_icon"
                                     :label="trans('admin::app.settings.themes.edit.services-content.service-icon-class')"
-                                    :placeholder="trans('admin::app.settings.themes.edit.services-content.service-icon-placeholder')"
+                                    :placeholder="trans('admin::app.settings.themes.edit.services-content.service-icon-class')"
                                 />
-
-                                <p class="mt-1 text-xs text-gray-500">
-                                    @lang('admin::app.settings.themes.edit.services-content.icon-hint')
-                                </p>
 
                                 <x-admin::form.control-group.error control-name="{{ $currentLocale->code }}[service_icon]" />
                             </x-admin::form.control-group>
@@ -341,11 +256,12 @@
 
             data() {
                 return {
+                    
                     servicesContent: @json($theme->translate($currentLocale->code)['options'] ?? null),
 
                     deletedServices: [],
 
-                    selectedService: {},
+                    selectedService: [],
 
                     isUpdating: false
                 };
@@ -361,37 +277,22 @@
             },
 
             methods: {
-                saveServices(params, { resetForm, setErrors }) {
+                saveServices(params, { resetForm ,setErrors }) {
                     let formData = new FormData(this.$refs.createServiceForm);
 
                     if (! this.isUpdating) {
                         try {
+                            const serviceImage = formData.get("service_icon[]");
+
                             this.servicesContent.services.push({
                                 title: formData.get("{{ $currentLocale->code }}[title]"),
                                 description: formData.get("{{ $currentLocale->code }}[description]"),
-                                service_icon: formData.get("{{ $currentLocale->code }}[service_icon]") || '',
-                                image: this.selectedService.image || '',
+                                service_icon: formData.get("{{ $currentLocale->code }}[service_icon]"),
                             });
 
                             resetForm();
-                            this.selectedService = {};
                         } catch (error) {
                             setErrors({'service_icon': [error.message]});
-                        }
-                        this.isUpdating = false;
-                    } else {
-                        // Update existing service
-                        const index = this.servicesContent.services.findIndex(
-                            s => s === this.selectedService
-                        );
-                        if (index !== -1) {
-                            this.servicesContent.services[index] = {
-                                ...this.servicesContent.services[index],
-                                title: formData.get("{{ $currentLocale->code }}[title]"),
-                                description: formData.get("{{ $currentLocale->code }}[description]"),
-                                service_icon: formData.get("{{ $currentLocale->code }}[service_icon]") || '',
-                                image: this.selectedService.image || '',
-                            };
                         }
                         this.isUpdating = false;
                     }
@@ -416,7 +317,7 @@
                 },
 
                 add() {
-                    this.selectedService = {};
+                    this.selectedService = [];
 
                     this.isUpdating = false;
 
@@ -424,46 +325,11 @@
                 },
 
                 edit(service_details) {
-                    this.selectedService = { ...service_details };
+                    this.selectedService = service_details;
 
                     this.isUpdating = true;
 
                     this.$refs.addServiceModal.toggle();
-                },
-
-                uploadServiceImage($event) {
-                    const file = $event.target.files[0];
-                    if (!file) return;
-
-                    if (!file.type.startsWith('image/')) {
-                        this.$emitter.emit('add-flash', {
-                            type: 'warning',
-                            message: '@lang("admin::app.settings.themes.edit.image-upload-message")'
-                        });
-                        return;
-                    }
-
-                    let formData = new FormData();
-                    formData.append('{{ $currentLocale->code }}[options][][image]', file);
-                    formData.append('id', '{{ $theme->id }}');
-                    formData.append('type', 'services_content');
-
-                    this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
-                        .then((response) => {
-                            this.selectedService.image = response.data;
-                            this.$emitter.emit('add-flash', {
-                                type: 'success',
-                                message: '@lang("admin::app.settings.themes.edit.image-uploaded")'
-                            });
-                        })
-                        .catch((error) => {
-                            this.$emitter.emit('add-flash', {
-                                type: 'error',
-                                message: error.response?.data?.message || '@lang("admin::app.settings.themes.edit.image-upload-failed")'
-                            });
-                        });
-
-                    $event.target.value = '';
                 },
             },
         });
