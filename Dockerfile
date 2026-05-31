@@ -207,6 +207,11 @@ RUN apt-get purge -y git \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
+# ---------------------------------------------------------------------------
+# Declare volumes for persistent data
+# ---------------------------------------------------------------------------
+VOLUME ["/var/www/bagisto/storage", "/var/lib/mysql"]
+
 EXPOSE 80
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
