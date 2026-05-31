@@ -47,24 +47,20 @@ cd "$APP_DIR"
 
 log "Applying runtime environment configuration..."
 
-# Escape special characters for sed
-APP_URL_ESCAPED=$(echo "$APP_URL" | sed 's/[\/&]/\\&/g')
-DB_PASSWORD_ESCAPED=$(echo "$DB_PASSWORD" | sed 's/[\/&]/\\&/g')
-
-sed -i "s|^APP_URL=.*|APP_URL=${APP_URL_ESCAPED}|" .env
-sed -i "s/^DB_HOST=.*/DB_HOST=${DB_HOST}/" .env
-sed -i "s/^DB_PORT=.*/DB_PORT=${DB_PORT}/" .env
-sed -i "s/^DB_DATABASE=.*/DB_DATABASE=${DB_DATABASE}/" .env
-sed -i "s/^DB_USERNAME=.*/DB_USERNAME=${DB_USERNAME}/" .env
-sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${DB_PASSWORD_ESCAPED}/" .env
-sed -i "s/^APP_TIMEZONE=.*/APP_TIMEZONE=${APP_TIMEZONE}/" .env
-sed -i "s/^APP_CURRENCY=.*/APP_CURRENCY=${APP_CURRENCY}/" .env
-sed -i "s/^APP_LOCALE=.*/APP_LOCALE=${APP_LOCALE}/" .env
+# Use a safer method to update .env - replace entire lines
+grep -v "^APP_URL=" .env > .env.tmp && echo "APP_URL=${APP_URL}" >> .env.tmp && mv .env.tmp .env
+grep -v "^DB_HOST=" .env > .env.tmp && echo "DB_HOST=${DB_HOST}" >> .env.tmp && mv .env.tmp .env
+grep -v "^DB_PORT=" .env > .env.tmp && echo "DB_PORT=${DB_PORT}" >> .env.tmp && mv .env.tmp .env
+grep -v "^DB_DATABASE=" .env > .env.tmp && echo "DB_DATABASE=${DB_DATABASE}" >> .env.tmp && mv .env.tmp .env
+grep -v "^DB_USERNAME=" .env > .env.tmp && echo "DB_USERNAME=${DB_USERNAME}" >> .env.tmp && mv .env.tmp .env
+grep -v "^DB_PASSWORD=" .env > .env.tmp && echo "DB_PASSWORD=${DB_PASSWORD}" >> .env.tmp && mv .env.tmp .env
+grep -v "^APP_TIMEZONE=" .env > .env.tmp && echo "APP_TIMEZONE=${APP_TIMEZONE}" >> .env.tmp && mv .env.tmp .env
+grep -v "^APP_CURRENCY=" .env > .env.tmp && echo "APP_CURRENCY=${APP_CURRENCY}" >> .env.tmp && mv .env.tmp .env
+grep -v "^APP_LOCALE=" .env > .env.tmp && echo "APP_LOCALE=${APP_LOCALE}" >> .env.tmp && mv .env.tmp .env
 
 # Update APP_KEY if provided
 if [ -n "$APP_KEY" ]; then
-    APP_KEY_ESCAPED=$(echo "$APP_KEY" | sed 's/[\/&]/\\&/g')
-    sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY_ESCAPED}|" .env
+    grep -v "^APP_KEY=" .env > .env.tmp && echo "APP_KEY=${APP_KEY}" >> .env.tmp && mv .env.tmp .env
 fi
 
 # ==========================================================================
