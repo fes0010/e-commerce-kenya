@@ -11,14 +11,22 @@ log() {
 }
 
 # ==========================================================================
-# Determine database mode: internal (default) or external
+# Set defaults for production environment
+# These will be used if environment variables are not provided by Dokploy
 # ==========================================================================
-DB_HOST="${DB_HOST:-127.0.0.1}"
+APP_URL="${APP_URL:-https://ecommerce.munene.shop}"
+DB_HOST="${DB_HOST:-services-freeman-kgiydl}"
 DB_PORT="${DB_PORT:-3306}"
 DB_DATABASE="${DB_DATABASE:-bagisto}"
-DB_USERNAME="${DB_USERNAME:-bagisto}"
-DB_PASSWORD="${DB_PASSWORD:-bagisto}"
+DB_USERNAME="${DB_USERNAME:-root}"
+DB_PASSWORD="${DB_PASSWORD:-Enterpassword001.}"
+APP_TIMEZONE="${APP_TIMEZONE:-Africa/Nairobi}"
+APP_CURRENCY="${APP_CURRENCY:-KES}"
+APP_LOCALE="${APP_LOCALE:-en}"
 
+# ==========================================================================
+# Determine database mode based on DB_HOST
+# ==========================================================================
 use_internal_mysql() {
     [[ "$DB_HOST" == "127.0.0.1" || "$DB_HOST" == "localhost" ]]
 }
@@ -32,31 +40,31 @@ else
 fi
 
 # ==========================================================================
-# Update .env with runtime overrides (if any env vars are passed)
+# Update .env with runtime configuration
+# Always update these values to ensure correct configuration
 # ==========================================================================
 cd "$APP_DIR"
 
-log "Applying runtime environment overrides..."
+log "Applying runtime environment configuration..."
+sed -i "s|^APP_URL=.*|APP_URL=${APP_URL}|" .env
 sed -i "s/^DB_HOST=.*/DB_HOST=${DB_HOST}/" .env
 sed -i "s/^DB_PORT=.*/DB_PORT=${DB_PORT}/" .env
 sed -i "s/^DB_DATABASE=.*/DB_DATABASE=${DB_DATABASE}/" .env
 sed -i "s/^DB_USERNAME=.*/DB_USERNAME=${DB_USERNAME}/" .env
 sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${DB_PASSWORD}/" .env
+sed -i "s/^APP_TIMEZONE=.*/APP_TIMEZONE=${APP_TIMEZONE}/" .env
+sed -i "s/^APP_CURRENCY=.*/APP_CURRENCY=${APP_CURRENCY}/" .env
+sed -i "s/^APP_LOCALE=.*/APP_LOCALE=${APP_LOCALE}/" .env
 
-[ -n "$APP_URL" ]      && sed -i "s|^APP_URL=.*|APP_URL=${APP_URL}|" .env
-[ -n "$APP_KEY" ]      && sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
-[ -n "$APP_LOCALE" ]   && sed -i "s/^APP_LOCALE=.*/APP_LOCALE=${APP_LOCALE}/" .env
-[ -n "$APP_CURRENCY" ] && sed -i "s/^APP_CURRENCY=.*/APP_CURRENCY=${APP_CURRENCY}/" .env
-[ -n "$APP_TIMEZONE" ] && sed -i "s/^APP_TIMEZONE=.*/APP_TIMEZONE=${APP_TIMEZONE}/" .env
+# Update APP_KEY if provided
+[ -n "$APP_KEY" ] && sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
 
 # ==========================================================================
-# Re-cache config if env vars were overridden
+# Re-cache config after updating .env
 # ==========================================================================
-if [ -n "$APP_URL" ] || [ -n "$DB_HOST" ] && ! use_internal_mysql; then
-    log "Re-caching configuration after env overrides..."
-    php artisan optimize:clear --no-interaction 2>/dev/null || true
-    php artisan optimize --no-interaction 2>/dev/null || true
-fi
+log "Re-caching configuration..."
+php artisan optimize:clear --no-interaction 2>/dev/null || true
+php artisan optimize --no-interaction 2>/dev/null || true
 
 # ==========================================================================
 # External MySQL: wait for connectivity before Supervisor starts
