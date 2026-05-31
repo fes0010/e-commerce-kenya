@@ -36,9 +36,9 @@ class ThemeCustomizationRepository extends Repository
                 'CSS.AllowedProperties' => null,
             ];
 
-            $data[$locale]['options']['html'] = Purify::config($config)->clean($data[$locale]['options']['html']);
+            $data[$locale]['options']['html'] = Purify::config($config)->clean($data[$locale]['options']['html'] ?? '');
 
-            $data[$locale]['options']['css'] = Purify::config($config)->clean($data[$locale]['options']['css']);
+            $data[$locale]['options']['css'] = Purify::config($config)->clean($data[$locale]['options']['css'] ?? '');
         }
 
         if (in_array($data['type'], ['image_carousel', 'services_content'])) {

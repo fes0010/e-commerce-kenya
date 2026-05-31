@@ -546,9 +546,30 @@
                             const newUrl = '{{ config("app.url") }}/' + response.data;
                             this.uploadedImages.push({ url: newUrl });
                             
+                            // Auto-insert into HTML
+                            const relativeUrl = response.data;
+                            const imgTag = `<img class="lazy" src="" data-src="${relativeUrl}">`;
+                            
+                            // Try to insert into HTML editor
+                            this.$parent.$parent.$nextTick(() => {
+                                if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
+                                    let editor = this.$parent.$parent.$refs.editor._html.getDoc();
+                                    let cursorPointer = editor.getCursor();
+                                    
+                                    editor.replaceRange('\n' + imgTag + '\n', {
+                                        line: cursorPointer.line, 
+                                        ch: cursorPointer.ch
+                                    });
+                                    
+                                    // Update parent's HTML
+                                    this.$parent.$parent.options.html = editor.getValue();
+                                    this.$parent.$parent.extractUploadedImages();
+                                }
+                            });
+                            
                             this.$emitter.emit('add-flash', {
                                 type: 'success',
-                                message: 'Image uploaded successfully! Click "Insert" to add to HTML or copy the URL.'
+                                message: 'Image uploaded and inserted into HTML! Check Preview tab to see it.'
                             });
                             
                             event.target.value = '';
@@ -565,12 +586,33 @@
                     const relativeUrl = url.replace('{{ config("app.url") }}/', '');
                     const imgTag = `<img class="lazy" src="" data-src="${relativeUrl}">`;
                     
-                    // Copy to clipboard as fallback
+                    // Copy to clipboard
                     navigator.clipboard.writeText(imgTag);
                     
                     this.$emitter.emit('add-flash', {
                         type: 'success',
-                        message: 'Image tag copied to clipboard! Switch to HTML tab and paste (Ctrl+V) where you want it.'
+                        message: 'Image tag copied! Switch to HTML tab and paste (Ctrl+V) where you want it.'
+                    });
+                    
+                    // Also try to insert directly if parent has the editor
+                    this.$parent.$parent.$nextTick(() => {
+                        if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
+                            let editor = this.$parent.$parent.$refs.editor._html.getDoc();
+                            let cursorPointer = editor.getCursor();
+                            
+                            editor.replaceRange('\n' + imgTag + '\n', {
+                                line: cursorPointer.line, 
+                                ch: cursorPointer.ch
+                            });
+                            
+                            // Update parent's HTML
+                            this.$parent.$parent.options.html = editor.getValue();
+                            
+                            this.$emitter.emit('add-flash', {
+                                type: 'success',
+                                message: 'Image inserted into HTML! Check HTML tab or Preview tab.'
+                            });
+                        }
                     });
                 },
 
@@ -607,20 +649,28 @@
                             const oldUrl = this.uploadedImages[index].url;
                             const newUrl = '{{ config("app.url") }}/' + response.data;
                             
-                            // Update in parent component
+                            // Update in parent component's HTML
                             const oldRelativeUrl = oldUrl.replace('{{ config("app.url") }}/', '');
                             const newRelativeUrl = response.data;
                             
-                            this.options.html = this.options.html.replace(
+                            this.$parent.$parent.options.html = this.$parent.$parent.options.html.replace(
                                 new RegExp(oldRelativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
                                 newRelativeUrl
                             );
+                            
+                            // Update HTML editor if available
+                            this.$parent.$parent.$nextTick(() => {
+                                if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
+                                    this.$parent.$parent.$refs.editor._html.setValue(this.$parent.$parent.options.html);
+                                }
+                                this.$parent.$parent.extractUploadedImages();
+                            });
                             
                             this.uploadedImages[index].url = newUrl;
                             
                             this.$emitter.emit('add-flash', {
                                 type: 'success',
-                                message: 'Image replaced successfully in HTML!'
+                                message: 'Image replaced successfully in HTML! Check Preview tab.'
                             });
                             
                             event.target.value = '';
@@ -641,9 +691,17 @@
                     const imageUrl = this.uploadedImages[index].url;
                     const relativeUrl = imageUrl.replace('{{ config("app.url") }}/', '');
                     
-                    // Remove from HTML
+                    // Remove from parent's HTML
                     const imgRegex = new RegExp(`<img[^>]*(?:src|data-src)="${relativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`, 'gi');
-                    this.options.html = this.options.html.replace(imgRegex, '');
+                    this.$parent.$parent.options.html = this.$parent.$parent.options.html.replace(imgRegex, '');
+                    
+                    // Update HTML editor if available
+                    this.$parent.$parent.$nextTick(() => {
+                        if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
+                            this.$parent.$parent.$refs.editor._html.setValue(this.$parent.$parent.options.html);
+                        }
+                        this.$parent.$parent.extractUploadedImages();
+                    });
                     
                     this.uploadedImages.splice(index, 1);
                     
