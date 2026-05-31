@@ -96,7 +96,7 @@
                 @includeWhen($theme->type === 'category_carousel', 'admin::settings.themes.edit.category-carousel')
 
                 <!-- Static-Content Template -->
-                @includeWhen($theme->type === 'static_content', 'admin::settings.themes.edit.static-content-visual')
+                @includeWhen($theme->type === 'static_content', 'admin::settings.themes.edit.static-content')
 
                 <!-- Footer Template -->
                 @includeWhen($theme->type === 'footer_links', 'admin::settings.themes.edit.footer-links')

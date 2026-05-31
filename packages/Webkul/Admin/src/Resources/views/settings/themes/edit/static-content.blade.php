@@ -25,7 +25,7 @@
                         class="flex gap-2.5"
                         v-if="isHtmlEditorActive"
                     >
-                        <!-- Hidden Input Filed for upload images -->
+                        <!-- Image Upload Button -->
                         <label
                             class="secondary-button"
                             for="static_image"
@@ -43,6 +43,15 @@
                             label="Image"
                             @change="storeImage($event)"
                         >
+
+                        <!-- Manage Uploaded Images Button -->
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            @click="showImageManager = true"
+                        >
+                            Manage Images (@{{ uploadedImages.length }})
+                        </button>
                     </div>
                 </div>
                 
@@ -103,6 +112,108 @@
                     >
                     </component>
                 </KeepAlive>
+
+                <!-- Image Manager Modal -->
+                <div
+                    v-if="showImageManager"
+                    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                    @click.self="showImageManager = false"
+                >
+                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full max-h-[80vh] overflow-hidden">
+                        <div class="flex items-center justify-between p-4 border-b dark:border-gray-800">
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                Uploaded Images (@{{ uploadedImages.length }})
+                            </h3>
+                            <button
+                                type="button"
+                                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                                @click="showImageManager = false"
+                            >
+                                <span class="icon-cross text-2xl"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="p-4 overflow-y-auto max-h-[calc(80vh-120px)]">
+                            <div v-if="uploadedImages.length === 0" class="text-center py-8 text-gray-500">
+                                No images uploaded yet. Click "Add Image" to upload.
+                            </div>
+                            
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div
+                                    v-for="(image, index) in uploadedImages"
+                                    :key="'img-' + index"
+                                    class="relative border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                                >
+                                    <img
+                                        :src="image.url"
+                                        class="w-full h-48 object-cover"
+                                        :alt="'Image ' + (index + 1)"
+                                    />
+                                    
+                                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 transition-opacity flex items-center justify-center gap-2 opacity-0 hover:opacity-100">
+                                        <button
+                                            type="button"
+                                            class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
+                                            @click="copyImageUrl(image.url)"
+                                            title="Copy URL"
+                                        >
+                                            Copy URL
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700"
+                                            @click="insertImageToEditor(image.url)"
+                                            title="Insert to Editor"
+                                        >
+                                            Insert
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="px-3 py-1 bg-yellow-600 text-white text-sm rounded hover:bg-yellow-700"
+                                            @click="replaceImage(index)"
+                                            title="Replace"
+                                        >
+                                            Replace
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700"
+                                            @click="deleteImage(index)"
+                                            title="Delete"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="p-2 bg-gray-50 dark:bg-gray-800">
+                                        <p class="text-xs text-gray-600 dark:text-gray-400 truncate" :title="image.url">
+                                            @{{ image.url.split('/').pop() }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-end gap-2 p-4 border-t dark:border-gray-800">
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                @click="showImageManager = false"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden file input for replace functionality -->
+                <input
+                    type="file"
+                    ref="replaceImageInput"
+                    class="hidden"
+                    accept="image/*"
+                    @change="handleReplaceImage($event)"
+                />
             </div>
         </div>
     </script>
@@ -144,13 +255,22 @@
                     options: @json($theme->translate($currentLocale->code)['options'] ?? null),
 
                     isHtmlEditorActive: true,
+
+                    showImageManager: false,
+
+                    uploadedImages: [],
+
+                    replaceImageIndex: null,
                 };
             },
 
             created() {
                 if (this.options === null) {
                     this.options = { html: {} };
-                }   
+                }
+                
+                // Extract uploaded images from HTML
+                this.extractUploadedImages();
             },
 
             mounted() {
@@ -175,6 +295,7 @@
                 editorData(value) {
                     if (value.html) {
                         this.options.html = value.html;
+                        this.extractUploadedImages();
                     } else {
                         this.options.css = value.css;
                     } 
@@ -202,6 +323,138 @@
 
                     imageInput.files.forEach((file, index) => {
                         this.$refs.editor.storeImage($event);
+                    });
+                },
+
+                extractUploadedImages() {
+                    // Extract image URLs from HTML content
+                    const html = this.options.html || '';
+                    const imgRegex = /(?:src|data-src)="([^"]*storage\/theme[^"]*)"/gi;
+                    const matches = [...html.matchAll(imgRegex)];
+                    
+                    this.uploadedImages = matches
+                        .map(match => ({
+                            url: match[1].startsWith('http') ? match[1] : '{{ config("app.url") }}/' + match[1].replace(/^\//, '')
+                        }))
+                        .filter((img, index, self) => 
+                            index === self.findIndex(t => t.url === img.url)
+                        );
+                },
+
+                copyImageUrl(url) {
+                    navigator.clipboard.writeText(url).then(() => {
+                        this.$emitter.emit('add-flash', {
+                            type: 'success',
+                            message: 'Image URL copied to clipboard!'
+                        });
+                    });
+                },
+
+                insertImageToEditor(url) {
+                    const relativeUrl = url.replace('{{ config("app.url") }}/', '');
+                    const imgTag = `<img class="lazy" src="" data-src="${relativeUrl}">`;
+                    
+                    if (this.$refs.editor && this.$refs.editor._html) {
+                        let editor = this.$refs.editor._html.getDoc();
+                        let cursorPointer = editor.getCursor();
+                        
+                        editor.replaceRange(imgTag, {
+                            line: cursorPointer.line, 
+                            ch: cursorPointer.ch
+                        });
+                        
+                        this.$emitter.emit('add-flash', {
+                            type: 'success',
+                            message: 'Image inserted into editor!'
+                        });
+                        
+                        this.showImageManager = false;
+                    }
+                },
+
+                replaceImage(index) {
+                    this.replaceImageIndex = index;
+                    this.$refs.replaceImageInput.click();
+                },
+
+                handleReplaceImage($event) {
+                    const file = $event.target.files[0];
+                    if (!file) return;
+
+                    const allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg', 'image/gif'];
+
+                    if (!allowedImageTypes.includes(file.type)) {
+                        this.$emitter.emit('add-flash', {
+                            type: 'warning',
+                            message: 'Please select a valid image file (JPEG, PNG, WebP, GIF)'
+                        });
+                        return;
+                    }
+
+                    let formData = new FormData();
+                    formData.append('{{ $currentLocale->code }}[options][][image]', file);
+                    formData.append('id', '{{ $theme->id }}');
+                    formData.append('type', 'static_content');
+
+                    this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
+                        .then((response) => {
+                            const oldUrl = this.uploadedImages[this.replaceImageIndex].url;
+                            const newUrl = response.data;
+                            
+                            // Replace in HTML
+                            const oldRelativeUrl = oldUrl.replace('{{ config("app.url") }}/', '');
+                            this.options.html = this.options.html.replace(
+                                new RegExp(oldRelativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
+                                newUrl
+                            );
+                            
+                            // Update uploaded images list
+                            this.uploadedImages[this.replaceImageIndex].url = '{{ config("app.url") }}/' + newUrl;
+                            
+                            // Update editor
+                            if (this.$refs.editor && this.$refs.editor._html) {
+                                this.$refs.editor._html.setValue(this.options.html);
+                            }
+                            
+                            this.$emitter.emit('add-flash', {
+                                type: 'success',
+                                message: 'Image replaced successfully!'
+                            });
+                            
+                            this.replaceImageIndex = null;
+                            this.$refs.replaceImageInput.value = '';
+                        })
+                        .catch((error) => {
+                            this.$emitter.emit('add-flash', {
+                                type: 'error',
+                                message: error.response?.data?.message || 'Image replacement failed'
+                            });
+                        });
+                },
+
+                deleteImage(index) {
+                    if (!confirm('Are you sure you want to delete this image? It will be removed from the HTML.')) {
+                        return;
+                    }
+
+                    const imageUrl = this.uploadedImages[index].url;
+                    const relativeUrl = imageUrl.replace('{{ config("app.url") }}/', '');
+                    
+                    // Remove all occurrences from HTML
+                    const imgRegex = new RegExp(`<img[^>]*(?:src|data-src)="${relativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`, 'gi');
+                    this.options.html = this.options.html.replace(imgRegex, '');
+                    
+                    // Update editor
+                    if (this.$refs.editor && this.$refs.editor._html) {
+                        this.$refs.editor._html.setValue(this.options.html);
+                    }
+                    
+                    // Remove from list
+                    this.uploadedImages.splice(index, 1);
+                    
+                    this.$emitter.emit('add-flash', {
+                        type: 'success',
+                        message: 'Image removed from HTML!'
                     });
                 },
 
