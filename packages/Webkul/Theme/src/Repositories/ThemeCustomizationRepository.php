@@ -30,53 +30,25 @@ class ThemeCustomizationRepository extends Repository
         $locale = core()->getRequestedLocaleCode();
 
         if ($data['type'] == 'static_content') {
-            // Check if using simple image upload format (no HTML/CSS)
-            if (isset($data[$locale]['options']) && is_array($data[$locale]['options'])) {
-                // Simple format - just save as is, will be handled by uploadImage
-            } else {
-                // HTML/CSS format - sanitize
-                $config = [
-                    'HTML.Allowed' => null,
-                    'HTML.ForbiddenElements' => 'script,iframe,form',
-                    'CSS.AllowedProperties' => null,
-                ];
+            $config = [
+                'HTML.Allowed' => null,
+                'HTML.ForbiddenElements' => 'script,iframe,form',
+                'CSS.AllowedProperties' => null,
+            ];
 
-                $data[$locale]['options']['html'] = Purify::config($config)->clean($data[$locale]['options']['html'] ?? '');
-                $data[$locale]['options']['css'] = Purify::config($config)->clean($data[$locale]['options']['css'] ?? '');
-            }
+            $data[$locale]['options']['html'] = Purify::config($config)->clean($data[$locale]['options']['html']);
+
+            $data[$locale]['options']['css'] = Purify::config($config)->clean($data[$locale]['options']['css']);
         }
 
-        if (in_array($data['type'], ['image_carousel', 'services_content', 'static_content'])) {
-            // Store section title and layout if present
-            $sectionTitle = $data[$locale]['section_title'] ?? null;
-            $layout = $data[$locale]['layout'] ?? null;
-            
+        if (in_array($data['type'], ['image_carousel', 'services_content'])) {
             unset($data[$locale]['options']);
-            unset($data[$locale]['section_title']);
-            unset($data[$locale]['layout']);
         }
 
         $theme = parent::update($data, $id);
 
-        if (in_array($data['type'], ['image_carousel', 'services_content', 'static_content'])) {
+        if (in_array($data['type'], ['image_carousel', 'services_content'])) {
             $this->uploadImage(request()->all(), $theme);
-            
-            // Add section title and layout back to options
-            if (isset($sectionTitle) || isset($layout)) {
-                $translatedModel = $theme->translate($locale);
-                $options = $translatedModel->options ?? [];
-                
-                if ($sectionTitle) {
-                    $options['section_title'] = $sectionTitle;
-                }
-                
-                if ($layout) {
-                    $options['layout'] = $layout;
-                }
-                
-                $translatedModel->options = $options;
-                $translatedModel->save();
-            }
         }
 
         return $theme;
