@@ -44,8 +44,9 @@ class ThemeController extends Controller
     public function store()
     {
         if (request()->has('id')) {
+            // Remove strict image validation - we'll auto-optimize instead
             $this->validate(request(), [
-                core()->getRequestedLocaleCode().'.options.*.image' => 'image|extensions:jpeg,jpg,png,svg,webp',
+                core()->getRequestedLocaleCode().'.options.*.image' => 'image|mimes:jpeg,jpg,png,svg,webp,gif|max:10240', // Max 10MB, we'll optimize it
             ]);
 
             $theme = $this->themeCustomizationRepository->find(request()->input('id'));

@@ -100,7 +100,22 @@ class ThemeCustomizationRepository extends Repository
                 try {
                     $path = 'theme/'.$theme->id.'/'.Str::random(40).'.webp';
 
-                    $encoded = image_manager()->read($image['image'])->encodeByExtension('webp');
+                    // Read and optimize the image
+                    $imageManager = image_manager()->read($image['image']);
+                    
+                    // Auto-resize if image is too large (max 1920px width, maintain aspect ratio)
+                    $maxWidth = 1920;
+                    $maxHeight = 1080;
+                    
+                    if ($imageManager->width() > $maxWidth || $imageManager->height() > $maxHeight) {
+                        $imageManager->scale(
+                            width: $imageManager->width() > $maxWidth ? $maxWidth : null,
+                            height: $imageManager->height() > $maxHeight ? $maxHeight : null
+                        );
+                    }
+                    
+                    // Encode to WebP with quality optimization
+                    $encoded = $imageManager->encodeByExtension('webp', quality: 85);
 
                     Storage::put($path, (string) $encoded);
                 } catch (\Exception $e) {
