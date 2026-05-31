@@ -46,18 +46,26 @@ fi
 cd "$APP_DIR"
 
 log "Applying runtime environment configuration..."
-sed -i "s|^APP_URL=.*|APP_URL=${APP_URL}|" .env
+
+# Escape special characters for sed
+APP_URL_ESCAPED=$(echo "$APP_URL" | sed 's/[\/&]/\\&/g')
+DB_PASSWORD_ESCAPED=$(echo "$DB_PASSWORD" | sed 's/[\/&]/\\&/g')
+
+sed -i "s|^APP_URL=.*|APP_URL=${APP_URL_ESCAPED}|" .env
 sed -i "s/^DB_HOST=.*/DB_HOST=${DB_HOST}/" .env
 sed -i "s/^DB_PORT=.*/DB_PORT=${DB_PORT}/" .env
 sed -i "s/^DB_DATABASE=.*/DB_DATABASE=${DB_DATABASE}/" .env
 sed -i "s/^DB_USERNAME=.*/DB_USERNAME=${DB_USERNAME}/" .env
-sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${DB_PASSWORD}/" .env
+sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${DB_PASSWORD_ESCAPED}/" .env
 sed -i "s/^APP_TIMEZONE=.*/APP_TIMEZONE=${APP_TIMEZONE}/" .env
 sed -i "s/^APP_CURRENCY=.*/APP_CURRENCY=${APP_CURRENCY}/" .env
 sed -i "s/^APP_LOCALE=.*/APP_LOCALE=${APP_LOCALE}/" .env
 
 # Update APP_KEY if provided
-[ -n "$APP_KEY" ] && sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
+if [ -n "$APP_KEY" ]; then
+    APP_KEY_ESCAPED=$(echo "$APP_KEY" | sed 's/[\/&]/\\&/g')
+    sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY_ESCAPED}|" .env
+fi
 
 # ==========================================================================
 # Re-cache config after updating .env
