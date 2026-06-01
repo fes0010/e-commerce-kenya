@@ -52,9 +52,6 @@ mkdir -p "$APP_DIR/storage/framework/"{cache/data,sessions,views,testing}
 mkdir -p "$APP_DIR/storage/logs"
 mkdir -p "$APP_DIR/storage/app/public"
 mkdir -p "$APP_DIR/bootstrap/cache"
-chown -R www-data:www-data "$APP_DIR/storage" "$APP_DIR/bootstrap/cache"
-chmod -R 775 "$APP_DIR/storage" "$APP_DIR/bootstrap/cache"
-
 # Use a safer method to update .env - replace entire lines
 grep -v "^APP_URL=" .env > .env.tmp && echo "APP_URL=${APP_URL}" >> .env.tmp && mv .env.tmp .env
 grep -v "^DB_HOST=" .env > .env.tmp && echo "DB_HOST=${DB_HOST}" >> .env.tmp && mv .env.tmp .env
@@ -77,6 +74,10 @@ fi
 log "Re-caching configuration..."
 php artisan optimize:clear --no-interaction 2>/dev/null || true
 php artisan optimize --no-interaction 2>/dev/null || true
+
+# Fix permissions after optimize (which runs as root and creates root-owned files)
+chown -R www-data:www-data "$APP_DIR/storage" "$APP_DIR/bootstrap/cache"
+chmod -R 775 "$APP_DIR/storage" "$APP_DIR/bootstrap/cache"
 
 # ==========================================================================
 # Create storage/installed flag so Bagisto skips the installer

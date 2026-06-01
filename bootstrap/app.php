@@ -49,7 +49,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'stripe/*',
         ]);
 
-        $middleware->trustProxies(at: '*');
+        $middleware->trustProxies(at: ['0.0.0.0/0', '::/0']);
     })
     ->withSchedule(function (Schedule $schedule) {
         //
