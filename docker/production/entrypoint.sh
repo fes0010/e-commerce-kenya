@@ -88,6 +88,14 @@ if [ ! -f "$APP_DIR/storage/installed" ]; then
 fi
 
 # ==========================================================================
+# Ensure storage symlink exists
+# ==========================================================================
+if [ ! -L "$APP_DIR/public/storage" ]; then
+    php artisan storage:link --no-interaction 2>/dev/null || true
+    log "Created storage symlink."
+fi
+
+# ==========================================================================
 # External MySQL: wait for connectivity before Supervisor starts
 # ==========================================================================
 if ! use_internal_mysql; then
