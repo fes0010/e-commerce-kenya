@@ -1,12 +1,7 @@
 # =============================================================================
-# Bagisto Production Image (Single-stage)
-# Single container: Nginx + PHP 8.3 FPM + MySQL 8.0 + Supervisor
-#
-# Default mode  : Internal MySQL (ready-to-boot, Docker Hub style)
-# Override mode : Set DB_HOST to an external address to skip internal MySQL
-#
-# Bagisto is FULLY INSTALLED at build time — migrations, seeding, and all.
-# The image boots instantly with no first-run setup needed.
+# Bagisto Production Image
+# Single container: Nginx + PHP 8.3 FPM + Supervisor
+# Connects to external MySQL — no build-time install.
 # =============================================================================
 
 FROM ubuntu:24.04
@@ -40,7 +35,6 @@ RUN apt-get update && apt-get install -y \
         libpng-dev \
         libwebp-dev \
         libzip-dev \
-        mysql-server \
         nginx \
         supervisor \
         zlib1g-dev \
@@ -120,42 +114,20 @@ RUN composer install \
 
 
 # ---------------------------------------------------------------------------
-# Prepare .env with internal-MySQL defaults
+# Prepare .env (runtime values injected by entrypoint via Dokploy env vars)
 # ---------------------------------------------------------------------------
 RUN cp .env.example .env \
     && sed -i 's/^APP_DEBUG=.*/APP_DEBUG=false/' .env \
-    && sed -i 's/^DB_HOST=.*/DB_HOST=127.0.0.1/' .env \
-    && sed -i 's/^DB_PORT=.*/DB_PORT=3306/' .env \
-    && sed -i 's/^DB_DATABASE=.*/DB_DATABASE=bagisto/' .env \
-    && sed -i 's/^DB_USERNAME=.*/DB_USERNAME=bagisto/' .env \
-    && sed -i 's/^DB_PASSWORD=.*/DB_PASSWORD=bagisto/' .env \
     && sed -i 's|^APP_URL=.*|APP_URL=http://localhost|' .env
 
 
 # ---------------------------------------------------------------------------
-# Install Bagisto at BUILD TIME
-#
-# 1. Initialize MySQL data directory
-# 2. Start MySQL temporarily
-# 3. Create database + user
-# 4. Generate APP_KEY
-# 5. Run migrations + seeding
-# 6. Create storage symlink
-# 7. Cache config/routes/views
-# 8. Shut down MySQL cleanly
-#
-# The MySQL data directory (/var/lib/mysql) is baked into this layer.
+# Storage directories
 # ---------------------------------------------------------------------------
 RUN mkdir -p storage/framework/{cache/data,sessions,views,testing} \
     && mkdir -p storage/logs \
     && mkdir -p storage/app/public \
-    && mkdir -p bootstrap/cache \
-    && chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
-
-COPY docker/production/mysql-init.sql /docker-entrypoint-initdb.d/init.sql
-COPY docker/production/build-install.sh /tmp/build-install.sh
-RUN chmod +x /tmp/build-install.sh && bash /tmp/build-install.sh && rm /tmp/build-install.sh
+    && mkdir -p bootstrap/cache
 
 
 # ---------------------------------------------------------------------------
@@ -210,7 +182,7 @@ RUN apt-get purge -y git \
 # ---------------------------------------------------------------------------
 # Declare volumes for persistent data
 # ---------------------------------------------------------------------------
-VOLUME ["/var/www/bagisto/storage", "/var/lib/mysql"]
+VOLUME ["/var/www/bagisto/storage"]
 
 EXPOSE 80
 

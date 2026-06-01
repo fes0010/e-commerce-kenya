@@ -71,6 +71,14 @@ php artisan optimize:clear --no-interaction 2>/dev/null || true
 php artisan optimize --no-interaction 2>/dev/null || true
 
 # ==========================================================================
+# Create storage/installed flag so Bagisto skips the installer
+# ==========================================================================
+if [ ! -f "$APP_DIR/storage/installed" ]; then
+    touch "$APP_DIR/storage/installed"
+    log "Created storage/installed flag."
+fi
+
+# ==========================================================================
 # External MySQL: wait for connectivity before Supervisor starts
 # ==========================================================================
 if ! use_internal_mysql; then
