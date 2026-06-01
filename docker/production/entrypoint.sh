@@ -47,6 +47,14 @@ cd "$APP_DIR"
 
 log "Applying runtime environment configuration..."
 
+# Ensure storage directories exist (may be missing if volume-mounted)
+mkdir -p "$APP_DIR/storage/framework/"{cache/data,sessions,views,testing}
+mkdir -p "$APP_DIR/storage/logs"
+mkdir -p "$APP_DIR/storage/app/public"
+mkdir -p "$APP_DIR/bootstrap/cache"
+chown -R www-data:www-data "$APP_DIR/storage" "$APP_DIR/bootstrap/cache"
+chmod -R 775 "$APP_DIR/storage" "$APP_DIR/bootstrap/cache"
+
 # Use a safer method to update .env - replace entire lines
 grep -v "^APP_URL=" .env > .env.tmp && echo "APP_URL=${APP_URL}" >> .env.tmp && mv .env.tmp .env
 grep -v "^DB_HOST=" .env > .env.tmp && echo "DB_HOST=${DB_HOST}" >> .env.tmp && mv .env.tmp .env
