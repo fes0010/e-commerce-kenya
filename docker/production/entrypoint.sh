@@ -28,7 +28,7 @@ APP_LOCALE="${APP_LOCALE:-en}"
 # Determine database mode based on DB_HOST
 # ==========================================================================
 use_internal_mysql() {
-    [[ "$DB_HOST" == "127.0.0.1" || "$DB_HOST" == "localhost" ]]
+    [[  "$DB_HOST" == "127.0.0.1" || "$DB_HOST" == "localhost" ]]
 }
 
 if use_internal_mysql; then
@@ -112,6 +112,16 @@ if ! use_internal_mysql; then
         sleep 1
     done
 fi
+
+log "Running database migrations..."
+php artisan migrate --force --no-interaction 2>&1 || log "WARNING: Migration had issues, continuing anyway"
+
+# ==========================================================================
+# Fix scraped product data issues (idempotent — safe to run every startup)
+# ==========================================================================
+log "Fixing product image paths and enabling products..."
+php "$APP_DIR/docker/production/fix-product-data.php" 2>&1 || log "WARNING: Product data fix had issues"
+log "Product data fixes applied."
 
 log "Starting services via Supervisor..."
 
