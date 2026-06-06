@@ -54,6 +54,11 @@ class CategoryRepository extends Repository
                     $queryBuilder->whereIn('categories.parent_id', $parentIds);
 
                     break;
+                case 'exclude_root':
+                    if ($value) {
+                        $queryBuilder->where('categories.id', '!=', 1);
+                    }
+                    break;
                 case 'locale':
                     $queryBuilder->where('category_translations.locale', $value);
 

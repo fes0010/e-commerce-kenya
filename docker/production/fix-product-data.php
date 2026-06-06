@@ -75,8 +75,23 @@ if ($statusAttr) {
     echo "[fix-product-data] Enabled products in attribute_values: {$enabled} rows\n";
 }
 
+// Fix 3: Sync status=1 into product_flat
+$flatUpdated = DB::table('product_flat')
+    ->where('status', '!=', 1)
+    ->update(['status' => 1]);
+
+echo "[fix-product-data] Enabled products in product_flat: {$flatUpdated} rows\n";
+
+// Fix 4: Rebuild inventory index so products are saleable
+try {
+    $indexer = app(\Webkul\Product\Helpers\Indexers\Inventory::class);
+    $indexer->reindexFull();
+    echo "[fix-product-data] Rebuilt inventory indices successfully.\n";
+} catch (\Exception $e) {
+    echo "[fix-product-data] Failed to rebuild inventory indices: " . $e->getMessage() . "\n";
+}
+
 // Fix 4: Sync product_flat boolean columns
-DB::table('product_flat')->where('status', '!=', 1)->update(['status' => 1]);
 DB::table('product_flat')->whereNull('new')->update(['new' => 0]);
 DB::table('product_flat')->whereNull('featured')->update(['featured' => 0]);
 echo "[fix-product-data] product_flat boolean columns synced\n";
