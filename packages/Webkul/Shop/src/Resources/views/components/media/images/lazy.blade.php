@@ -18,19 +18,26 @@
         <img
             v-bind="$attrs"
             :data-src="src"
+            :data-srcset="srcset"
+            :data-sizes="sizes"
             :id="'image-' + $.uid"
             @load="onLoad"
             v-show="! isLoading"
             v-if="lazy"
+            loading="lazy"
+            decoding="async"
         >
 
         <img
             v-bind="$attrs"
-            :data-src="src"
+            :src="src"
+            :srcset="srcset"
+            :sizes="sizes"
             :id="'image-' + $.uid"
             @load="onLoad"
             v-else
             v-show="! isLoading"
+            decoding="async"
         >
     </script>
 
@@ -45,6 +52,16 @@
                 },
 
                 src: {
+                    type: String,
+                    default: '',
+                },
+                
+                srcset: {
+                    type: String,
+                    default: '',
+                },
+                
+                sizes: {
                     type: String,
                     default: '',
                 },
@@ -68,7 +85,15 @@
                         if (entry.isIntersecting) {
                             let lazyImage = document.getElementById('image-' + self.$.uid);
 
-                            lazyImage.src = lazyImage.dataset.src;
+                            if (lazyImage.dataset.src) {
+                                lazyImage.src = lazyImage.dataset.src;
+                            }
+                            if (lazyImage.dataset.srcset) {
+                                lazyImage.srcset = lazyImage.dataset.srcset;
+                            }
+                            if (lazyImage.dataset.sizes) {
+                                lazyImage.sizes = lazyImage.dataset.sizes;
+                            }
 
                             lazyImageObserver.unobserve(lazyImage);
                         }

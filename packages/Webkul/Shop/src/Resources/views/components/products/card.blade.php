@@ -202,6 +202,11 @@
                     <x-shop::media.images.lazy
                         class="after:content-[' '] relative min-w-[250px] bg-zinc-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)] group-hover:scale-105"
                         ::src="product.base_image.medium_image_url"
+                        ::srcset="`
+                            ${product.base_image.small_image_url} 150w,
+                            ${product.base_image.medium_image_url} 300w,
+                        `"
+                        sizes="(max-width: 768px) 150px, 300px"
                         ::key="product.id"
                         ::index="product.id"
                         width="291"
