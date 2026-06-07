@@ -538,27 +538,6 @@ img.lazy {
         animation: image-reveal 0.3s ease-out forwards;
     }
 
-    /* ========================================================
-     * TOP PROGRESS BAR — shows while Vue is booting / navigating
-     * ======================================================== */
-    #nprogress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: var(--theme-navyBlue, #060C3B);
-        border-radius: 0 2px 2px 0;
-        z-index: 99999;
-        transition: width 0.2s ease, opacity 0.4s ease;
-        box-shadow: 0 0 8px var(--theme-navyBlue, #060C3B);
-    }
-
-    #nprogress-bar.done {
-        width: 100% !important;
-        opacity: 0;
-    }
-
     @keyframes on-fade {
         0%   { opacity: 0; }
         100% { opacity: 1; }

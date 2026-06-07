@@ -23,7 +23,7 @@
             :id="'image-' + $.uid"
             @load="onLoad"
             @@error="onLoad"
-            v-show="! isLoading"
+            :style="isLoading ? 'opacity: 0.01; position: absolute; pointer-events: none; width: 1px; height: 1px;' : ''"
             :loading="lazy ? 'lazy' : 'eager'"
             decoding="async"
         >
