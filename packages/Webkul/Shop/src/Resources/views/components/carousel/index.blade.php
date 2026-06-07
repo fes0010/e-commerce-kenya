@@ -53,7 +53,7 @@
                 decoding="sync"
             >
         @else
-            <div class="shimmer aspect-[3/2] md:aspect-[2.743/1] max-h-screen w-screen"></div>
+            <div class="shimmer aspect-[3/2] md:aspect-[2.743/1] max-h-screen w-full"></div>
         @endif
     </div>
 </v-carousel>
@@ -70,7 +70,7 @@
                 ref="sliderContainer"
             >
                 <div
-                    class="max-h-screen w-screen bg-cover bg-no-repeat"
+                    class="max-h-screen w-full bg-cover bg-no-repeat"
                     v-for="(image, index) in images"
                     :key="index"
                     @click="visitLink(image)"
