@@ -28,11 +28,7 @@
     <!-- Hero Banner — uses category banner if set, otherwise auto-fetches first product image -->
     <v-category-banner
         category-name="{{ $category->name }}"
-        @if($category->banner_path)
-            banner-url="{{ $category->banner_url }}"
-        @else
-            banner-url=""
-        @endif
+        banner-url="{{ $category->banner_path ? $category->banner_url : '' }}"
         api-url="{{ route('shop.api.products.index', ['category_id' => $category->id, 'limit' => 1]) }}"
     ></v-category-banner>
 
@@ -349,7 +345,7 @@
                         class="h-full w-full object-cover object-center transition-opacity duration-500"
                         :class="imageLoaded ? 'opacity-100' : 'opacity-0'"
                         @load="imageLoaded = true"
-                        @error="onImageError"
+                        v-on:error="onImageError"
                     />
 
                     <!-- Dark gradient overlay + category name -->
