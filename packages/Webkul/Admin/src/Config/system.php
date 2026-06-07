@@ -263,6 +263,48 @@ return [
             ],
         ],
     ], [
+        'key' => 'general.design.theme_colors',
+        'name' => 'Theme Colors',
+        'info' => 'Manage the primary and component colors of your storefront.',
+        'sort' => 3,
+        'fields' => [
+            [
+                'name' => 'primary_color',
+                'title' => 'Primary Brand Color',
+                'type' => 'color',
+                'default' => '#060C3B',
+                'channel_based' => true,
+            ],
+            [
+                'name' => 'button_bg_color',
+                'title' => 'Primary Button Background',
+                'type' => 'color',
+                'default' => '#060C3B',
+                'channel_based' => true,
+            ],
+            [
+                'name' => 'button_text_color',
+                'title' => 'Primary Button Text',
+                'type' => 'color',
+                'default' => '#ffffff',
+                'channel_based' => true,
+            ],
+            [
+                'name' => 'nav_text_color',
+                'title' => 'Navigation Text Color',
+                'type' => 'color',
+                'default' => '#060C3B',
+                'channel_based' => true,
+            ],
+            [
+                'name' => 'nav_border_color',
+                'title' => 'Navigation Hover Border',
+                'type' => 'color',
+                'default' => '#060C3B',
+                'channel_based' => true,
+            ],
+        ],
+    ], [
         'key' => 'general.exchange_rates',
         'name' => 'admin::app.configuration.index.general.exchange-rates.title',
         'info' => 'admin::app.configuration.index.general.exchange-rates.info',

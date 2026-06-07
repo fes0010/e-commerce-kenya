@@ -79,6 +79,23 @@
         @stack('styles')
 
         <style>
+            :root {
+                @if (core()->getConfigData('general.design.theme_colors.primary_color'))
+                    --theme-navyBlue: {{ core()->getConfigData('general.design.theme_colors.primary_color') }};
+                @endif
+                @if (core()->getConfigData('general.design.theme_colors.button_bg_color'))
+                    --theme-button-bg: {{ core()->getConfigData('general.design.theme_colors.button_bg_color') }};
+                @endif
+                @if (core()->getConfigData('general.design.theme_colors.button_text_color'))
+                    --theme-button-text: {{ core()->getConfigData('general.design.theme_colors.button_text_color') }};
+                @endif
+                @if (core()->getConfigData('general.design.theme_colors.nav_text_color'))
+                    --theme-nav-text: {{ core()->getConfigData('general.design.theme_colors.nav_text_color') }};
+                @endif
+                @if (core()->getConfigData('general.design.theme_colors.nav_border_color'))
+                    --theme-nav-border: {{ core()->getConfigData('general.design.theme_colors.nav_border_color') }};
+                @endif
+            }
             {!! core()->getConfigData('general.content.custom_scripts.custom_css') !!}
         </style>
 
@@ -173,5 +190,7 @@
         <script type="text/javascript">
             {!! core()->getConfigData('general.content.custom_scripts.custom_javascript') !!}
         </script>
+        
+        <x-shop::layouts.theme-previewer />
     </body>
 </html>
