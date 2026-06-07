@@ -98,6 +98,7 @@
                     ['id'=>'tp-accent',     'var'=>'--theme-darkGreen',      'label'=>'Accent / Badge',     'key'=>'accent_color',     'default'=>'#40994A'],
                     ['id'=>'tp-link',       'var'=>'--theme-darkBlue',       'label'=>'Links / Highlights', 'key'=>'link_color',       'default'=>'#0044F2'],
                     ['id'=>'tp-danger',     'var'=>'--theme-darkPink',       'label'=>'Sale / Alert',       'key'=>'danger_color',     'default'=>'#F85156'],
+                    ['id'=>'tp-price',      'var'=>'--theme-price',          'label'=>'Price Color',        'key'=>'price_color',      'default'=>'#000000'],
                     ['id'=>'tp-btn-bg',     'var'=>'--theme-button-bg',      'label'=>'Button Background',  'key'=>'button_bg_color',  'default'=>'#060C3B'],
                     ['id'=>'tp-btn-text',   'var'=>'--theme-button-text',    'label'=>'Button Text',        'key'=>'button_text_color','default'=>'#ffffff'],
                     ['id'=>'tp-nav-text',   'var'=>'--theme-nav-text',       'label'=>'Nav Menu Text',      'key'=>'nav_text_color',   'default'=>'#060C3B'],
@@ -164,6 +165,18 @@
     title="Open Theme Studio"
 >🎨</button>
 
+<style>
+    /* Apply Price Color */
+    :root {
+        --theme-price: {{ core()->getConfigData('general.design.theme_colors.price_color') ?? '#000000' }};
+    }
+    .price, .final-price, .special-price, .active-price,
+    [v-html="product.price_html"] p:not(.line-through),
+    .product-price, .amount {
+        color: var(--theme-price) !important;
+    }
+</style>
+
 <script>
     var currentPreset = "{{ core()->getConfigData('general.design.theme_colors.theme_preset') ?? 'default' }}";
     var currentFont = "{{ core()->getConfigData('general.design.theme_colors.body_font') ?? 'Poppins' }}";
@@ -171,12 +184,12 @@
 
     // Pre-built themes
     var TP_THEMES = {
-        'default': { '--theme-navyBlue': '#060C3B', '--theme-lightOrange': '#F6F2EB', '--theme-darkGreen': '#40994A', '--theme-darkBlue': '#0044F2', '--theme-darkPink': '#F85156', 'font': 'Poppins' },
-        'sunset':  { '--theme-navyBlue': '#2D142C', '--theme-lightOrange': '#FEECE9', '--theme-darkGreen': '#3E8E7E', '--theme-darkBlue': '#51C4D3', '--theme-darkPink': '#E23E57', 'font': 'Outfit' },
-        'forest':  { '--theme-navyBlue': '#132A13', '--theme-lightOrange': '#ECF39E', '--theme-darkGreen': '#4F772D', '--theme-darkBlue': '#31572C', '--theme-darkPink': '#90A955', 'font': 'Inter' },
-        'ocean':   { '--theme-navyBlue': '#0F2027', '--theme-lightOrange': '#E8F1F2', '--theme-darkGreen': '#2A9D8F', '--theme-darkBlue': '#203A43', '--theme-darkPink': '#2C5364', 'font': 'Roboto' },
-        'red':     { '--theme-navyBlue': '#8B0000', '--theme-lightOrange': '#FFEEEE', '--theme-darkGreen': '#228B22', '--theme-darkBlue': '#B22222', '--theme-darkPink': '#DC143C', 'font': 'Poppins' },
-        'maroon':  { '--theme-navyBlue': '#4A0404', '--theme-lightOrange': '#FDF5F5', '--theme-darkGreen': '#2E5C2E', '--theme-darkBlue': '#800000', '--theme-darkPink': '#C2185B', 'font': 'Inter' },
+        'default': { '--theme-navyBlue': '#060C3B', '--theme-lightOrange': '#F6F2EB', '--theme-darkGreen': '#40994A', '--theme-darkBlue': '#0044F2', '--theme-darkPink': '#F85156', '--theme-price': '#000000', 'font': 'Poppins' },
+        'sunset':  { '--theme-navyBlue': '#2D142C', '--theme-lightOrange': '#FEECE9', '--theme-darkGreen': '#3E8E7E', '--theme-darkBlue': '#51C4D3', '--theme-darkPink': '#E23E57', '--theme-price': '#2D142C', 'font': 'Outfit' },
+        'forest':  { '--theme-navyBlue': '#132A13', '--theme-lightOrange': '#ECF39E', '--theme-darkGreen': '#4F772D', '--theme-darkBlue': '#31572C', '--theme-darkPink': '#90A955', '--theme-price': '#132A13', 'font': 'Inter' },
+        'ocean':   { '--theme-navyBlue': '#0F2027', '--theme-lightOrange': '#E8F1F2', '--theme-darkGreen': '#2A9D8F', '--theme-darkBlue': '#203A43', '--theme-darkPink': '#2C5364', '--theme-price': '#0F2027', 'font': 'Roboto' },
+        'red':     { '--theme-navyBlue': '#8B0000', '--theme-lightOrange': '#FFEEEE', '--theme-darkGreen': '#228B22', '--theme-darkBlue': '#B22222', '--theme-darkPink': '#DC143C', '--theme-price': '#8B0000', 'font': 'Poppins' },
+        'maroon':  { '--theme-navyBlue': '#4A0404', '--theme-lightOrange': '#FDF5F5', '--theme-darkGreen': '#2E5C2E', '--theme-darkBlue': '#800000', '--theme-darkPink': '#C2185B', '--theme-price': '#4A0404', 'font': 'Inter' },
     };
 
     // Initialize
@@ -221,7 +234,7 @@
         var map = {
             'tp-primary': '--theme-navyBlue', 'tp-bg': '--theme-lightOrange', 'tp-accent': '--theme-darkGreen',
             'tp-link': '--theme-darkBlue', 'tp-danger': '--theme-darkPink', 'tp-btn-bg': '--theme-navyBlue',
-            'tp-nav-text': '--theme-navyBlue', 'tp-nav-border': '--theme-navyBlue'
+            'tp-nav-text': '--theme-navyBlue', 'tp-nav-border': '--theme-navyBlue', 'tp-price': '--theme-price'
         };
         Object.keys(map).forEach(function(id) {
             var val = t[map[id]];
