@@ -41,6 +41,7 @@ class TinyMCEController extends Controller
         $result = $this->storeMedia();
 
         if (isset($result['error'])) {
+            \Illuminate\Support\Facades\Log::error('TinyMCE image upload error: ' . $result['error']);
             return response()->json([
                 'error' => $result['error'],
             ], 400);

@@ -551,9 +551,9 @@
                             const imgTag = `<img class="lazy" src="" data-src="${relativeUrl}">`;
                             
                             // Try to insert into HTML editor
-                            this.$parent.$parent.$nextTick(() => {
-                                if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
-                                    let editor = this.$parent.$parent.$refs.editor._html.getDoc();
+                            this.$parent.$nextTick(() => {
+                                if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
+                                    let editor = this.$parent.$refs.editor._html.getDoc();
                                     let cursorPointer = editor.getCursor();
                                     
                                     editor.replaceRange('\n' + imgTag + '\n', {
@@ -562,8 +562,12 @@
                                     });
                                     
                                     // Update parent's HTML
-                                    this.$parent.$parent.options.html = editor.getValue();
-                                    this.$parent.$parent.extractUploadedImages();
+                                    this.$parent.options.html = editor.getValue();
+                                    this.$parent.extractUploadedImages();
+                                } else {
+                                    // If editor is not rendered, just update the HTML directly
+                                    this.$parent.options.html += '\n' + imgTag + '\n';
+                                    this.$parent.extractUploadedImages();
                                 }
                             });
                             
@@ -595,9 +599,9 @@
                     });
                     
                     // Also try to insert directly if parent has the editor
-                    this.$parent.$parent.$nextTick(() => {
-                        if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
-                            let editor = this.$parent.$parent.$refs.editor._html.getDoc();
+                    this.$parent.$nextTick(() => {
+                        if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
+                            let editor = this.$parent.$refs.editor._html.getDoc();
                             let cursorPointer = editor.getCursor();
                             
                             editor.replaceRange('\n' + imgTag + '\n', {
@@ -606,12 +610,14 @@
                             });
                             
                             // Update parent's HTML
-                            this.$parent.$parent.options.html = editor.getValue();
+                            this.$parent.options.html = editor.getValue();
                             
                             this.$emitter.emit('add-flash', {
                                 type: 'success',
                                 message: 'Image inserted into HTML! Check HTML tab or Preview tab.'
                             });
+                        } else {
+                            this.$parent.options.html += '\n' + imgTag + '\n';
                         }
                     });
                 },
@@ -653,17 +659,17 @@
                             const oldRelativeUrl = oldUrl.replace('{{ config("app.url") }}/', '');
                             const newRelativeUrl = response.data;
                             
-                            this.$parent.$parent.options.html = this.$parent.$parent.options.html.replace(
+                            this.$parent.options.html = this.$parent.options.html.replace(
                                 new RegExp(oldRelativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
                                 newRelativeUrl
                             );
                             
                             // Update HTML editor if available
-                            this.$parent.$parent.$nextTick(() => {
-                                if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
-                                    this.$parent.$parent.$refs.editor._html.setValue(this.$parent.$parent.options.html);
+                            this.$parent.$nextTick(() => {
+                                if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
+                                    this.$parent.$refs.editor._html.setValue(this.$parent.options.html);
                                 }
-                                this.$parent.$parent.extractUploadedImages();
+                                this.$parent.extractUploadedImages();
                             });
                             
                             this.uploadedImages[index].url = newUrl;
@@ -692,15 +698,15 @@
                     const relativeUrl = imageUrl.replace('{{ config("app.url") }}/', '');
                     
                     // Remove from parent's HTML
-                    const imgRegex = new RegExp(`<img[^>]*(?:src|data-src)="${relativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`, 'gi');
-                    this.$parent.$parent.options.html = this.$parent.$parent.options.html.replace(imgRegex, '');
+                    const imgRegex = new RegExp(`<img[^>]*data-src="${relativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`, 'gi');
+                    this.$parent.options.html = this.$parent.options.html.replace(imgRegex, '');
                     
                     // Update HTML editor if available
-                    this.$parent.$parent.$nextTick(() => {
-                        if (this.$parent.$parent.$refs.editor && this.$parent.$parent.$refs.editor._html) {
-                            this.$parent.$parent.$refs.editor._html.setValue(this.$parent.$parent.options.html);
+                    this.$parent.$nextTick(() => {
+                        if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
+                            this.$parent.$refs.editor._html.setValue(this.$parent.options.html);
                         }
-                        this.$parent.$parent.extractUploadedImages();
+                        this.$parent.extractUploadedImages();
                     });
                     
                     this.uploadedImages.splice(index, 1);

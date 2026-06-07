@@ -119,6 +119,7 @@ class ThemeCustomizationRepository extends Repository
 
                     Storage::put($path, (string) $encoded);
                 } catch (\Exception $e) {
+                    \Illuminate\Support\Facades\Log::error('Theme image upload error: ' . $e->getMessage(), ['exception' => $e]);
                     session()->flash('error', $e->getMessage());
 
                     return redirect()->back();
