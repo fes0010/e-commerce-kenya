@@ -297,9 +297,14 @@ class ImageCache
 
         if ($image instanceof ImageInterface) {
             try {
-                return (string) $image->encodeByMediaType();
-            } catch (EncoderException) {
-                return (string) $image->toPng();
+                // Force highly optimized WebP format
+                return (string) $image->toWebp(80);
+            } catch (\Exception) {
+                try {
+                    return (string) $image->encodeByMediaType();
+                } catch (EncoderException) {
+                    return (string) $image->toPng();
+                }
             }
         }
 

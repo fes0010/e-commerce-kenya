@@ -91,10 +91,10 @@
 
             <!-- Navigation -->
             <span
-                class="icon-arrow-left absolute left-2.5 top-1/2 -mt-[22px] hidden w-auto rounded-full bg-black/80 p-3 text-2xl font-bold text-white opacity-30 transition-all md:inline-block"
+                class="icon-arrow-left absolute left-2.5 top-1/2 -mt-[22px] flex w-auto rounded-full bg-black/80 p-2 text-lg font-bold text-white opacity-40 transition-all hover:opacity-100 md:p-3 md:text-2xl"
                 :class="{
                     'cursor-not-allowed': direction == 'ltr' && currentIndex == 0,
-                    'cursor-pointer hover:opacity-100': direction == 'ltr' ? currentIndex > 0 : currentIndex <= 0
+                    'cursor-pointer': direction == 'ltr' ? currentIndex > 0 : currentIndex <= 0
                 }"
                 role="button"
                 aria-label="@lang('shop::components.carousel.previous')"
@@ -105,10 +105,10 @@
             </span>
 
             <span
-                class="icon-arrow-right absolute right-2.5 top-1/2 -mt-[22px] hidden w-auto rounded-full bg-black/80 p-3 text-2xl font-bold text-white opacity-30 transition-all md:inline-block"
+                class="icon-arrow-right absolute right-2.5 top-1/2 -mt-[22px] flex w-auto rounded-full bg-black/80 p-2 text-lg font-bold text-white opacity-40 transition-all hover:opacity-100 md:p-3 md:text-2xl"
                 :class="{
                     'cursor-not-allowed': direction == 'rtl' && currentIndex == 0,
-                    'cursor-pointer hover:opacity-100': direction == 'rtl' ? currentIndex < 0 : currentIndex >= 0
+                    'cursor-pointer': direction == 'rtl' ? currentIndex < 0 : currentIndex >= 0
                 }"
                 role="button"
                 aria-label="@lang('shop::components.carousel.next')"
@@ -123,9 +123,8 @@
                 <div
                     v-for="(image, index) in images"
                     :key="index"
-                    class="sm:p-2.5 mx-1 h-3 w-3 cursor-pointer rounded-full max-md:h-2 max-md:w-2 max-sm:h-1.5 max-sm:w-1.5
-                    p-2 focus:outline-none"
-                    :class="{ 'bg-navyBlue': index === Math.abs(currentIndex), 'opacity-30 bg-gray-500': index !== Math.abs(currentIndex) }"
+                    class="mx-1 h-3 w-3 cursor-pointer rounded-full p-2 focus:outline-none max-md:h-2.5 max-md:w-2.5 max-sm:h-2.5 max-sm:w-2.5 max-sm:mx-1.5"
+                    :class="{ 'bg-navyBlue scale-110': index === Math.abs(currentIndex), 'opacity-40 bg-gray-500 hover:opacity-100': index !== Math.abs(currentIndex) }"
                     role="button"
                     tabindex="0"
                     :aria-label="'Go to slide ' + (index + 1)"
