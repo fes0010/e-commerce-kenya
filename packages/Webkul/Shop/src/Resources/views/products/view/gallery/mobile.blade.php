@@ -1,4 +1,4 @@
-<div class="1180:hidden flex flex-col gap-4">
+<div class="1180:hidden flex flex-col gap-4 max-w-full overflow-hidden">
     <!-- Main Image/Video with Shimmer -->
     <div
         class="w-full"

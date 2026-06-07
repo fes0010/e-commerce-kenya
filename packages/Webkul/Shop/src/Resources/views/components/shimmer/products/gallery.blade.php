@@ -17,5 +17,5 @@
 </div>
 
 <div class="overflow-hidden 1180:hidden">
-    <div class="shimmer aspect-square max-h-screen w-full"></div>
+    <div class="shimmer aspect-square max-h-screen w-screen"></div>
 </div>

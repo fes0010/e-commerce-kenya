@@ -121,7 +121,7 @@
 
     </head>
 
-    <body>
+    <body class="overflow-x-hidden">
         {!! view_render_event('bagisto.shop.layout.body.before') !!}
 
         <a
