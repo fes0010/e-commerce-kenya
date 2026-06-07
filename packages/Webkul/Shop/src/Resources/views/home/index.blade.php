@@ -35,55 +35,59 @@
     </x-slot>
 
     <!-- Loop over the theme customization -->
-    @foreach ($customizations as $customization)
-        @php ($data = $customization->options) @endphp
+    <div id="theme-layout-container">
+        @foreach ($customizations as $customization)
+            @php ($data = $customization->options) @endphp
 
-        <!-- Static content -->
-        @switch ($customization->type)
-            @case ($customization::IMAGE_CAROUSEL)
-                <!-- Image Carousel -->
-                <x-shop::carousel
-                    :options="$data"
-                    aria-label="{{ trans('shop::app.home.index.image-carousel') }}"
-                />
+            <div data-theme-section="{{ $customization->id }}" class="theme-section transition-all duration-300">
+                <!-- Static content -->
+                @switch ($customization->type)
+                    @case ($customization::IMAGE_CAROUSEL)
+                        <!-- Image Carousel -->
+                        <x-shop::carousel
+                            :options="$data"
+                            aria-label="{{ trans('shop::app.home.index.image-carousel') }}"
+                        />
 
-                @break
-            @case ($customization::STATIC_CONTENT)
-                <!-- push style -->
-                @if (! empty($data['css']))
-                    @push ('styles')
-                        <style>
-                            {{ $data['css'] }}
-                        </style>
-                    @endpush
-                @endif
+                        @break
+                    @case ($customization::STATIC_CONTENT)
+                        <!-- push style -->
+                        @if (! empty($data['css']))
+                            @push ('styles')
+                                <style>
+                                    {{ $data['css'] }}
+                                </style>
+                            @endpush
+                        @endif
 
-                <!-- render html -->
-                @if (! empty($data['html']))
-                    {!! $data['html'] !!}
-                @endif
+                        <!-- render html -->
+                        @if (! empty($data['html']))
+                            {!! $data['html'] !!}
+                        @endif
 
-                @break
-            @case ($customization::CATEGORY_CAROUSEL)
-                <!-- Categories carousel -->
-                <x-shop::categories.carousel
-                    :title="$data['title'] ?? ''"
-                    :src="route('shop.api.categories.index', $data['filters'] ?? [])"
-                    :navigation-link="route('shop.home.index')"
-                    aria-label="{{ trans('shop::app.home.index.categories-carousel') }}"
-                />
+                        @break
+                    @case ($customization::CATEGORY_CAROUSEL)
+                        <!-- Categories carousel -->
+                        <x-shop::categories.carousel
+                            :title="$data['title'] ?? ''"
+                            :src="route('shop.api.categories.index', $data['filters'] ?? [])"
+                            :navigation-link="route('shop.home.index')"
+                            aria-label="{{ trans('shop::app.home.index.categories-carousel') }}"
+                        />
 
-                @break
-            @case ($customization::PRODUCT_CAROUSEL)
-                <!-- Product Carousel -->
-                <x-shop::products.carousel
-                    :title="$data['title'] ?? ''"
-                    :src="route('shop.api.products.index', $data['filters'] ?? [])"
-                    :navigation-link="route('shop.search.index', $data['filters'] ?? [])"
-                    aria-label="{{ trans('shop::app.home.index.product-carousel') }}"
-                />
+                        @break
+                    @case ($customization::PRODUCT_CAROUSEL)
+                        <!-- Product Carousel -->
+                        <x-shop::products.carousel
+                            :title="$data['title'] ?? ''"
+                            :src="route('shop.api.products.index', $data['filters'] ?? [])"
+                            :navigation-link="route('shop.search.index', $data['filters'] ?? [])"
+                            aria-label="{{ trans('shop::app.home.index.product-carousel') }}"
+                        />
 
-                @break
-        @endswitch
-    @endforeach
+                        @break
+                @endswitch
+            </div>
+        @endforeach
+    </div>
 </x-shop::layouts>

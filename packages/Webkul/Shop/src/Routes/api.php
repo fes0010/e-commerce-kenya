@@ -10,9 +10,14 @@ use Webkul\Shop\Http\Controllers\API\CustomerController;
 use Webkul\Shop\Http\Controllers\API\OnepageController;
 use Webkul\Shop\Http\Controllers\API\ProductController;
 use Webkul\Shop\Http\Controllers\API\ReviewController;
+use Webkul\Shop\Http\Controllers\API\ThemeStudioController;
 use Webkul\Shop\Http\Controllers\API\WishlistController;
 
 Route::group(['prefix' => 'api'], function () {
+    Route::controller(ThemeStudioController::class)->prefix('theme-studio')->group(function () {
+        Route::get('layout', 'layout')->name('shop.api.theme_studio.layout');
+        Route::post('save', 'save')->name('shop.api.theme_studio.save');
+    });
     Route::controller(CoreController::class)->prefix('core')->group(function () {
         Route::get('countries', 'getCountries')->name('shop.api.core.countries');
 
