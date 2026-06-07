@@ -512,12 +512,12 @@
                     const html = this.options.html || '';
                     const imgRegex = /(?:src|data-src)="([^"]*storage\/theme[^"]*)"/gi;
                     const matches = [...html.matchAll(imgRegex)];
-                    
+
                     this.uploadedImages = matches
                         .map(match => ({
                             url: match[1].startsWith('http') ? match[1] : '{{ config("app.url") }}/' + match[1].replace(/^\//, '')
                         }))
-                        .filter((img, index, self) => 
+                        .filter((img, index, self) =>
                             index === self.findIndex(t => t.url === img.url)
                         );
                 },
@@ -526,16 +526,6 @@
                     const file = event.target.files[0];
                     if (!file) return;
 
-                    const allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg', 'image/gif'];
-
-                    if (!allowedImageTypes.includes(file.type)) {
-                        this.$emitter.emit('add-flash', {
-                            type: 'warning',
-                            message: 'Please select a valid image file (JPEG, PNG, WebP, GIF)'
-                        });
-                        return;
-                    }
-
                     let formData = new FormData();
                     formData.append('{{ $currentLocale->code }}[options][][image]', file);
                     formData.append('id', '{{ $theme->id }}');
@@ -543,39 +533,18 @@
 
                     this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
                         .then((response) => {
-                            const newUrl = '{{ config("app.url") }}/' + response.data;
-                            this.uploadedImages.push({ url: newUrl });
-                            
-                            // Auto-insert into HTML
-                            const relativeUrl = response.data;
-                            const imgTag = `<img class="lazy" src="" data-src="${relativeUrl}">`;
-                            
-                            // Try to insert into HTML editor
-                            this.$parent.$nextTick(() => {
-                                if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
-                                    let editor = this.$parent.$refs.editor._html.getDoc();
-                                    let cursorPointer = editor.getCursor();
-                                    
-                                    editor.replaceRange('\n' + imgTag + '\n', {
-                                        line: cursorPointer.line, 
-                                        ch: cursorPointer.ch
-                                    });
-                                    
-                                    // Update parent's HTML
-                                    this.$parent.options.html = editor.getValue();
-                                    this.$parent.extractUploadedImages();
-                                } else {
-                                    // If editor is not rendered, just update the HTML directly
-                                    this.$parent.options.html += '\n' + imgTag + '\n';
-                                    this.$parent.extractUploadedImages();
-                                }
-                            });
-                            
+                            // response.data is the relative URL e.g. /storage/theme/1/abc.webp
+                            const relativeUrl = response.data.replace(/^\//, '');
+                            const imgTag = `<img class="lazy" src="" data-src="/${relativeUrl}">`;
+
+                            this.options.html += '\n' + imgTag + '\n';
+                            this.extractUploadedImages();
+
                             this.$emitter.emit('add-flash', {
                                 type: 'success',
-                                message: 'Image uploaded and inserted into HTML! Check Preview tab to see it.'
+                                message: 'Image uploaded! Check the Preview tab to see it.'
                             });
-                            
+
                             event.target.value = '';
                         })
                         .catch((error) => {
@@ -587,38 +556,18 @@
                 },
 
                 insertImageToHTML(url) {
-                    const relativeUrl = url.replace('{{ config("app.url") }}/', '');
-                    const imgTag = `<img class="lazy" src="" data-src="${relativeUrl}">`;
-                    
-                    // Copy to clipboard
-                    navigator.clipboard.writeText(imgTag);
-                    
+                    // Strip domain to get bare path e.g. /storage/theme/1/abc.webp
+                    const relative = url.replace(/^https?:\/\/[^\/]+/, '');
+                    const imgTag = `<img class="lazy" src="" data-src="${relative}">`;
+
+                    navigator.clipboard.writeText(imgTag).catch(() => {});
+
+                    this.options.html += '\n' + imgTag + '\n';
+                    this.extractUploadedImages();
+
                     this.$emitter.emit('add-flash', {
                         type: 'success',
-                        message: 'Image tag copied! Switch to HTML tab and paste (Ctrl+V) where you want it.'
-                    });
-                    
-                    // Also try to insert directly if parent has the editor
-                    this.$parent.$nextTick(() => {
-                        if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
-                            let editor = this.$parent.$refs.editor._html.getDoc();
-                            let cursorPointer = editor.getCursor();
-                            
-                            editor.replaceRange('\n' + imgTag + '\n', {
-                                line: cursorPointer.line, 
-                                ch: cursorPointer.ch
-                            });
-                            
-                            // Update parent's HTML
-                            this.$parent.options.html = editor.getValue();
-                            
-                            this.$emitter.emit('add-flash', {
-                                type: 'success',
-                                message: 'Image inserted into HTML! Check HTML tab or Preview tab.'
-                            });
-                        } else {
-                            this.$parent.options.html += '\n' + imgTag + '\n';
-                        }
+                        message: 'Image inserted into HTML and copied to clipboard!'
                     });
                 },
 
@@ -643,29 +592,21 @@
                     this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
                         .then((response) => {
                             const oldFullUrl = this.uploadedImages[index].url;
-                            const newRelativeUrl = response.data;
-                            const newFullUrl = '{{ config("app.url") }}/' + newRelativeUrl.replace(/^\//, '');
+                            const newRelative = response.data.replace(/^\//, ''); // e.g. storage/theme/1/new.webp
 
-                            // Strip domain to get the bare relative path (e.g. storage/theme/1/abc.webp)
+                            // Get old bare path (without domain, without leading slash)
                             const oldRelative = oldFullUrl
                                 .replace(/^https?:\/\/[^\/]+\/?/, '')
                                 .replace(/^\//, '');
 
-                            // Replace any occurrence of the old URL in HTML (with or without leading slash)
-                            let html = this.$parent.options.html;
-                            html = html.replace(new RegExp('\\/' + oldRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), '/' + newRelativeUrl.replace(/^\//, ''));
-                            html = html.replace(new RegExp(oldRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), newRelativeUrl.replace(/^\//, ''));
-                            this.$parent.options.html = html;
+                            const esc = oldRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-                            // Sync editor
-                            this.$parent.$nextTick(() => {
-                                if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
-                                    this.$parent.$refs.editor._html.setValue(this.$parent.options.html);
-                                }
-                                this.$parent.extractUploadedImages();
-                            });
-
-                            this.uploadedImages[index].url = newFullUrl;
+                            // Replace both /storage/theme/... and storage/theme/... variants
+                            let html = this.options.html;
+                            html = html.replace(new RegExp('\\/' + esc, 'g'), '/' + newRelative);
+                            html = html.replace(new RegExp('(?<!\\/|\\w)' + esc, 'g'), newRelative);
+                            this.options.html = html;
+                            this.extractUploadedImages();
 
                             this.$emitter.emit('add-flash', { type: 'success', message: 'Image replaced!' });
                             event.target.value = '';
@@ -685,29 +626,18 @@
 
                     const imageUrl = this.uploadedImages[index].url;
 
-                    // Get bare relative path (e.g. storage/theme/1/abc.webp) from full URL
+                    // Strip domain → bare path e.g. storage/theme/1/abc.webp
                     const bareRelative = imageUrl
                         .replace(/^https?:\/\/[^\/]+\/?/, '')
                         .replace(/^\//, '');
 
-                    // Match img tags containing this path in data-src (with or without leading slash)
-                    const escaped = bareRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                    let html = this.$parent.options.html;
-                    html = html.replace(new RegExp(`<img[^>]*data-src="\\/?${escaped}"[^>]*>`, 'gi'), '');
-                    // Also match if stored with full URL in data-src
-                    const escapedFull = imageUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                    html = html.replace(new RegExp(`<img[^>]*data-src="${escapedFull}"[^>]*>`, 'gi'), '');
-                    this.$parent.options.html = html;
+                    const esc = bareRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-                    // Sync editor
-                    this.$parent.$nextTick(() => {
-                        if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
-                            this.$parent.$refs.editor._html.setValue(this.$parent.options.html);
-                        }
-                        this.$parent.extractUploadedImages();
-                    });
-
-                    this.uploadedImages.splice(index, 1);
+                    let html = this.options.html;
+                    // Remove img tags with data-src matching /storage/... or storage/...
+                    html = html.replace(new RegExp(`<img[^>]*data-src="\\/?${esc}"[^>]*>`, 'gi'), '');
+                    this.options.html = html;
+                    this.extractUploadedImages();
 
                     this.$emitter.emit('add-flash', { type: 'success', message: 'Image removed from HTML!' });
                 },
