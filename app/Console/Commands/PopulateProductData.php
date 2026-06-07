@@ -125,11 +125,11 @@ class PopulateProductData extends Command
         }
 
         // ─── 3. Set attribute values on every product ─────────────────────────
-        $products = Product::where('type', 'simple')->get();
+        $products = Product::all();
         $total    = $products->count();
 
         if ($total === 0) {
-            $this->warn('  ⚠ No simple products found in database — run this command on your production server!');
+            $this->warn('  ⚠ No products found in database — run this command on your production server!');
         } else {
             $this->info("  Updating $total products...");
         }
