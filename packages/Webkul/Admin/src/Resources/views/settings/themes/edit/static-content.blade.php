@@ -635,16 +635,6 @@
                     const file = event.target.files[0];
                     if (!file) return;
 
-                    const allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg', 'image/gif'];
-
-                    if (!allowedImageTypes.includes(file.type)) {
-                        this.$emitter.emit('add-flash', {
-                            type: 'warning',
-                            message: 'Please select a valid image file (JPEG, PNG, WebP, GIF)'
-                        });
-                        return;
-                    }
-
                     let formData = new FormData();
                     formData.append('{{ $currentLocale->code }}[options][][image]', file);
                     formData.append('id', '{{ $theme->id }}');
@@ -652,33 +642,32 @@
 
                     this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
                         .then((response) => {
-                            const oldUrl = this.uploadedImages[index].url;
-                            const newUrl = '{{ config("app.url") }}/' + response.data;
-                            
-                            // Update in parent component's HTML
-                            const oldRelativeUrl = oldUrl.replace('{{ config("app.url") }}/', '');
+                            const oldFullUrl = this.uploadedImages[index].url;
                             const newRelativeUrl = response.data;
-                            
-                            this.$parent.options.html = this.$parent.options.html.replace(
-                                new RegExp(oldRelativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
-                                newRelativeUrl
-                            );
-                            
-                            // Update HTML editor if available
+                            const newFullUrl = '{{ config("app.url") }}/' + newRelativeUrl.replace(/^\//, '');
+
+                            // Strip domain to get the bare relative path (e.g. storage/theme/1/abc.webp)
+                            const oldRelative = oldFullUrl
+                                .replace(/^https?:\/\/[^\/]+\/?/, '')
+                                .replace(/^\//, '');
+
+                            // Replace any occurrence of the old URL in HTML (with or without leading slash)
+                            let html = this.$parent.options.html;
+                            html = html.replace(new RegExp('\\/' + oldRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), '/' + newRelativeUrl.replace(/^\//, ''));
+                            html = html.replace(new RegExp(oldRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), newRelativeUrl.replace(/^\//, ''));
+                            this.$parent.options.html = html;
+
+                            // Sync editor
                             this.$parent.$nextTick(() => {
                                 if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
                                     this.$parent.$refs.editor._html.setValue(this.$parent.options.html);
                                 }
                                 this.$parent.extractUploadedImages();
                             });
-                            
-                            this.uploadedImages[index].url = newUrl;
-                            
-                            this.$emitter.emit('add-flash', {
-                                type: 'success',
-                                message: 'Image replaced successfully in HTML! Check Preview tab.'
-                            });
-                            
+
+                            this.uploadedImages[index].url = newFullUrl;
+
+                            this.$emitter.emit('add-flash', { type: 'success', message: 'Image replaced!' });
                             event.target.value = '';
                         })
                         .catch((error) => {
@@ -695,26 +684,32 @@
                     }
 
                     const imageUrl = this.uploadedImages[index].url;
-                    const relativeUrl = imageUrl.replace('{{ config("app.url") }}/', '');
-                    
-                    // Remove from parent's HTML
-                    const imgRegex = new RegExp(`<img[^>]*data-src="${relativeUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`, 'gi');
-                    this.$parent.options.html = this.$parent.options.html.replace(imgRegex, '');
-                    
-                    // Update HTML editor if available
+
+                    // Get bare relative path (e.g. storage/theme/1/abc.webp) from full URL
+                    const bareRelative = imageUrl
+                        .replace(/^https?:\/\/[^\/]+\/?/, '')
+                        .replace(/^\//, '');
+
+                    // Match img tags containing this path in data-src (with or without leading slash)
+                    const escaped = bareRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    let html = this.$parent.options.html;
+                    html = html.replace(new RegExp(`<img[^>]*data-src="\\/?${escaped}"[^>]*>`, 'gi'), '');
+                    // Also match if stored with full URL in data-src
+                    const escapedFull = imageUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    html = html.replace(new RegExp(`<img[^>]*data-src="${escapedFull}"[^>]*>`, 'gi'), '');
+                    this.$parent.options.html = html;
+
+                    // Sync editor
                     this.$parent.$nextTick(() => {
                         if (this.$parent.$refs.editor && this.$parent.$refs.editor._html) {
                             this.$parent.$refs.editor._html.setValue(this.$parent.options.html);
                         }
                         this.$parent.extractUploadedImages();
                     });
-                    
+
                     this.uploadedImages.splice(index, 1);
-                    
-                    this.$emitter.emit('add-flash', {
-                        type: 'success',
-                        message: 'Image removed from HTML!'
-                    });
+
+                    this.$emitter.emit('add-flash', { type: 'success', message: 'Image removed from HTML!' });
                 },
             },
         });

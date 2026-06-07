@@ -5,6 +5,7 @@ namespace Webkul\Admin\Http\Controllers\Settings;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Theme\ThemeDataGrid;
@@ -44,13 +45,29 @@ class ThemeController extends Controller
     public function store()
     {
         if (request()->has('id')) {
-            // Remove strict image validation - we'll auto-optimize instead
-            // Existing images are passed as strings, so "image" validation will fail.
+            // No validation on image type — accept any image and optimize it in the repository.
             $this->validate(request(), []);
 
             $theme = $this->themeCustomizationRepository->find(request()->input('id'));
 
-            return $this->themeCustomizationRepository->uploadImage(request()->all(), $theme);
+            Log::info('Theme store upload', [
+                'theme_id' => request()->input('id'),
+                'type' => request()->input('type'),
+                'all_keys' => array_keys(request()->all()),
+                'file_keys' => array_keys(request()->allFiles()),
+                'locale' => core()->getRequestedLocaleCode(),
+            ]);
+
+            try {
+                $result = $this->themeCustomizationRepository->uploadImage(request()->all(), $theme);
+                Log::info('Theme store upload result', ['result' => $result]);
+
+                return $result;
+            } catch (\Throwable $e) {
+                Log::error('Theme store upload exception', ['error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+
+                return response()->json(['message' => $e->getMessage()], 500);
+            }
         }
 
         $validated = $this->validate(request(), [

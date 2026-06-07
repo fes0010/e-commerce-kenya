@@ -3,6 +3,7 @@
 namespace Webkul\Theme\Repositories;
 
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Stevebauman\Purify\Facades\Purify;
@@ -87,6 +88,16 @@ class ThemeCustomizationRepository extends Repository
             return;
         }
 
+        // Merge uploaded files into options so UploadedFile instances are available.
+        // request()->all() does NOT include files — they must come from request()->file().
+        $uploadedFiles = request()->file($locale.'.options') ?? [];
+
+        foreach ($uploadedFiles as $index => $fileGroup) {
+            if (isset($fileGroup['image']) && $fileGroup['image'] instanceof UploadedFile) {
+                $data[$locale]['options'][$index]['image'] = $fileGroup['image'];
+            }
+        }
+
         $options = [];
 
         foreach ($data[$locale]['options'] as $image) {
@@ -102,24 +113,24 @@ class ThemeCustomizationRepository extends Repository
 
                     // Read and optimize the image
                     $imageManager = image_manager()->read($image['image']);
-                    
+
                     // Auto-resize if image is too large (max 1920px width, maintain aspect ratio)
                     $maxWidth = 1920;
                     $maxHeight = 1080;
-                    
+
                     if ($imageManager->width() > $maxWidth || $imageManager->height() > $maxHeight) {
                         $imageManager->scale(
                             width: $imageManager->width() > $maxWidth ? $maxWidth : null,
                             height: $imageManager->height() > $maxHeight ? $maxHeight : null
                         );
                     }
-                    
+
                     // Encode to WebP with quality optimization
                     $encoded = $imageManager->encodeByExtension('webp', quality: 85);
 
                     Storage::put($path, (string) $encoded);
                 } catch (\Exception $e) {
-                    \Illuminate\Support\Facades\Log::error('Theme image upload error: ' . $e->getMessage(), ['exception' => $e]);
+                    Log::error('Theme image upload error: '.$e->getMessage(), ['exception' => $e]);
                     session()->flash('error', $e->getMessage());
 
                     return redirect()->back();
