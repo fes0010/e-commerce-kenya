@@ -36,6 +36,10 @@ class ImageCacheController extends Controller
 
     /**
      * Get the HTTP response for a template-processed image.
+     *
+     * Uses disk-based caching: processed images are saved to
+     * storage/app/public/cache/{template}/{filename} so subsequent
+     * requests skip Intervention Image processing entirely.
      */
     protected function getImage(string $template, string $filename): Response
     {
@@ -43,6 +47,23 @@ class ImageCacheController extends Controller
 
         if (! $templateConfig) {
             abort(404, 'Template not found.');
+        }
+
+        // Check for a disk-cached version first.
+        $cachedPath = $this->getDiskCachePath($template, $filename);
+
+        if ($cachedPath && file_exists($cachedPath)) {
+            $sourcePath = $this->getImagePath($filename);
+
+            // Serve cached version if the original hasn't been modified since caching.
+            if (
+                ! file_exists($sourcePath)
+                || filemtime($cachedPath) >= filemtime($sourcePath)
+            ) {
+                $content = file_get_contents($cachedPath);
+
+                return $this->buildResponse($content);
+            }
         }
 
         $path = $this->getImagePath($filename);
@@ -67,6 +88,9 @@ class ImageCacheController extends Controller
             }
 
             $content = (string) $image->encodeByMediaType();
+
+            // Persist to disk so the next request skips processing.
+            $this->saveToDiskCache($cachedPath, $content);
 
             return $this->buildResponse($content);
         } catch (Exception) {
@@ -251,6 +275,38 @@ class ImageCacheController extends Controller
     }
 
     /**
+     * Build the absolute path where a disk-cached image should be stored.
+     */
+    protected function getDiskCachePath(string $template, string $filename): ?string
+    {
+        $filename = $this->sanitizeFilename($filename);
+
+        if ($filename === '') {
+            return null;
+        }
+
+        return storage_path('app/public/cache/'.$template.'/'.$filename);
+    }
+
+    /**
+     * Persist processed image content to the disk cache.
+     */
+    protected function saveToDiskCache(?string $path, string $content): void
+    {
+        if (! $path) {
+            return;
+        }
+
+        $directory = dirname($path);
+
+        if (! is_dir($directory)) {
+            mkdir($directory, 0775, true);
+        }
+
+        file_put_contents($path, $content, LOCK_EX);
+    }
+
+    /**
      * Build the HTTP response with the image content.
      */
     protected function buildResponse(string $content): Response
@@ -267,11 +323,17 @@ class ImageCacheController extends Controller
 
         $maxAge = ($this->template === 'logo' ? 10080 : config('imagecache.lifetime', 43200)) * 60;
 
-        return new Response($responseContent, $statusCode, [
+        $headers = [
             'Content-Type' => $mime,
             'Cache-Control' => 'max-age='.$maxAge.', public',
-            'Content-Length' => strlen($content),
             'Etag' => $eTag,
-        ]);
+        ];
+
+        // Only set Content-Length for actual responses, not 304s.
+        if (! $notModified) {
+            $headers['Content-Length'] = strlen($content);
+        }
+
+        return new Response($responseContent, $statusCode, $headers);
     }
 }
