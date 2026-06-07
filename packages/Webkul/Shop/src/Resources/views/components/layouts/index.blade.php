@@ -124,6 +124,9 @@
     <body>
         {!! view_render_event('bagisto.shop.layout.body.before') !!}
 
+        {{-- Top progress bar: thin line that sweeps across while JS boots --}}
+        <div id="nprogress-bar"></div>
+
         <a
             href="#main"
             class="skip-to-main-content-link"
@@ -204,5 +207,65 @@
         </script>
         
         <x-shop::layouts.theme-previewer />
+
+        <script>
+        /* ── Micro progress bar ────────────────────────────────────────── */
+        (function () {
+            var bar = document.getElementById('nprogress-bar');
+            var timer;
+
+            function start() {
+                clearTimeout(timer);
+                bar.style.transition = 'none';
+                bar.style.opacity    = '1';
+                bar.classList.remove('done');
+                bar.style.width = '2%';
+                // Trickle to 85% over ~2 s
+                requestAnimationFrame(function () {
+                    bar.style.transition = 'width 1.8s cubic-bezier(.1,.6,.4,1)';
+                    bar.style.width = '85%';
+                });
+            }
+
+            function done() {
+                clearTimeout(timer);
+                bar.style.transition = 'width 0.15s ease';
+                bar.style.width = '100%';
+                timer = setTimeout(function () {
+                    bar.classList.add('done');
+                }, 180);
+            }
+
+            // Run on initial page load
+            start();
+            window.addEventListener('load', done);
+
+            // Run on every same-page link click
+            document.addEventListener('click', function (e) {
+                var link = e.target.closest('a[href]');
+                if (!link) return;
+                var href = link.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript') || link.target === '_blank') return;
+                start();
+            });
+        })();
+
+        /* ── Image reveal fade-in ──────────────────────────────────────── */
+        (function () {
+            function revealImg(img) {
+                img.setAttribute('data-revealed', '1');
+            }
+            // For any img that loads after this script
+            document.addEventListener('load', function (e) {
+                if (e.target.tagName === 'IMG') revealImg(e.target);
+            }, true);
+            // For cached imgs that are already loaded at DOM-ready
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('img').forEach(function (img) {
+                    if (img.complete) revealImg(img);
+                });
+            });
+        })();
+        </script>
     </body>
 </html>

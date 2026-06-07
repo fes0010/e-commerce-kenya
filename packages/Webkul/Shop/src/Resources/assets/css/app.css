@@ -506,34 +506,62 @@ img.lazy {
         border: 1px solid var(--theme-button-secondary-text, var(--theme-navyBlue));
     }
 
+    /* ========================================================
+     * SHIMMER / SKELETON — faster wave shimmer (1.4 s)
+     * Using a wider gradient stop creates a sharper highlight
+     * ======================================================== */
     .shimmer {
-        animation-duration: 2.2s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-name: skeleton;
-        animation-timing-function: linear;
-        background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
-        background-size: 1250px 100%;
+        animation: shimmer-wave 1.4s ease-in-out infinite;
+        background: linear-gradient(
+            90deg,
+            #efefef 25%,
+            #e0e0e0 37%,
+            #efefef 63%
+        );
+        background-size: 400% 100%;
     }
 
-    @keyframes skeleton {
-        0% {
-            background-position: -1250px 0;
-        }
+    @keyframes shimmer-wave {
+        0%   { background-position: 100% 50%; }
+        100% { background-position: 0%   50%; }
+    }
 
-        100% {
-            background-position: 1250px 0;
-        }
+    /* ========================================================
+     * IMAGE REVEAL — smooth fade in when image finishes loading
+     * ======================================================== */
+    @keyframes image-reveal {
+        from { opacity: 0; transform: scale(1.02); }
+        to   { opacity: 1; transform: scale(1); }
+    }
+
+    img[data-revealed] {
+        animation: image-reveal 0.3s ease-out forwards;
+    }
+
+    /* ========================================================
+     * TOP PROGRESS BAR — shows while Vue is booting / navigating
+     * ======================================================== */
+    #nprogress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: var(--theme-navyBlue, #060C3B);
+        border-radius: 0 2px 2px 0;
+        z-index: 99999;
+        transition: width 0.2s ease, opacity 0.4s ease;
+        box-shadow: 0 0 8px var(--theme-navyBlue, #060C3B);
+    }
+
+    #nprogress-bar.done {
+        width: 100% !important;
+        opacity: 0;
     }
 
     @keyframes on-fade {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
     }
 
     .wrapper-404 {
