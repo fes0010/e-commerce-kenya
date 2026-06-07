@@ -78,26 +78,38 @@
 
         @stack('styles')
 
+        @php
+            $cfg = fn($k) => core()->getConfigData('general.design.theme_colors.'.$k);
+            $themePreset = $cfg('theme_preset') ?? 'default';
+            $bodyFont    = $cfg('body_font') ?? 'Poppins';
+        @endphp
+
         <style>
             :root {
-                @if (core()->getConfigData('general.design.theme_colors.primary_color'))
-                    --theme-navyBlue: {{ core()->getConfigData('general.design.theme_colors.primary_color') }};
-                @endif
-                @if (core()->getConfigData('general.design.theme_colors.button_bg_color'))
-                    --theme-button-bg: {{ core()->getConfigData('general.design.theme_colors.button_bg_color') }};
-                @endif
-                @if (core()->getConfigData('general.design.theme_colors.button_text_color'))
-                    --theme-button-text: {{ core()->getConfigData('general.design.theme_colors.button_text_color') }};
-                @endif
-                @if (core()->getConfigData('general.design.theme_colors.nav_text_color'))
-                    --theme-nav-text: {{ core()->getConfigData('general.design.theme_colors.nav_text_color') }};
-                @endif
-                @if (core()->getConfigData('general.design.theme_colors.nav_border_color'))
-                    --theme-nav-border: {{ core()->getConfigData('general.design.theme_colors.nav_border_color') }};
-                @endif
+                @if($cfg('primary_color'))    --theme-navyBlue:    {{ $cfg('primary_color') }}; @endif
+                @if($cfg('bg_color'))         --theme-lightOrange: {{ $cfg('bg_color') }}; @endif
+                @if($cfg('accent_color'))     --theme-darkGreen:   {{ $cfg('accent_color') }}; @endif
+                @if($cfg('link_color'))       --theme-darkBlue:    {{ $cfg('link_color') }}; @endif
+                @if($cfg('danger_color'))     --theme-darkPink:    {{ $cfg('danger_color') }}; @endif
+                @if($cfg('button_bg_color'))  --theme-button-bg:   {{ $cfg('button_bg_color') }}; @endif
+                @if($cfg('button_text_color'))--theme-button-text: {{ $cfg('button_text_color') }}; @endif
+                @if($cfg('nav_text_color'))   --theme-nav-text:    {{ $cfg('nav_text_color') }}; @endif
+                @if($cfg('nav_border_color')) --theme-nav-border:  {{ $cfg('nav_border_color') }}; @endif
+                @if($bodyFont !== 'Poppins')  --theme-font-poppins: "{{ $bodyFont }}"; @endif
             }
             {!! core()->getConfigData('general.content.custom_scripts.custom_css') !!}
         </style>
+
+        {{-- Load saved body font from Google Fonts if not the default Poppins --}}
+        @if($bodyFont !== 'Poppins')
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family={{ urlencode($bodyFont) }}:wght@400;500;600;700;800&display=swap">
+        @endif
+
+        {{-- Apply pre-built theme class to body (matches app.css .theme-* selectors) --}}
+        @if($themePreset !== 'default' && $themePreset !== 'custom')
+        <script>document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('theme-{{ $themePreset }}');});</script>
+        @endif
 
         @if(core()->getConfigData('general.content.speculation_rules.enabled'))
             <script type="speculationrules">
