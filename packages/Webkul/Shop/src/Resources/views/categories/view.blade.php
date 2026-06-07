@@ -25,16 +25,16 @@
 
     {!! view_render_event('bagisto.shop.categories.view.banner_path.before') !!}
 
-    <!-- Hero Image -->
-    <div class="container mt-8 px-[60px] max-lg:px-8 max-md:mt-4 max-md:px-4">
-        <x-shop::media.images.lazy
-            class="aspect-[4/1] max-h-full max-w-full rounded-xl object-cover"
-            src="{{ $category->banner_path ? $category->banner_url : bagisto_asset('images/large-product-placeholder.webp') }}"
-            alt="{{ $category->name }}"
-            width="1320"
-            height="300"
-        />
-    </div>
+    <!-- Hero Banner — uses category banner if set, otherwise auto-fetches first product image -->
+    <v-category-banner
+        category-name="{{ $category->name }}"
+        @if($category->banner_path)
+            banner-url="{{ $category->banner_url }}"
+        @else
+            banner-url=""
+        @endif
+        api-url="{{ route('shop.api.products.index', ['category_id' => $category->id, 'limit' => 1]) }}"
+    ></v-category-banner>
 
     {!! view_render_event('bagisto.shop.categories.view.banner_path.after') !!}
 
@@ -327,6 +327,116 @@
 
                         return parameters.toString();
                     }
+                },
+            });
+        </script>
+
+        <!-- Category Banner Vue Component -->
+        <script type="text/x-template" id="v-category-banner-template">
+            <div class="container mt-6 px-[60px] max-lg:px-8 max-md:mt-4 max-md:px-4">
+                <div class="relative w-full overflow-hidden rounded-xl bg-gray-100"
+                     style="aspect-ratio: 4/1;"
+                     :style="'aspect-ratio: ' + aspectRatio"
+                >
+                    <!-- Loading shimmer -->
+                    <div v-if="isLoading" class="absolute inset-0 animate-pulse bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200"></div>
+
+                    <!-- Banner image -->
+                    <img
+                        v-if="!isLoading && resolvedImage"
+                        :src="resolvedImage"
+                        :alt="categoryName"
+                        class="h-full w-full object-cover object-center transition-opacity duration-500"
+                        :class="imageLoaded ? 'opacity-100' : 'opacity-0'"
+                        @load="imageLoaded = true"
+                        @error="onImageError"
+                    />
+
+                    <!-- Dark gradient overlay + category name -->
+                    <div v-if="!isLoading && resolvedImage && imageLoaded"
+                         class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 max-md:p-4">
+                        <h1 class="text-3xl font-bold text-white drop-shadow-lg max-md:text-xl max-sm:text-lg">
+                            @{{ categoryName }}
+                        </h1>
+                    </div>
+
+                    <!-- Fallback: no image at all -->
+                    <div v-if="!isLoading && !resolvedImage"
+                         class="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-50 to-blue-100 p-6">
+                        <h1 class="text-3xl font-bold text-gray-700 max-md:text-xl">@{{ categoryName }}</h1>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script type="module">
+            app.component('v-category-banner', {
+                template: '#v-category-banner-template',
+
+                props: {
+                    categoryName: { type: String, default: '' },
+                    bannerUrl:    { type: String, default: '' },
+                    apiUrl:       { type: String, default: '' },
+                },
+
+                data() {
+                    return {
+                        isLoading: true,
+                        resolvedImage: '',
+                        imageLoaded: false,
+                        aspectRatio: '4/1',
+                    };
+                },
+
+                mounted() {
+                    // Adjust aspect ratio per device
+                    this.updateAspectRatio();
+                    window.addEventListener('resize', this.updateAspectRatio);
+
+                    if (this.bannerUrl) {
+                        // Category already has a banner — use it directly
+                        this.resolvedImage = this.bannerUrl;
+                        this.isLoading = false;
+                    } else if (this.apiUrl) {
+                        // Fetch first product image as fallback
+                        this.$axios.get(this.apiUrl)
+                            .then(response => {
+                                const products = response.data?.data || [];
+                                if (products.length && products[0].base_image?.large_image_url) {
+                                    this.resolvedImage = products[0].base_image.large_image_url;
+                                } else {
+                                    this.resolvedImage = '';
+                                }
+                            })
+                            .catch(() => { this.resolvedImage = ''; })
+                            .finally(() => { this.isLoading = false; });
+                    } else {
+                        this.resolvedImage = '';
+                        this.isLoading = false;
+                    }
+                },
+
+                beforeUnmount() {
+                    window.removeEventListener('resize', this.updateAspectRatio);
+                },
+
+                methods: {
+                    updateAspectRatio() {
+                        const w = window.innerWidth;
+                        if (w < 480) {
+                            this.aspectRatio = '3/2'; // tallish on very small phones
+                        } else if (w < 768) {
+                            this.aspectRatio = '2/1'; // slightly taller on mobile
+                        } else if (w < 1024) {
+                            this.aspectRatio = '3/1'; // tablet
+                        } else {
+                            this.aspectRatio = '4/1'; // desktop wide banner
+                        }
+                    },
+                    onImageError() {
+                        this.resolvedImage = '';
+                        this.imageLoaded = false;
+                    },
                 },
             });
         </script>

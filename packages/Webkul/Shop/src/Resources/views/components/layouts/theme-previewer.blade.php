@@ -1,4 +1,4 @@
-{{-- Theme Previewer: visible when URL has ?theme_preview=true or admin is logged in --}}
+{{-- Theme Previewer: visible when URL has ?theme_preview --}}
 <div id="theme-previewer-widget" class="fixed bottom-4 left-4 z-[9999] bg-white rounded-lg shadow-2xl border border-gray-200 p-5 w-80" style="display: none;">
     <div class="flex justify-between items-center mb-4">
         <h3 class="font-bold text-lg text-gray-800 flex items-center gap-2">
@@ -7,7 +7,7 @@
             </svg>
             Live Theme Preview
         </h3>
-        <button onclick="document.getElementById('theme-previewer-widget').style.display='none'" class="text-gray-500 hover:text-red-500 text-2xl leading-none">&times;</button>
+        <button onclick="document.getElementById('theme-previewer-widget').style.display='none';document.getElementById('theme-previewer-toggle').style.display='flex';" class="text-gray-500 hover:text-red-500 text-2xl leading-none">&times;</button>
     </div>
     <p class="text-xs text-gray-600 mb-5 leading-relaxed">
         Pick colors here to preview them live. When happy, copy the hex codes into <strong class="text-gray-800">Admin &rarr; Configuration &rarr; Design &rarr; Theme Colors</strong> to save permanently.
@@ -56,12 +56,12 @@
     </div>
 </div>
 
-{{-- Floating toggle button (hidden by default, shown by JS) --}}
+{{-- Floating toggle button — always in DOM, visibility controlled by JS below --}}
 <button
     id="theme-previewer-toggle"
-    onclick="document.getElementById('theme-previewer-widget').style.display='block'"
-    class="fixed bottom-6 left-6 z-[9998] bg-indigo-600 text-white p-4 rounded-full shadow-2xl hover:bg-indigo-700 transition-transform transform hover:scale-110 flex items-center justify-center"
-    style="display: none !important;"
+    onclick="document.getElementById('theme-previewer-widget').style.display='block';this.style.display='none';"
+    class="fixed bottom-6 left-6 z-[9998] bg-indigo-600 text-white p-4 rounded-full shadow-2xl hover:bg-indigo-700 transition-transform transform hover:scale-110 items-center justify-center"
+    style="display: none;"
     title="Open Live Theme Previewer"
 >
     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,12 +70,14 @@
 </button>
 
 <script>
-    // Show the previewer only when ?theme_preview is in the URL
+    // Activate the previewer toggle button when ?theme_preview is present in the URL
     (function () {
         var params = new URLSearchParams(window.location.search);
         if (params.has('theme_preview')) {
             var btn = document.getElementById('theme-previewer-toggle');
-            if (btn) btn.style.setProperty('display', 'flex', 'important');
+            if (btn) {
+                btn.style.display = 'flex';
+            }
         }
     })();
 
