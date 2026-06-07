@@ -22,7 +22,7 @@
             :sizes="sizes"
             :id="'image-' + $.uid"
             @load="onLoad"
-            @error="onLoad"
+            @@error="onLoad"
             v-show="! isLoading"
             :loading="lazy ? 'lazy' : 'eager'"
             decoding="async"
