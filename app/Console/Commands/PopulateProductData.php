@@ -150,15 +150,16 @@ class PopulateProductData extends Command
             $categoryIds = $product->categories->pluck('id')->toArray();
             
             if (!empty($categoryIds)) {
-                $relatedQuery = Product::whereHas('categories', function($q) use ($categoryIds) {
+                $baseQuery = Product::whereHas('categories', function($q) use ($categoryIds) {
                     $q->whereIn('category_id', $categoryIds);
-                })->where('id', '!=', $product->id)->inRandomOrder()->limit(4)->pluck('id')->toArray();
+                })->where('id', '!=', $product->id);
             } else {
-                $relatedQuery = Product::where('id', '!=', $product->id)->inRandomOrder()->limit(4)->pluck('id')->toArray();
+                $baseQuery = Product::where('id', '!=', $product->id);
             }
 
-            $upSells = Product::where('id', '!=', $product->id)->inRandomOrder()->limit(4)->pluck('id')->toArray();
-            $crossSells = Product::where('id', '!=', $product->id)->inRandomOrder()->limit(4)->pluck('id')->toArray();
+            $relatedQuery = (clone $baseQuery)->inRandomOrder()->limit(4)->pluck('id')->toArray();
+            $upSells = (clone $baseQuery)->inRandomOrder()->limit(4)->pluck('id')->toArray();
+            $crossSells = (clone $baseQuery)->inRandomOrder()->limit(4)->pluck('id')->toArray();
 
             $product->related_products()->sync($relatedQuery);
             $product->up_sells()->sync($upSells);
