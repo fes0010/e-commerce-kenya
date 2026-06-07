@@ -24,7 +24,6 @@
             @load="onLoad"
             v-show="! isLoading"
             v-if="lazy"
-            loading="lazy"
             decoding="async"
         >
 
