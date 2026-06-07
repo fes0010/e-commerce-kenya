@@ -29,16 +29,20 @@ module.exports = {
 
         extend: {
             colors: {
-                navyBlue: "#060C3B",
-                lightOrange: "#F6F2EB",
-                darkGreen: '#40994A',
-                darkBlue: '#0044F2',
-                darkPink: '#F85156',
+                navyBlue: "var(--theme-navyBlue)",
+                lightOrange: "var(--theme-lightOrange)",
+                darkGreen: "var(--theme-darkGreen)",
+                darkBlue: "var(--theme-darkBlue)",
+                darkPink: "var(--theme-darkPink)",
+                nav: {
+                    border: "var(--theme-nav-border, var(--theme-navyBlue))",
+                    text: "var(--theme-nav-text, var(--theme-navyBlue))",
+                }
             },
 
             fontFamily: {
-                poppins: ["Poppins", "sans-serif"],
-                dmserif: ["DM Serif Display", "serif"],
+                poppins: ["var(--theme-font-poppins)", "sans-serif"],
+                dmserif: ["var(--theme-font-dmserif)", "serif"],
             },
         }
     },

@@ -2,6 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --theme-navyBlue: #060C3B;
+        --theme-lightOrange: #F6F2EB;
+        --theme-darkGreen: #40994A;
+        --theme-darkBlue: #0044F2;
+        --theme-darkPink: #F85156;
+        --theme-font-poppins: "Poppins";
+        --theme-font-dmserif: "DM Serif Display";
+    }
+
+    /* Pre-built Themes - apply these classes to the <body> tag to switch */
+    .theme-sunset {
+        --theme-navyBlue: #2D142C;
+        --theme-lightOrange: #FEECE9;
+        --theme-darkGreen: #3E8E7E;
+        --theme-darkBlue: #51C4D3;
+        --theme-darkPink: #E23E57;
+        --theme-font-poppins: "Outfit";
+        --theme-font-dmserif: "Playfair Display";
+    }
+
+    .theme-forest {
+        --theme-navyBlue: #132A13;
+        --theme-lightOrange: #ECF39E;
+        --theme-darkGreen: #4F772D;
+        --theme-darkBlue: #31572C;
+        --theme-darkPink: #90A955;
+        --theme-font-poppins: "Inter";
+        --theme-font-dmserif: "Lora";
+    }
+
+    .theme-ocean {
+        --theme-navyBlue: #0F2027;
+        --theme-lightOrange: #E8F1F2;
+        --theme-darkGreen: #2A9D8F;
+        --theme-darkBlue: #203A43;
+        --theme-darkPink: #2C5364;
+        --theme-font-poppins: "Roboto";
+        --theme-font-dmserif: "Merriweather";
+    }
+
+    .theme-red {
+        --theme-navyBlue: #8B0000;
+        --theme-lightOrange: #FFEEEE;
+        --theme-darkGreen: #228B22;
+        --theme-darkBlue: #B22222;
+        --theme-darkPink: #DC143C;
+        --theme-font-poppins: "Poppins";
+        --theme-font-dmserif: "DM Serif Display";
+    }
+
+    .theme-maroon {
+        --theme-navyBlue: #4A0404;
+        --theme-lightOrange: #FDF5F5;
+        --theme-darkGreen: #2E5C2E;
+        --theme-darkBlue: #800000;
+        --theme-darkPink: #C2185B;
+        --theme-font-poppins: "Inter";
+        --theme-font-dmserif: "Lora";
+    }
+}
+
 @font-face {
     font-family: "bagisto-shop";
     src: url("../fonts/bagisto-shop.woff") format("woff");
@@ -431,11 +494,16 @@ img.lazy {
     }
 
     .primary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl text-white bg-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:opacity-[0.9];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl px-8 py-4 max-w-max cursor-pointer transition-all hover:opacity-[0.9];
+        background-color: var(--theme-button-bg, var(--theme-navyBlue));
+        border: 1px solid var(--theme-button-bg, var(--theme-navyBlue));
+        color: var(--theme-button-text, #ffffff);
     }
 
     .secondary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-white text-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#050e3a0d];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-white px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#050e3a0d];
+        color: var(--theme-button-secondary-text, var(--theme-navyBlue));
+        border: 1px solid var(--theme-button-secondary-text, var(--theme-navyBlue));
     }
 
     .shimmer {
