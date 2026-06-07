@@ -17,25 +17,14 @@
 
         <img
             v-bind="$attrs"
-            :data-src="src"
-            :data-srcset="srcset"
-            :data-sizes="sizes"
-            :id="'image-' + $.uid"
-            @load="onLoad"
-            v-show="! isLoading"
-            v-if="lazy"
-            decoding="async"
-        >
-
-        <img
-            v-bind="$attrs"
             :src="src"
             :srcset="srcset"
             :sizes="sizes"
             :id="'image-' + $.uid"
             @load="onLoad"
-            v-else
+            @error="onLoad"
             v-show="! isLoading"
+            :loading="lazy ? 'lazy' : 'eager'"
             decoding="async"
         >
     </script>
@@ -73,33 +62,13 @@
             },
 
             mounted() {
-                let self = this;
-
-                if (! this.lazy) {
-                    return;
-                }
-
-                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = document.getElementById('image-' + self.$.uid);
-
-                            if (lazyImage.dataset.src) {
-                                lazyImage.src = lazyImage.dataset.src;
-                            }
-                            if (lazyImage.dataset.srcset) {
-                                lazyImage.srcset = lazyImage.dataset.srcset;
-                            }
-                            if (lazyImage.dataset.sizes) {
-                                lazyImage.sizes = lazyImage.dataset.sizes;
-                            }
-
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
+                // If the image is already complete (cached), reveal it instantly
+                this.$nextTick(() => {
+                    let img = document.getElementById('image-' + this.$.uid);
+                    if (img && img.complete && img.naturalHeight !== 0) {
+                        this.isLoading = false;
+                    }
                 });
-
-                lazyImageObserver.observe(document.getElementById('image-shimmer-' + this.$.uid));
             },
 
             methods: {
