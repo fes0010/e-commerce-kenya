@@ -49,10 +49,11 @@
 
                         <a
                             :href="category.slug"
-                            class=""
+                            class="w-full"
+                            :title="category.name"
                         >
                             <p
-                                class="text-center text-lg text-black max-md:text-base max-md:font-normal max-sm:text-sm"
+                                class="text-center text-lg text-black max-md:text-base max-md:font-normal max-sm:text-sm line-clamp-2 break-words"
                                 v-text="category.name"
                             >
                             </p>
