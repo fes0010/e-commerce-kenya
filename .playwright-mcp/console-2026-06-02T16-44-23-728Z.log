@@ -1,0 +1,4 @@
+[     411ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://ecommerce.munene.shop/admin/login:0
+[     465ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://ecommerce.munene.shop/admin/login:0
+[   86229ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://ecommerce.munene.shop/admin/login:0
+[   86248ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://ecommerce.munene.shop/admin/login:0

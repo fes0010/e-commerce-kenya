@@ -1,0 +1,30 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]:
+      - generic [ref=e6]: 
+      - text: Please check your credentials and try again.
+    - generic [ref=e7] [cursor=pointer]: Close
+  - generic [ref=e9]:
+    - img "E-Commerce Kenya" [ref=e10]
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: Sign In
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]: Email Address *
+          - textbox "Email Address" [ref=e17]
+        - generic [ref=e18]:
+          - generic [ref=e19]: Password *
+          - textbox "Password" [ref=e20]
+          - generic [ref=e21] [cursor=pointer]: 
+      - generic [ref=e22]:
+        - link "Forget Password ?" [ref=e23] [cursor=pointer]:
+          - /url: https://ecommerce.munene.shop/admin/forget-password
+        - button "Sign In" [ref=e24] [cursor=pointer]
+    - generic [ref=e25]:
+      - text: Powered by
+      - link "Bagisto" [ref=e26] [cursor=pointer]:
+        - /url: https://bagisto.com/en/
+      - text: ", an open-source project by"
+      - link "Webkul" [ref=e27] [cursor=pointer]:
+        - /url: https://webkul.com/
+      - text: .

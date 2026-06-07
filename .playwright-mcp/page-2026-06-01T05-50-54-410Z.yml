@@ -1,0 +1,66 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img "Bagisto Logo" [ref=e6]
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Welcome to Installation
+        - paragraph [ref=e9]: We are happy to see you here!
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]: 
+          - paragraph [ref=e13]: Start
+        - generic [ref=e14]:
+          - generic [ref=e15]: 
+          - paragraph [ref=e16]: System Requirements
+        - generic [ref=e17]:
+          - generic [ref=e18]: 
+          - paragraph [ref=e19]: Store Configuration
+        - generic [ref=e20]:
+          - generic [ref=e21]: 
+          - paragraph [ref=e22]: Ready for Installation
+        - generic [ref=e23]:
+          - generic [ref=e24]: 
+          - paragraph [ref=e25]: Sample Products
+        - generic [ref=e26]:
+          - generic [ref=e27]: 
+          - paragraph [ref=e28]: Create Administrator
+        - generic [ref=e29]:
+          - generic [ref=e30]: 
+          - paragraph [ref=e31]: Installation Completed
+    - paragraph [ref=e32]:
+      - link "Bagisto" [ref=e33] [cursor=pointer]:
+        - /url: https://bagisto.com/en/
+      - text: a Community Project by
+      - link "Webkul" [ref=e34] [cursor=pointer]:
+        - /url: https://webkul.com/
+  - generic [ref=e37]:
+    - paragraph [ref=e39]: Welcome to Bagisto
+    - generic [ref=e41]:
+      - paragraph [ref=e43]: Bagisto installation typically involves several steps. Here's a general outline of the installation process for Bagisto
+      - generic [ref=e45]:
+        - generic [ref=e46]: Installation Wizard language
+        - combobox [ref=e47]:
+          - option "Select Locale" [disabled]
+          - option "Arabic"
+          - option "Bengali"
+          - option "Catalan"
+          - option "German"
+          - option "English" [selected]
+          - option "Spanish"
+          - option "Persian"
+          - option "French"
+          - option "Hebrew"
+          - option "Hindi"
+          - option "Indonesian"
+          - option "Italian"
+          - option "Japanese"
+          - option "Dutch"
+          - option "Polish"
+          - option "Portuguese"
+          - option "Romanian"
+          - option "Russian"
+          - option "Sinhala"
+          - option "Turkish"
+          - option "Ukrainian"
+          - option "Chinese"
+    - button "Continue" [ref=e49] [cursor=pointer]
