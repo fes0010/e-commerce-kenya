@@ -18,7 +18,6 @@
     font-family: sans-serif;
     max-height: 92vh;
     overflow-y: auto;
-    display: flex;
     flex-direction: column;
 ">
     {{-- Header --}}
