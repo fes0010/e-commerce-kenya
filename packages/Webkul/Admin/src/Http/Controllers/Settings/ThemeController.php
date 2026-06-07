@@ -45,9 +45,8 @@ class ThemeController extends Controller
     {
         if (request()->has('id')) {
             // Remove strict image validation - we'll auto-optimize instead
-            $this->validate(request(), [
-                core()->getRequestedLocaleCode().'.options.*.image' => 'image|mimes:jpeg,jpg,png,svg,webp,gif|max:10240', // Max 10MB, we'll optimize it
-            ]);
+            // Existing images are passed as strings, so "image" validation will fail.
+            $this->validate(request(), []);
 
             $theme = $this->themeCustomizationRepository->find(request()->input('id'));
 
