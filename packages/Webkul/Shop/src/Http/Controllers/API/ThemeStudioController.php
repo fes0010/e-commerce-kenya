@@ -5,6 +5,7 @@ namespace Webkul\Shop\Http\Controllers\API;
 use Illuminate\Http\JsonResponse;
 use Webkul\Core\Repositories\CoreConfigRepository;
 use Webkul\Theme\Repositories\ThemeCustomizationRepository;
+use Webkul\Shop\Http\Controllers\Controller;
 
 class ThemeStudioController extends Controller
 {
