@@ -81,13 +81,13 @@ class OnepageController extends APIController
 
             return new JsonResource([
                 'redirect' => false,
-                'data' => $rates,
+                'shippingMethods' => $rates['shippingMethods'],
             ]);
         }
 
         return new JsonResource([
             'redirect' => false,
-            'data' => Payment::getSupportedPaymentMethods(),
+            'payment_methods' => Payment::getSupportedPaymentMethods()['payment_methods'],
         ]);
     }
 
