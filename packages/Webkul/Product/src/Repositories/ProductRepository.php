@@ -564,6 +564,13 @@ class ProductRepository extends Repository
      */
     public function getSortOptions(array $params): array
     {
+        if (isset($params['sort']) && $params['sort'] === 'rand') {
+            return [
+                'sort' => 'rand',
+                'order' => 'rand',
+            ];
+        }
+
         return product_toolbar()->getOrder($params);
     }
 
