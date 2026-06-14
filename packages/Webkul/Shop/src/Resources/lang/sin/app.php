@@ -562,7 +562,7 @@ return [
                     'bottom' => [
                         'all' => 'සියල්ල',
                         'back-button' => 'ප්‍රධාන මෙනුවට ආපසු යන්න',
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => config('app.name'),
                         'categories' => 'ප්‍රවර්ග',
                         'compare' => 'සංසන්දනය කරන්න',
                         'dropdown-text' => 'කරත්තය, ඇණවුම් සහ ඉල්ලුම් ලැයිස්තුව කළමනාකරණය කරන්න',
@@ -583,7 +583,7 @@ return [
                 'mobile' => [
                     'account' => 'ගිණුම',
                     'back-button' => 'ප්‍රධාන මෙනුවට ආපසු යන්න',
-                    'bagisto' => 'Bagisto',
+                    'bagisto' => config('app.name'),
                     'compare' => 'සංසන්දනය කරන්න',
                     'currencies' => 'මුදල් ඒකක',
                     'dropdown-text' => 'කරත්තය, ඇණවුම් සහ ඉල්ලුම් ලැයිස්තුව කළමනාකරණය කරන්න',
@@ -609,7 +609,7 @@ return [
                 'customer-service' => 'ප්‍රශ්නය හා සේවය',
                 'email' => 'ඊමේල්',
                 'footer-content' => 'පිටුවේ අන්තර්ගතය',
-                'footer-text' => '© වෙබ්කල් සොෆ්ට්වෙයර් (ශ්‍රී ලංකාවේ ලියාපදිංචි) සම්පූර්ණයේ සිට 2010 - :current_year දක්වා. සියලු අභිරුචිකරුවන් සමඟ සම්පූර්ණයෙන් පහසුවෙනි.',
+                'footer-text' => '© Copyright :current_year. All rights reserved.',
                 'locale' => 'පිටු මාධ්‍ය',
                 'newsletter-text' => 'අපේ සෙවුම් පනසලේ සම්බන්ධවන්ද බලන්න!',
                 'order-return' => 'ඇණවුම් හා ආපසු සපිරව්ව',
