@@ -1,6 +1,6 @@
-<div class="1180:hidden flex flex-col gap-4 max-w-full overflow-hidden">
+<div class="1180:hidden flex flex-col gap-4 w-full" style="max-width:100%;contain:layout">
     <!-- Swipeable Main Image/Video Gallery with Prev/Next arrows -->
-    <div class="relative w-full max-w-full overflow-hidden">
+    <div class="relative w-full overflow-hidden" style="max-width:100%">
         <!-- Prev Arrow -->
         <button
             v-if="[...media.images, ...media.videos].length > 1 && activeIndex > 0"
@@ -19,17 +19,20 @@
 
         <div
             ref="mobileSwiper"
-            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full max-w-full aspect-square rounded-xl scrollbar-hide"
+            class="flex overflow-x-hidden snap-x snap-mandatory scroll-smooth w-full aspect-square rounded-xl scrollbar-hide"
+            style="-webkit-overflow-scrolling:touch;overflow-x:scroll"
             @scroll="onMobileScroll"
         >
             <div
                 v-for="(mediaItem, index) in [...media.images, ...media.videos]"
                 :key="index"
-                class="w-full shrink-0 snap-center aspect-square max-w-full"
+                class="shrink-0 snap-center aspect-square rounded-xl"
+                style="width:100%;min-width:100%;max-width:100%"
             >
                 <img
                     v-if="mediaItem.type !== 'videos'"
-                    class="w-full h-full object-cover cursor-pointer rounded-xl aspect-square block"
+                    class="w-full h-full object-cover cursor-pointer rounded-xl block"
+                    style="width:100%;height:100%;display:block"
                     :src="mediaItem.large_image_url"
                     alt="{{ $product->name }}"
                     @click="isImageZooming = !isImageZooming"
@@ -37,12 +40,13 @@
 
                 <div
                     v-else
-                    class="w-full h-full cursor-pointer rounded-xl aspect-square"
+                    class="w-full h-full cursor-pointer rounded-xl"
+                    style="width:100%;height:100%"
                 >
                     <video
                         controls
                         class="w-full h-full object-cover rounded-xl"
-                        alt="{{ $product->name }}"
+                        style="width:100%;height:100%"
                         @click="isImageZooming = !isImageZooming"
                     >
                         <source
@@ -54,16 +58,17 @@
             </div>
         </div>
 
-        <!-- Dot indicators -->
+        <!-- Dot indicators — scrollable when there are many images -->
         <div
-            class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/30 backdrop-blur-sm px-2.5 py-1.5 rounded-full"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/30 backdrop-blur-sm px-2.5 py-1.5 rounded-full overflow-x-auto scrollbar-hide"
+            style="max-width:calc(100% - 2rem)"
             v-if="[...media.images, ...media.videos].length > 1"
         >
             <span
                 v-for="(mediaItem, index) in [...media.images, ...media.videos]"
                 :key="index"
-                class="w-2 h-2 rounded-full cursor-pointer transition-all duration-300"
-                :class="activeIndex === index ? 'bg-white w-4' : 'bg-white/50'"
+                class="flex-shrink-0 w-2 h-2 rounded-full cursor-pointer transition-all duration-300"
+                :class="activeIndex === index ? 'bg-white !w-4' : 'bg-white/50'"
                 @click="scrollToMedia(index)"
             ></span>
         </div>

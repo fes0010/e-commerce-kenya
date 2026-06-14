@@ -1,4 +1,4 @@
-<v-product-gallery ref="gallery">
+<v-product-gallery class="max-1180:w-full min-w-0" ref="gallery">
     <x-shop::shimmer.products.gallery />
 </v-product-gallery>
 
@@ -7,7 +7,7 @@
         type="text/x-template"
         id="v-product-gallery-template"
     >
-        <div>
+        <div class="max-1180:w-full min-w-0">
             <!-- Desktop Gallery -->
             @include('shop::products.view.gallery.desktop')
 

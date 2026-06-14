@@ -3,6 +3,46 @@
 @tailwind utilities;
 
 @layer base {
+    /* Mobile overflow fixes */
+    html {
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
+    }
+    
+    /* Responsive container padding for mobile */
+    @media (max-width: 768px) {
+        .container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+        
+        .px-\[60px\],
+        .px-\[90px\] {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+    }
+    
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Responsive container padding for mobile */
+    @media (max-width: 768px) {
+        .container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+    }
     :root {
         --theme-navyBlue: #060C3B;
         --theme-lightOrange: #F6F2EB;
