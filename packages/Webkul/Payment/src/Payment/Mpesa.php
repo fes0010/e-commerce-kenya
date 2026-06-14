@@ -28,7 +28,7 @@ class Mpesa extends Payment
      */
     public function getImage()
     {
-        return url('images/mpesa.svg');
+        return bagisto_asset('images/mpesa.png');
     }
 
     /**
