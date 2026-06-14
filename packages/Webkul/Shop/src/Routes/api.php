@@ -93,6 +93,8 @@ Route::group(['prefix' => 'api'], function () {
 
         Route::post('payment-methods', 'storePaymentMethod')->name('shop.checkout.onepage.payment_methods.store');
 
+        Route::post('notes', 'storeNotes')->name('shop.checkout.onepage.notes.store');
+
         Route::post('orders', 'storeOrder')->name('shop.checkout.onepage.orders.store');
     });
 

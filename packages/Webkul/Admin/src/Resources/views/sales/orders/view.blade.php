@@ -595,6 +595,24 @@
             <div class="flex w-[360px] max-w-full flex-col gap-2 max-sm:w-full">
                 {!! view_render_event('bagisto.admin.sales.order.right_component.before', ['order' => $order]) !!}
 
+                @if ($order->notes)
+                    <!-- Customer Notes -->
+                    <x-admin::accordion>
+                        <x-slot:header>
+                            <p class="p-2.5 text-base font-semibold text-red-600 dark:text-red-400 flex items-center gap-1.5 font-bold">
+                                <span class="icon-notification text-xl"></span>
+                                @lang('Customer Note')
+                            </p>
+                        </x-slot>
+
+                        <x-slot:content>
+                            <div class="bg-amber-50 dark:bg-amber-950/20 border border-amber-300 dark:border-amber-900 rounded-lg p-3 text-sm text-gray-800 dark:text-gray-200 whitespace-pre-wrap leading-relaxed">
+                                {{ $order->notes }}
+                            </div>
+                        </x-slot>
+                    </x-admin::accordion>
+                @endif
+
                 <!-- Customer and address information -->
                 <x-admin::accordion>
                     <x-slot:header>

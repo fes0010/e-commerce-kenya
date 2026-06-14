@@ -73,6 +73,7 @@ class OrderResource extends JsonResource
             $this->mergeWhen($this->haveStockableItems(), $shippingInformation),
             'payment' => (new OrderPaymentResource($this->payment))->jsonSerialize(),
             'items' => OrderItemResource::collection($this->items)->jsonSerialize(),
+            'notes' => $this->notes,
         ];
     }
 }

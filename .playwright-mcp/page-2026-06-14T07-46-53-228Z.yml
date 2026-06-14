@@ -1,0 +1,197 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - generic: 
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - generic [ref=e8]:
+              - generic [ref=e10] [cursor=pointer]: 
+              - text:  
+            - link "Bagisto" [ref=e11] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop
+              - img "E-Commerce Kenya" [ref=e12]
+          - generic [ref=e14]:
+            - link "Compare" [ref=e15] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop/compare
+              - generic [ref=e16]: 
+            - generic [ref=e17]:
+              - button "Shopping Cart" [ref=e20] [cursor=pointer]: 
+              - text: 
+            - generic [ref=e24] [cursor=pointer]: 
+            - text: 
+        - generic [ref=e25]:
+          - generic [ref=e26]: Search
+          - generic [ref=e27]:
+            - generic: 
+            - textbox "Search products here" [ref=e28]
+            - generic "Search" [ref=e29]: 
+    - main [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e33]:
+          - generic [ref=e34] [cursor=pointer]:
+            - img "Newborn Essentials" [ref=e36]
+            - img "Cute Baby Clothing" [ref=e38]
+            - generic [ref=e39]:
+              - img "Playtime & Toys"
+            - generic [ref=e41]:
+              - img "Adorable Rompers & Outfits"
+            - generic [ref=e43]:
+              - img "Premium Cribs & Bedding"
+            - generic [ref=e45]:
+              - img "Comfort Feeding & Care"
+          - button "shop::components.carousel.previous" [ref=e47]: 
+          - button "shop::components.carousel.next" [ref=e48] [cursor=pointer]: 
+          - generic [ref=e49]:
+            - button "Go to slide 1" [ref=e50] [cursor=pointer]
+            - button "Go to slide 2" [ref=e51] [cursor=pointer]
+            - button "Go to slide 3" [ref=e52] [cursor=pointer]
+            - button "Go to slide 4" [ref=e53] [cursor=pointer]
+            - button "Go to slide 5" [ref=e54] [cursor=pointer]
+            - button "Go to slide 6" [ref=e55] [cursor=pointer]
+        - generic [ref=e59]:
+          - paragraph [ref=e62]
+          - paragraph [ref=e65]
+          - paragraph [ref=e68]
+          - paragraph [ref=e71]
+          - paragraph [ref=e74]
+          - paragraph [ref=e77]
+          - paragraph [ref=e80]
+          - paragraph [ref=e83]
+        - heading "Get UPTO 40% OFF on your 1st order SHOP NOW" [level=1] [ref=e86]
+        - generic [ref=e88]:
+          - heading [level=3] [ref=e90]
+          - generic [ref=e92]:
+            - generic [ref=e96]:
+              - paragraph [ref=e97]
+              - paragraph [ref=e98]
+            - generic [ref=e102]:
+              - paragraph [ref=e103]
+              - paragraph [ref=e104]
+            - generic [ref=e108]:
+              - paragraph [ref=e109]
+              - paragraph [ref=e110]
+            - generic [ref=e114]:
+              - paragraph [ref=e115]
+              - paragraph [ref=e116]
+          - button "Show more products" [ref=e117] [cursor=pointer]
+        - generic [ref=e119]:
+          - heading "Featured Baby Collections" [level=2] [ref=e121]
+          - generic [ref=e122]:
+            - link "Rompers & Outfits" [ref=e124] [cursor=pointer]:
+              - /url: /categories/rompers
+              - heading "Rompers & Outfits" [level=3] [ref=e125]
+            - link "Cribs & Bedding" [ref=e127] [cursor=pointer]:
+              - /url: /categories/cribs-beddings
+              - heading "Cribs & Bedding" [level=3] [ref=e128]
+            - link "Feeding & Care" [ref=e130] [cursor=pointer]:
+              - /url: /categories/baby-care
+              - heading "Feeding & Care" [level=3] [ref=e131]
+            - link "Bikes & Walkers" [ref=e133] [cursor=pointer]:
+              - /url: /categories/tricycles-bikes-walkers
+              - heading "Bikes & Walkers" [level=3] [ref=e134]
+            - link "Swings & Rockers" [ref=e136] [cursor=pointer]:
+              - /url: /categories/swings-rockers
+              - heading "Swings & Rockers" [level=3] [ref=e137]
+            - link "Diaper Bags" [ref=e139] [cursor=pointer]:
+              - /url: /categories/diaper-bags
+              - heading "Diaper Bags" [level=3] [ref=e140]
+        - generic [ref=e142]:
+          - heading [level=3] [ref=e144]
+          - generic [ref=e146]:
+            - generic [ref=e150]:
+              - paragraph [ref=e151]
+              - paragraph [ref=e152]
+            - generic [ref=e156]:
+              - paragraph [ref=e157]
+              - paragraph [ref=e158]
+            - generic [ref=e162]:
+              - paragraph [ref=e163]
+              - paragraph [ref=e164]
+            - generic [ref=e168]:
+              - paragraph [ref=e169]
+              - paragraph [ref=e170]
+          - button "Show more products" [ref=e171] [cursor=pointer]
+        - generic [ref=e176]:
+          - heading "Welcome to Nila Baby Shop!" [level=2] [ref=e177]
+          - paragraph [ref=e178]: Your one-stop destination for all newborn essentials, adorable baby clothing, premium nursery cribs, toys, and baby care accessories. We provide high-quality, safe, and comfortable products for your little bundles of joy.
+          - link "Shop Now" [ref=e179] [cursor=pointer]:
+            - /url: /categories/clothing
+            - button "Shop Now" [ref=e180]
+        - generic [ref=e182]:
+          - heading "Comfort & Safety Favorites" [level=2] [ref=e184]
+          - generic [ref=e186]:
+            - generic [ref=e187]:
+              - link [ref=e188] [cursor=pointer]:
+                - /url: /categories/nests-bassinets
+              - heading "Nests & Bassinets" [level=3] [ref=e189]:
+                - link "Nests & Bassinets" [ref=e190] [cursor=pointer]:
+                  - /url: /categories/nests-bassinets
+              - link:
+                - /url: /categories/nests-bassinets
+            - generic [ref=e191]:
+              - link [ref=e192] [cursor=pointer]:
+                - /url: /categories/swings-rockers
+              - heading "Swings & Rockers" [level=3] [ref=e193]:
+                - link "Swings & Rockers" [ref=e194] [cursor=pointer]:
+                  - /url: /categories/swings-rockers
+              - link:
+                - /url: /categories/swings-rockers
+        - generic [ref=e196]:
+          - heading [level=3] [ref=e198]
+          - generic [ref=e200]:
+            - generic [ref=e204]:
+              - paragraph [ref=e205]
+              - paragraph [ref=e206]
+            - generic [ref=e210]:
+              - paragraph [ref=e211]
+              - paragraph [ref=e212]
+            - generic [ref=e216]:
+              - paragraph [ref=e217]
+              - paragraph [ref=e218]
+            - generic [ref=e222]:
+              - paragraph [ref=e223]
+              - paragraph [ref=e224]
+          - button "Show more products" [ref=e225] [cursor=pointer]
+        - generic [ref=e230]:
+          - heading "Premium Strollers & Travel Systems" [level=2] [ref=e231]
+          - paragraph [ref=e232]: Explore our premium selection of KikkaBoo multi-functional strollers and travel systems, designed to ensure maximum safety, comfort, and convenience for your baby on every journey.
+          - link "Explore Travel Gear" [ref=e233] [cursor=pointer]:
+            - /url: /categories/baby-carriers
+            - button "Explore Travel Gear" [ref=e234]
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - text: 
+        - generic [ref=e238]:
+          - paragraph [ref=e239]: Free Shipping
+          - paragraph [ref=e240]: Enjoy free shipping on all orders
+      - generic [ref=e241]:
+        - text: 
+        - generic [ref=e242]:
+          - paragraph [ref=e243]: Product Replace
+          - paragraph [ref=e244]: Easy Product Replacement Available!
+      - generic [ref=e245]:
+        - text: 
+        - generic [ref=e246]:
+          - paragraph [ref=e247]: Emi Available
+          - paragraph [ref=e248]: No cost EMI available on all major credit cards
+      - generic [ref=e249]:
+        - text: 
+        - generic [ref=e250]:
+          - paragraph [ref=e251]: 24/7 Support
+          - paragraph [ref=e252]: Dedicated 24/7 support via chat and email
+    - contentinfo [ref=e253]:
+      - generic [ref=e254]:
+        - button "Footer Content Toggle accordion" [ref=e257] [cursor=pointer]:
+          - text: Footer Content
+          - button "Toggle accordion" [ref=e258]: 
+        - generic [ref=e259]:
+          - heading "Get Ready for our Fun Newsletter!" [level=2] [ref=e260]
+          - paragraph [ref=e261]: Subscribe to stay in touch.
+          - generic [ref=e264]:
+            - textbox "Email" [ref=e265]:
+              - /placeholder: email@example.com
+            - button "Subscribe" [ref=e266] [cursor=pointer]
+      - paragraph [ref=e268]: © Copyright 2026. All rights reserved.

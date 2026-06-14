@@ -1,0 +1,15 @@
+- generic [active]:
+  - link "Skip to main content" [ref=e1] [cursor=pointer]:
+    - /url: "#main"
+  - generic:
+    - generic: 
+    - main:
+      - generic [ref=e3]:
+        - generic [ref=e4]:
+          - generic [ref=e5]: "500"
+          - generic [ref=e6]: "500"
+        - generic [ref=e7]:
+          - heading "500 Internal Server Error" [level=1] [ref=e8]
+          - paragraph [ref=e9]: Oops! Something went wrong. It seems we're having trouble loading the page you're looking for.
+          - link "Go To Home" [ref=e10] [cursor=pointer]:
+            - /url: https://ecommerce.munene.shop

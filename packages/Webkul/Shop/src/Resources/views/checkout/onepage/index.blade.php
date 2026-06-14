@@ -31,6 +31,7 @@
                         alt="{{ config('app.name') }}"
                         width="131"
                         height="29"
+                        style="max-height: 30px; width: auto; object-fit: contain;"
                     >
                 </a>
             </div>
@@ -161,6 +162,8 @@
                         selectedPaymentMethod: null,
 
                         canPlaceOrder: false,
+
+                        notes: '',
                     }
                 },
 
@@ -174,9 +177,23 @@
                             .then(response => {
                                 this.cart = response.data.data;
 
+                                if (this.cart.notes) {
+                                    this.notes = this.cart.notes;
+                                }
+
                                 this.scrollToCurrentStep();
                             })
                             .catch(error => {});
+                    },
+
+                    saveNotes() {
+                        this.$axios.post("{{ route('shop.checkout.onepage.notes.store') }}", {
+                            notes: this.notes
+                        })
+                        .then(response => {
+                            console.log('Notes saved successfully.');
+                        })
+                        .catch(error => {});
                     },
 
                     stepForward(step) {
@@ -231,7 +248,9 @@
 
                         this.isPlacingOrder = true;
 
-                        this.$axios.post('{{ route('shop.checkout.onepage.orders.store') }}')
+                        this.$axios.post('{{ route('shop.checkout.onepage.orders.store') }}', {
+                            notes: this.notes
+                        })
                             .then(response => {
                                 if (response.data.data.redirect) {
                                     window.location.href = response.data.data.redirect_url;

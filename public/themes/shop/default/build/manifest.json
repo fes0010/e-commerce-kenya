@@ -15,7 +15,7 @@
     "name": "vue"
   },
   "src/Resources/assets/css/app.css": {
-    "file": "assets/app-BG1qDNxp.css",
+    "file": "assets/app-zdoW88qS.css",
     "src": "src/Resources/assets/css/app.css",
     "isEntry": true
   },
@@ -36,7 +36,7 @@
     "src": "src/Resources/assets/images/empty-dwn-product.png"
   },
   "src/Resources/assets/images/favicon.ico": {
-    "file": "assets/favicon-Df9chQdB.ico",
+    "file": "assets/favicon-7B3g6FWy.ico",
     "src": "src/Resources/assets/images/favicon.ico"
   },
   "src/Resources/assets/images/hero-image.jpg": {
@@ -51,8 +51,12 @@
     "file": "assets/large-product-placeholder-B9xoAuKQ.webp",
     "src": "src/Resources/assets/images/large-product-placeholder.webp"
   },
+  "src/Resources/assets/images/logo.png": {
+    "file": "assets/logo-BuOQ22ty.png",
+    "src": "src/Resources/assets/images/logo.png"
+  },
   "src/Resources/assets/images/logo.svg": {
-    "file": "assets/logo-CZWQQgOF.svg",
+    "file": "assets/logo-CzlWVYLI.svg",
     "src": "src/Resources/assets/images/logo.svg"
   },
   "src/Resources/assets/images/medium-product-placeholder.webp": {
@@ -62,6 +66,10 @@
   "src/Resources/assets/images/money-transfer.png": {
     "file": "assets/money-transfer-BNjtOcYo.png",
     "src": "src/Resources/assets/images/money-transfer.png"
+  },
+  "src/Resources/assets/images/mpesa.svg": {
+    "file": "assets/mpesa-IURo6gTz.svg",
+    "src": "src/Resources/assets/images/mpesa.svg"
   },
   "src/Resources/assets/images/no-address.png": {
     "file": "assets/no-address-BHTy4apn.png",

@@ -1,0 +1,1367 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - generic: 
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - generic [ref=e8]:
+              - generic [ref=e10] [cursor=pointer]: 
+              - text:  
+            - link "Bagisto" [ref=e11] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop
+              - img "E-Commerce Kenya" [ref=e12]
+          - generic [ref=e14]:
+            - link "Compare" [ref=e15] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop/compare
+              - generic [ref=e16]: 
+            - generic [ref=e17]:
+              - button "Shopping Cart" [ref=e20] [cursor=pointer]: 
+              - text: 
+            - generic [ref=e24] [cursor=pointer]: 
+            - text: 
+        - generic [ref=e25]:
+          - generic [ref=e26]: Search
+          - generic [ref=e27]:
+            - generic: 
+            - textbox "Search products here" [ref=e28]
+            - generic "Search" [ref=e29]: 
+    - main [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e33]:
+          - generic [ref=e34] [cursor=pointer]:
+            - img "Get Ready For New Collection" [ref=e36]
+            - img "Get Ready For New Collection" [ref=e38]
+            - generic [ref=e39]:
+              - img "Get Ready For New Collection"
+            - generic [ref=e41]:
+              - img "Get Ready For New Collection"
+            - generic [ref=e43]:
+              - img "Get Ready For New Collection"
+            - generic [ref=e45]:
+              - img "Get Ready For New Collection"
+            - generic [ref=e47]:
+              - img "title"
+          - button "shop::components.carousel.previous" [ref=e49]: 
+          - button "shop::components.carousel.next" [ref=e50] [cursor=pointer]: 
+          - generic [ref=e51]:
+            - button "Go to slide 1" [ref=e52] [cursor=pointer]
+            - button "Go to slide 2" [ref=e53] [cursor=pointer]
+            - button "Go to slide 3" [ref=e54] [cursor=pointer]
+            - button "Go to slide 4" [ref=e55] [cursor=pointer]
+            - button "Go to slide 5" [ref=e56] [cursor=pointer]
+            - button "Go to slide 6" [ref=e57] [cursor=pointer]
+            - button "Go to slide 7" [ref=e58] [cursor=pointer]
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - link "Toys" [ref=e64] [cursor=pointer]:
+                - /url: toys
+                - img "Toys"
+              - link "Toys" [ref=e65] [cursor=pointer]:
+                - /url: toys
+                - paragraph [ref=e66]: Toys
+            - generic [ref=e67]:
+              - link "Health & Safety" [ref=e68] [cursor=pointer]:
+                - /url: health-safety
+                - img "Health & Safety"
+              - link "Health & Safety" [ref=e69] [cursor=pointer]:
+                - /url: health-safety
+                - paragraph [ref=e70]: Health & Safety
+            - generic [ref=e71]:
+              - link "Bath &Skin" [ref=e72] [cursor=pointer]:
+                - /url: bath-skin
+                - img "Bath &Skin"
+              - link "Bath &Skin" [ref=e73] [cursor=pointer]:
+                - /url: bath-skin
+                - paragraph [ref=e74]: Bath &Skin
+            - generic [ref=e75]:
+              - link "Diapering" [ref=e76] [cursor=pointer]:
+                - /url: diapering
+                - img "Diapering"
+              - link "Diapering" [ref=e77] [cursor=pointer]:
+                - /url: diapering
+                - paragraph [ref=e78]: Diapering
+            - generic [ref=e79]:
+              - link "Bath & Skin" [ref=e80] [cursor=pointer]:
+                - /url: bath-skin
+                - img "Bath & Skin"
+              - link "Bath & Skin" [ref=e81] [cursor=pointer]:
+                - /url: bath-skin
+                - paragraph [ref=e82]: Bath & Skin
+            - generic [ref=e83]:
+              - link "Travel" [ref=e84] [cursor=pointer]:
+                - /url: travel
+                - img "Travel"
+              - link "Travel" [ref=e85] [cursor=pointer]:
+                - /url: travel
+                - paragraph [ref=e86]: Travel
+            - generic [ref=e87]:
+              - link "Nursery,Diapering" [ref=e88] [cursor=pointer]:
+                - /url: nurserydiapering
+                - img "Nursery,Diapering"
+              - link "Nursery,Diapering" [ref=e89] [cursor=pointer]:
+                - /url: nurserydiapering
+                - paragraph [ref=e90]: Nursery,Diapering
+            - generic [ref=e91]:
+              - link "Nursery" [ref=e92] [cursor=pointer]:
+                - /url: nursery
+                - img "Nursery"
+              - link "Nursery" [ref=e93] [cursor=pointer]:
+                - /url: nursery
+                - paragraph [ref=e94]: Nursery
+            - generic [ref=e95]:
+              - link "Feeding" [ref=e96] [cursor=pointer]:
+                - /url: feeding
+                - img "Feeding"
+              - link "Feeding" [ref=e97] [cursor=pointer]:
+                - /url: feeding
+                - paragraph [ref=e98]: Feeding
+            - generic [ref=e99]:
+              - link "Travel,Feeding" [ref=e100] [cursor=pointer]:
+                - /url: travelfeeding
+                - img "Travel,Feeding"
+              - link "Travel,Feeding" [ref=e101] [cursor=pointer]:
+                - /url: travelfeeding
+                - paragraph [ref=e102]: Travel,Feeding
+            - generic [ref=e103]:
+              - link "Fashion" [ref=e104] [cursor=pointer]:
+                - /url: fashion
+                - img "Fashion"
+              - link "Fashion" [ref=e105] [cursor=pointer]:
+                - /url: fashion
+                - paragraph [ref=e106]: Fashion
+            - generic [ref=e107]:
+              - link "Fashion, Gifting" [ref=e108] [cursor=pointer]:
+                - /url: fashion-gifting
+                - img "Fashion, Gifting"
+              - link "Fashion, Gifting" [ref=e109] [cursor=pointer]:
+                - /url: fashion-gifting
+                - paragraph [ref=e110]: Fashion, Gifting
+            - generic [ref=e111]:
+              - link "Toys,Gifting" [ref=e112] [cursor=pointer]:
+                - /url: toysgifting
+                - img "Toys,Gifting"
+              - link "Toys,Gifting" [ref=e113] [cursor=pointer]:
+                - /url: toysgifting
+                - paragraph [ref=e114]: Toys,Gifting
+            - generic [ref=e115]:
+              - link "Gifting" [ref=e116] [cursor=pointer]:
+                - /url: gifting
+                - img "Gifting"
+              - link "Gifting" [ref=e117] [cursor=pointer]:
+                - /url: gifting
+                - paragraph [ref=e118]: Gifting
+            - generic [ref=e119]:
+              - link "Feeding,Health & Safety" [ref=e120] [cursor=pointer]:
+                - /url: feedinghealth-safety
+                - img "Feeding,Health & Safety"
+              - link "Feeding,Health & Safety" [ref=e121] [cursor=pointer]:
+                - /url: feedinghealth-safety
+                - paragraph [ref=e122]: Feeding,Health & Safety
+            - generic [ref=e123]:
+              - link "Uncategorized" [ref=e124] [cursor=pointer]:
+                - /url: uncategorized
+                - img "Uncategorized"
+              - link "Uncategorized" [ref=e125] [cursor=pointer]:
+                - /url: uncategorized
+                - paragraph [ref=e126]: Uncategorized
+            - generic [ref=e127]:
+              - link "School Supplies" [ref=e128] [cursor=pointer]:
+                - /url: school-supplies
+                - img "School Supplies"
+              - link "School Supplies" [ref=e129] [cursor=pointer]:
+                - /url: school-supplies
+                - paragraph [ref=e130]: School Supplies
+            - generic [ref=e131]:
+              - link "Fashion,Gifting" [ref=e132] [cursor=pointer]:
+                - /url: fashiongifting
+                - img "Fashion,Gifting"
+              - link "Fashion,Gifting" [ref=e133] [cursor=pointer]:
+                - /url: fashiongifting
+                - paragraph [ref=e134]: Fashion,Gifting
+            - generic [ref=e135]:
+              - link "Nursery, Travel,Gifting" [ref=e136] [cursor=pointer]:
+                - /url: nursery-travelgifting
+                - img "Nursery, Travel,Gifting"
+              - link "Nursery, Travel,Gifting" [ref=e137] [cursor=pointer]:
+                - /url: nursery-travelgifting
+                - paragraph [ref=e138]: Nursery, Travel,Gifting
+            - generic [ref=e139]:
+              - link "Toys,Travel" [ref=e140] [cursor=pointer]:
+                - /url: toystravel
+                - img "Toys,Travel"
+              - link "Toys,Travel" [ref=e141] [cursor=pointer]:
+                - /url: toystravel
+                - paragraph [ref=e142]: Toys,Travel
+            - generic [ref=e143]:
+              - link "Gifting,Toys" [ref=e144] [cursor=pointer]:
+                - /url: giftingtoys
+                - img "Gifting,Toys"
+              - link "Gifting,Toys" [ref=e145] [cursor=pointer]:
+                - /url: giftingtoys
+                - paragraph [ref=e146]: Gifting,Toys
+            - generic [ref=e147]:
+              - link "Gifting,Toys,Travel" [ref=e148] [cursor=pointer]:
+                - /url: giftingtoystravel
+                - img "Gifting,Toys,Travel"
+              - link "Gifting,Toys,Travel" [ref=e149] [cursor=pointer]:
+                - /url: giftingtoystravel
+                - paragraph [ref=e150]: Gifting,Toys,Travel
+            - generic [ref=e151]:
+              - link "Travel,Toys" [ref=e152] [cursor=pointer]:
+                - /url: traveltoys
+                - img "Travel,Toys"
+              - link "Travel,Toys" [ref=e153] [cursor=pointer]:
+                - /url: traveltoys
+                - paragraph [ref=e154]: Travel,Toys
+            - generic [ref=e155]:
+              - link "Nursery,Health & Safety,Feeding" [ref=e156] [cursor=pointer]:
+                - /url: nurseryhealth-safetyfeeding
+                - img "Nursery,Health & Safety,Feeding"
+              - link "Nursery,Health & Safety,Feeding" [ref=e157] [cursor=pointer]:
+                - /url: nurseryhealth-safetyfeeding
+                - paragraph [ref=e158]: Nursery,Health & Safety,Feeding
+            - generic [ref=e159]:
+              - link "Nursery,Health & Safety" [ref=e160] [cursor=pointer]:
+                - /url: nurseryhealth-safety
+                - img "Nursery,Health & Safety"
+              - link "Nursery,Health & Safety" [ref=e161] [cursor=pointer]:
+                - /url: nurseryhealth-safety
+                - paragraph [ref=e162]: Nursery,Health & Safety
+            - generic [ref=e163]:
+              - link "Toys,Gifting,School Supplies" [ref=e164] [cursor=pointer]:
+                - /url: toysgiftingschool-supplies
+                - img "Toys,Gifting,School Supplies"
+              - link "Toys,Gifting,School Supplies" [ref=e165] [cursor=pointer]:
+                - /url: toysgiftingschool-supplies
+                - paragraph [ref=e166]: Toys,Gifting,School Supplies
+            - generic [ref=e167]:
+              - link "Bath & Skin,Fashion" [ref=e168] [cursor=pointer]:
+                - /url: bath-skinfashion
+                - img "Bath & Skin,Fashion"
+              - link "Bath & Skin,Fashion" [ref=e169] [cursor=pointer]:
+                - /url: bath-skinfashion
+                - paragraph [ref=e170]: Bath & Skin,Fashion
+            - generic [ref=e171]:
+              - link "Bath & Skin,Health & Safety" [ref=e172] [cursor=pointer]:
+                - /url: bath-skinhealth-safety
+                - img "Bath & Skin,Health & Safety"
+              - link "Bath & Skin,Health & Safety" [ref=e173] [cursor=pointer]:
+                - /url: bath-skinhealth-safety
+                - paragraph [ref=e174]: Bath & Skin,Health & Safety
+            - generic [ref=e175]:
+              - link "Travel, Nursery" [ref=e176] [cursor=pointer]:
+                - /url: travel-nursery
+                - img "Travel, Nursery"
+              - link "Travel, Nursery" [ref=e177] [cursor=pointer]:
+                - /url: travel-nursery
+                - paragraph [ref=e178]: Travel, Nursery
+            - generic [ref=e179]:
+              - link "Training Pants" [ref=e180] [cursor=pointer]:
+                - /url: training-pants
+                - img "Training Pants"
+              - link "Training Pants" [ref=e181] [cursor=pointer]:
+                - /url: training-pants
+                - paragraph [ref=e182]: Training Pants
+            - generic [ref=e183]:
+              - link "Bag" [ref=e184] [cursor=pointer]:
+                - /url: bag
+                - img "Bag"
+              - link "Bag" [ref=e185] [cursor=pointer]:
+                - /url: bag
+                - paragraph [ref=e186]: Bag
+            - generic [ref=e187]:
+              - link "Carrier" [ref=e188] [cursor=pointer]:
+                - /url: carrier
+                - img "Carrier"
+              - link "Carrier" [ref=e189] [cursor=pointer]:
+                - /url: carrier
+                - paragraph [ref=e190]: Carrier
+            - generic [ref=e191]:
+              - link "Carriers" [ref=e192] [cursor=pointer]:
+                - /url: carriers
+                - img "Carriers"
+              - link "Carriers" [ref=e193] [cursor=pointer]:
+                - /url: carriers
+                - paragraph [ref=e194]: Carriers
+            - generic [ref=e195]:
+              - link "Travel, Diapering" [ref=e196] [cursor=pointer]:
+                - /url: travel-diapering
+                - img "Travel, Diapering"
+              - link "Travel, Diapering" [ref=e197] [cursor=pointer]:
+                - /url: travel-diapering
+                - paragraph [ref=e198]: Travel, Diapering
+            - generic [ref=e199]:
+              - link "Books" [ref=e200] [cursor=pointer]:
+                - /url: books
+                - img "Books"
+              - link "Books" [ref=e201] [cursor=pointer]:
+                - /url: books
+                - paragraph [ref=e202]: Books
+            - generic [ref=e203]:
+              - link "Health & Safety,Nursery" [ref=e204] [cursor=pointer]:
+                - /url: health-safetynursery
+                - img "Health & Safety,Nursery"
+              - link "Health & Safety,Nursery" [ref=e205] [cursor=pointer]:
+                - /url: health-safetynursery
+                - paragraph [ref=e206]: Health & Safety,Nursery
+            - generic [ref=e207]:
+              - link "Bath & Skin,Diapering" [ref=e208] [cursor=pointer]:
+                - /url: bath-skindiapering
+                - img "Bath & Skin,Diapering"
+              - link "Bath & Skin,Diapering" [ref=e209] [cursor=pointer]:
+                - /url: bath-skindiapering
+                - paragraph [ref=e210]: Bath & Skin,Diapering
+            - generic [ref=e211]:
+              - link "Baby Diapers" [ref=e212] [cursor=pointer]:
+                - /url: baby-diapers
+                - img "Baby Diapers"
+              - link "Baby Diapers" [ref=e213] [cursor=pointer]:
+                - /url: baby-diapers
+                - paragraph [ref=e214]: Baby Diapers
+            - generic [ref=e215]:
+              - link "Nursery,Travel" [ref=e216] [cursor=pointer]:
+                - /url: nurserytravel
+                - img "Nursery,Travel"
+              - link "Nursery,Travel" [ref=e217] [cursor=pointer]:
+                - /url: nurserytravel
+                - paragraph [ref=e218]: Nursery,Travel
+            - generic [ref=e219]:
+              - link "Fashion,Gifting,Feeding" [ref=e220] [cursor=pointer]:
+                - /url: fashiongiftingfeeding
+                - img "Fashion,Gifting,Feeding"
+              - link "Fashion,Gifting,Feeding" [ref=e221] [cursor=pointer]:
+                - /url: fashiongiftingfeeding
+                - paragraph [ref=e222]: Fashion,Gifting,Feeding
+            - generic [ref=e223]:
+              - link "School Supplies,Toys" [ref=e224] [cursor=pointer]:
+                - /url: school-suppliestoys
+                - img "School Supplies,Toys"
+              - link "School Supplies,Toys" [ref=e225] [cursor=pointer]:
+                - /url: school-suppliestoys
+                - paragraph [ref=e226]: School Supplies,Toys
+            - generic [ref=e227]:
+              - link "Nursery,Gifting" [ref=e228] [cursor=pointer]:
+                - /url: nurserygifting
+                - img "Nursery,Gifting"
+              - link "Nursery,Gifting" [ref=e229] [cursor=pointer]:
+                - /url: nurserygifting
+                - paragraph [ref=e230]: Nursery,Gifting
+            - generic [ref=e231]:
+              - link "Fashion,Bath & Skin" [ref=e232] [cursor=pointer]:
+                - /url: fashionbath-skin
+                - img "Fashion,Bath & Skin"
+              - link "Fashion,Bath & Skin" [ref=e233] [cursor=pointer]:
+                - /url: fashionbath-skin
+                - paragraph [ref=e234]: Fashion,Bath & Skin
+            - generic [ref=e235]:
+              - link "Bath & Skin,Fashion,Nursery" [ref=e236] [cursor=pointer]:
+                - /url: bath-skinfashionnursery
+                - img "Bath & Skin,Fashion,Nursery"
+              - link "Bath & Skin,Fashion,Nursery" [ref=e237] [cursor=pointer]:
+                - /url: bath-skinfashionnursery
+                - paragraph [ref=e238]: Bath & Skin,Fashion,Nursery
+            - generic [ref=e239]:
+              - link "Toys,School Supplies" [ref=e240] [cursor=pointer]:
+                - /url: toysschool-supplies
+                - img "Toys,School Supplies"
+              - link "Toys,School Supplies" [ref=e241] [cursor=pointer]:
+                - /url: toysschool-supplies
+                - paragraph [ref=e242]: Toys,School Supplies
+            - generic [ref=e243]:
+              - link "Change" [ref=e244] [cursor=pointer]:
+                - /url: change
+                - img "Change"
+              - link "Change" [ref=e245] [cursor=pointer]:
+                - /url: change
+                - paragraph [ref=e246]: Change
+            - generic [ref=e247]:
+              - link "Bath Time" [ref=e248] [cursor=pointer]:
+                - /url: bath-time
+                - img "Bath Time"
+              - link "Bath Time" [ref=e249] [cursor=pointer]:
+                - /url: bath-time
+                - paragraph [ref=e250]: Bath Time
+            - generic [ref=e251]:
+              - link "Heath & Safety" [ref=e252] [cursor=pointer]:
+                - /url: heath-safety
+                - img "Heath & Safety"
+              - link "Heath & Safety" [ref=e253] [cursor=pointer]:
+                - /url: heath-safety
+                - paragraph [ref=e254]: Heath & Safety
+            - generic [ref=e255]:
+              - link "Toys,Nursery" [ref=e256] [cursor=pointer]:
+                - /url: toysnursery
+                - img "Toys,Nursery"
+              - link "Toys,Nursery" [ref=e257] [cursor=pointer]:
+                - /url: toysnursery
+                - paragraph [ref=e258]: Toys,Nursery
+            - generic [ref=e259]:
+              - link "Toys,Books" [ref=e260] [cursor=pointer]:
+                - /url: toysbooks
+                - img "Toys,Books"
+              - link "Toys,Books" [ref=e261] [cursor=pointer]:
+                - /url: toysbooks
+                - paragraph [ref=e262]: Toys,Books
+            - generic [ref=e263]:
+              - link "Gifting,Chocolates & Candies,New Arrivals,AF10,shopify" [ref=e264] [cursor=pointer]:
+                - /url: giftingchocolates-candiesnew-arrivalsaf10shopify
+                - img "Gifting,Chocolates & Candies,New Arrivals,AF10,shopify"
+              - link "Gifting,Chocolates & Candies,New Arrivals,AF10,shopify" [ref=e265] [cursor=pointer]:
+                - /url: giftingchocolates-candiesnew-arrivalsaf10shopify
+                - paragraph [ref=e266]: Gifting,Chocolates & Candies,New Arrivals,AF10,shopify
+            - generic [ref=e267]:
+              - link "Travel, Nursery,Toys" [ref=e268] [cursor=pointer]:
+                - /url: travel-nurserytoys
+                - img "Travel, Nursery,Toys"
+              - link "Travel, Nursery,Toys" [ref=e269] [cursor=pointer]:
+                - /url: travel-nurserytoys
+                - paragraph [ref=e270]: Travel, Nursery,Toys
+            - generic [ref=e271]:
+              - link "School Supplies,Gifting," [ref=e272] [cursor=pointer]:
+                - /url: school-suppliesgifting
+                - img "School Supplies,Gifting,"
+              - link "School Supplies,Gifting," [ref=e273] [cursor=pointer]:
+                - /url: school-suppliesgifting
+                - paragraph [ref=e274]: School Supplies,Gifting,
+            - generic [ref=e275]:
+              - link "Toys,Gifting,Nursery" [ref=e276] [cursor=pointer]:
+                - /url: toysgiftingnursery
+                - img "Toys,Gifting,Nursery"
+              - link "Toys,Gifting,Nursery" [ref=e277] [cursor=pointer]:
+                - /url: toysgiftingnursery
+                - paragraph [ref=e278]: Toys,Gifting,Nursery
+            - generic [ref=e279]:
+              - link "Nursery, Travel" [ref=e280] [cursor=pointer]:
+                - /url: nursery-travel
+                - img "Nursery, Travel"
+              - link "Nursery, Travel" [ref=e281] [cursor=pointer]:
+                - /url: nursery-travel
+                - paragraph [ref=e282]: Nursery, Travel
+            - generic [ref=e283]:
+              - link "Toys,Feeding" [ref=e284] [cursor=pointer]:
+                - /url: toysfeeding
+                - img "Toys,Feeding"
+              - link "Toys,Feeding" [ref=e285] [cursor=pointer]:
+                - /url: toysfeeding
+                - paragraph [ref=e286]: Toys,Feeding
+            - generic [ref=e287]:
+              - link "Gifting,Toys,School Supplies" [ref=e288] [cursor=pointer]:
+                - /url: giftingtoysschool-supplies
+                - img "Gifting,Toys,School Supplies"
+              - link "Gifting,Toys,School Supplies" [ref=e289] [cursor=pointer]:
+                - /url: giftingtoysschool-supplies
+                - paragraph [ref=e290]: Gifting,Toys,School Supplies
+            - generic [ref=e291]:
+              - link "Health & Safety,Feeding" [ref=e292] [cursor=pointer]:
+                - /url: health-safetyfeeding
+                - img "Health & Safety,Feeding"
+              - link "Health & Safety,Feeding" [ref=e293] [cursor=pointer]:
+                - /url: health-safetyfeeding
+                - paragraph [ref=e294]: Health & Safety,Feeding
+            - generic [ref=e295]:
+              - link "Travel,Nursery" [ref=e296] [cursor=pointer]:
+                - /url: travelnursery
+                - img "Travel,Nursery"
+              - link "Travel,Nursery" [ref=e297] [cursor=pointer]:
+                - /url: travelnursery
+                - paragraph [ref=e298]: Travel,Nursery
+            - generic [ref=e299]:
+              - link "Fashion,Feeding" [ref=e300] [cursor=pointer]:
+                - /url: fashionfeeding
+                - img "Fashion,Feeding"
+              - link "Fashion,Feeding" [ref=e301] [cursor=pointer]:
+                - /url: fashionfeeding
+                - paragraph [ref=e302]: Fashion,Feeding
+            - generic [ref=e303]:
+              - link "Feeding,School Supplies" [ref=e304] [cursor=pointer]:
+                - /url: feedingschool-supplies
+                - img "Feeding,School Supplies"
+              - link "Feeding,School Supplies" [ref=e305] [cursor=pointer]:
+                - /url: feedingschool-supplies
+                - paragraph [ref=e306]: Feeding,School Supplies
+            - generic [ref=e307]:
+              - link "Feeding,School Supplies,Diapering" [ref=e308] [cursor=pointer]:
+                - /url: feedingschool-suppliesdiapering
+                - img "Feeding,School Supplies,Diapering"
+              - link "Feeding,School Supplies,Diapering" [ref=e309] [cursor=pointer]:
+                - /url: feedingschool-suppliesdiapering
+                - paragraph [ref=e310]: Feeding,School Supplies,Diapering
+            - generic [ref=e311]:
+              - link "Feeding,Travel" [ref=e312] [cursor=pointer]:
+                - /url: feedingtravel
+                - img "Feeding,Travel"
+              - link "Feeding,Travel" [ref=e313] [cursor=pointer]:
+                - /url: feedingtravel
+                - paragraph [ref=e314]: Feeding,Travel
+            - generic [ref=e315]:
+              - link "Diapering,Travel" [ref=e316] [cursor=pointer]:
+                - /url: diaperingtravel
+                - img "Diapering,Travel"
+              - link "Diapering,Travel" [ref=e317] [cursor=pointer]:
+                - /url: diaperingtravel
+                - paragraph [ref=e318]: Diapering,Travel
+            - generic [ref=e319]:
+              - link "Gifting,Fashion" [ref=e320] [cursor=pointer]:
+                - /url: giftingfashion
+                - img "Gifting,Fashion"
+              - link "Gifting,Fashion" [ref=e321] [cursor=pointer]:
+                - /url: giftingfashion
+                - paragraph [ref=e322]: Gifting,Fashion
+            - generic [ref=e323]:
+              - link "Travel,Toys,Gifting" [ref=e324] [cursor=pointer]:
+                - /url: traveltoysgifting
+                - img "Travel,Toys,Gifting"
+              - link "Travel,Toys,Gifting" [ref=e325] [cursor=pointer]:
+                - /url: traveltoysgifting
+                - paragraph [ref=e326]: Travel,Toys,Gifting
+            - generic [ref=e327]:
+              - link "Toys,Fashion" [ref=e328] [cursor=pointer]:
+                - /url: toysfashion
+                - img "Toys,Fashion"
+              - link "Toys,Fashion" [ref=e329] [cursor=pointer]:
+                - /url: toysfashion
+                - paragraph [ref=e330]: Toys,Fashion
+            - generic [ref=e331]:
+              - link "School Supplies,Gifting" [ref=e332] [cursor=pointer]:
+                - /url: school-suppliesgifting
+                - img "School Supplies,Gifting"
+              - link "School Supplies,Gifting" [ref=e333] [cursor=pointer]:
+                - /url: school-suppliesgifting
+                - paragraph [ref=e334]: School Supplies,Gifting
+            - generic [ref=e335]:
+              - link "School Supplies,Books" [ref=e336] [cursor=pointer]:
+                - /url: school-suppliesbooks
+                - img "School Supplies,Books"
+              - link "School Supplies,Books" [ref=e337] [cursor=pointer]:
+                - /url: school-suppliesbooks
+                - paragraph [ref=e338]: School Supplies,Books
+            - generic [ref=e339]:
+              - link "School Suppies" [ref=e340] [cursor=pointer]:
+                - /url: school-suppies
+                - img "School Suppies"
+              - link "School Suppies" [ref=e341] [cursor=pointer]:
+                - /url: school-suppies
+                - paragraph [ref=e342]: School Suppies
+            - generic [ref=e343]:
+              - link "Gifting,School Supplies,Toys" [ref=e344] [cursor=pointer]:
+                - /url: giftingschool-suppliestoys
+                - img "Gifting,School Supplies,Toys"
+              - link "Gifting,School Supplies,Toys" [ref=e345] [cursor=pointer]:
+                - /url: giftingschool-suppliestoys
+                - paragraph [ref=e346]: Gifting,School Supplies,Toys
+            - generic [ref=e347]:
+              - link "Gifting,Books,Toys" [ref=e348] [cursor=pointer]:
+                - /url: giftingbookstoys
+                - img "Gifting,Books,Toys"
+              - link "Gifting,Books,Toys" [ref=e349] [cursor=pointer]:
+                - /url: giftingbookstoys
+                - paragraph [ref=e350]: Gifting,Books,Toys
+            - generic [ref=e351]:
+              - link "Toys,Gifting,Fashion" [ref=e352] [cursor=pointer]:
+                - /url: toysgiftingfashion
+                - img "Toys,Gifting,Fashion"
+              - link "Toys,Gifting,Fashion" [ref=e353] [cursor=pointer]:
+                - /url: toysgiftingfashion
+                - paragraph [ref=e354]: Toys,Gifting,Fashion
+            - generic [ref=e355]:
+              - link "Fashion,Gifting,Toys" [ref=e356] [cursor=pointer]:
+                - /url: fashiongiftingtoys
+                - img "Fashion,Gifting,Toys"
+              - link "Fashion,Gifting,Toys" [ref=e357] [cursor=pointer]:
+                - /url: fashiongiftingtoys
+                - paragraph [ref=e358]: Fashion,Gifting,Toys
+            - generic [ref=e359]:
+              - link "Toys,Schhol, Supplies" [ref=e360] [cursor=pointer]:
+                - /url: toysschhol-supplies
+                - img "Toys,Schhol, Supplies"
+              - link "Toys,Schhol, Supplies" [ref=e361] [cursor=pointer]:
+                - /url: toysschhol-supplies
+                - paragraph [ref=e362]: Toys,Schhol, Supplies
+            - generic [ref=e363]:
+              - link "Fashion,Toys" [ref=e364] [cursor=pointer]:
+                - /url: fashiontoys
+                - img "Fashion,Toys"
+              - link "Fashion,Toys" [ref=e365] [cursor=pointer]:
+                - /url: fashiontoys
+                - paragraph [ref=e366]: Fashion,Toys
+            - generic [ref=e367]:
+              - link "Feeding, Gifting" [ref=e368] [cursor=pointer]:
+                - /url: feeding-gifting
+                - img "Feeding, Gifting"
+              - link "Feeding, Gifting" [ref=e369] [cursor=pointer]:
+                - /url: feeding-gifting
+                - paragraph [ref=e370]: Feeding, Gifting
+            - generic [ref=e371]:
+              - link "Bath & Skin, Nursery" [ref=e372] [cursor=pointer]:
+                - /url: bath-skin-nursery
+                - img "Bath & Skin, Nursery"
+              - link "Bath & Skin, Nursery" [ref=e373] [cursor=pointer]:
+                - /url: bath-skin-nursery
+                - paragraph [ref=e374]: Bath & Skin, Nursery
+            - generic [ref=e375]:
+              - link "Bath & Skin, Health & Safety" [ref=e376] [cursor=pointer]:
+                - /url: bath-skin-health-safety
+                - img "Bath & Skin, Health & Safety"
+              - link "Bath & Skin, Health & Safety" [ref=e377] [cursor=pointer]:
+                - /url: bath-skin-health-safety
+                - paragraph [ref=e378]: Bath & Skin, Health & Safety
+            - generic [ref=e379]:
+              - link "Bath & Skin,Toys" [ref=e380] [cursor=pointer]:
+                - /url: bath-skintoys
+                - img "Bath & Skin,Toys"
+              - link "Bath & Skin,Toys" [ref=e381] [cursor=pointer]:
+                - /url: bath-skintoys
+                - paragraph [ref=e382]: Bath & Skin,Toys
+            - generic [ref=e383]:
+              - link "Nursery,Toys" [ref=e384] [cursor=pointer]:
+                - /url: nurserytoys
+                - img "Nursery,Toys"
+              - link "Nursery,Toys" [ref=e385] [cursor=pointer]:
+                - /url: nurserytoys
+                - paragraph [ref=e386]: Nursery,Toys
+            - generic [ref=e387]:
+              - link "Health & Safety, Nursery" [ref=e388] [cursor=pointer]:
+                - /url: health-safety-nursery
+                - img "Health & Safety, Nursery"
+              - link "Health & Safety, Nursery" [ref=e389] [cursor=pointer]:
+                - /url: health-safety-nursery
+                - paragraph [ref=e390]: Health & Safety, Nursery
+            - generic [ref=e391]:
+              - link "Fashion, Gifting,Toys" [ref=e392] [cursor=pointer]:
+                - /url: fashion-giftingtoys
+                - img "Fashion, Gifting,Toys"
+              - link "Fashion, Gifting,Toys" [ref=e393] [cursor=pointer]:
+                - /url: fashion-giftingtoys
+                - paragraph [ref=e394]: Fashion, Gifting,Toys
+            - generic [ref=e395]:
+              - link "Nursery,Toys,Gifting" [ref=e396] [cursor=pointer]:
+                - /url: nurserytoysgifting
+                - img "Nursery,Toys,Gifting"
+              - link "Nursery,Toys,Gifting" [ref=e397] [cursor=pointer]:
+                - /url: nurserytoysgifting
+                - paragraph [ref=e398]: Nursery,Toys,Gifting
+            - generic [ref=e399]:
+              - link "Gifting,Nursery" [ref=e400] [cursor=pointer]:
+                - /url: giftingnursery
+                - img "Gifting,Nursery"
+              - link "Gifting,Nursery" [ref=e401] [cursor=pointer]:
+                - /url: giftingnursery
+                - paragraph [ref=e402]: Gifting,Nursery
+            - generic [ref=e403]:
+              - link "Toys, Gifting" [ref=e404] [cursor=pointer]:
+                - /url: toys-gifting
+                - img "Toys, Gifting"
+              - link "Toys, Gifting" [ref=e405] [cursor=pointer]:
+                - /url: toys-gifting
+                - paragraph [ref=e406]: Toys, Gifting
+            - generic [ref=e407]:
+              - link "Diapering, Travel" [ref=e408] [cursor=pointer]:
+                - /url: diapering-travel
+                - img "Diapering, Travel"
+              - link "Diapering, Travel" [ref=e409] [cursor=pointer]:
+                - /url: diapering-travel
+                - paragraph [ref=e410]: Diapering, Travel
+            - generic [ref=e411]:
+              - link "Toys, Travel" [ref=e412] [cursor=pointer]:
+                - /url: toys-travel
+                - img "Toys, Travel"
+              - link "Toys, Travel" [ref=e413] [cursor=pointer]:
+                - /url: toys-travel
+                - paragraph [ref=e414]: Toys, Travel
+            - generic [ref=e415]:
+              - link "Toys, School Supplies" [ref=e416] [cursor=pointer]:
+                - /url: toys-school-supplies
+                - img "Toys, School Supplies"
+              - link "Toys, School Supplies" [ref=e417] [cursor=pointer]:
+                - /url: toys-school-supplies
+                - paragraph [ref=e418]: Toys, School Supplies
+            - generic [ref=e419]:
+              - link "Toys, Books" [ref=e420] [cursor=pointer]:
+                - /url: toys-books
+                - img "Toys, Books"
+              - link "Toys, Books" [ref=e421] [cursor=pointer]:
+                - /url: toys-books
+                - paragraph [ref=e422]: Toys, Books
+            - generic [ref=e423]:
+              - link "Health & Safety, Toys" [ref=e424] [cursor=pointer]:
+                - /url: health-safety-toys
+                - img "Health & Safety, Toys"
+              - link "Health & Safety, Toys" [ref=e425] [cursor=pointer]:
+                - /url: health-safety-toys
+                - paragraph [ref=e426]: Health & Safety, Toys
+            - generic [ref=e427]:
+              - link "School Supplies, Feeding" [ref=e428] [cursor=pointer]:
+                - /url: school-supplies-feeding
+                - img "School Supplies, Feeding"
+              - link "School Supplies, Feeding" [ref=e429] [cursor=pointer]:
+                - /url: school-supplies-feeding
+                - paragraph [ref=e430]: School Supplies, Feeding
+            - generic [ref=e431]:
+              - link "Health & Safety, Bath & Skin" [ref=e432] [cursor=pointer]:
+                - /url: health-safety-bath-skin
+                - img "Health & Safety, Bath & Skin"
+              - link "Health & Safety, Bath & Skin" [ref=e433] [cursor=pointer]:
+                - /url: health-safety-bath-skin
+                - paragraph [ref=e434]: Health & Safety, Bath & Skin
+            - generic [ref=e435]:
+              - link "School Supplies, Travel" [ref=e436] [cursor=pointer]:
+                - /url: school-supplies-travel
+                - img "School Supplies, Travel"
+              - link "School Supplies, Travel" [ref=e437] [cursor=pointer]:
+                - /url: school-supplies-travel
+                - paragraph [ref=e438]: School Supplies, Travel
+            - generic [ref=e439]:
+              - link "Gift Cards" [ref=e440] [cursor=pointer]:
+                - /url: gift-cards
+                - img "Gift Cards"
+              - link "Gift Cards" [ref=e441] [cursor=pointer]:
+                - /url: gift-cards
+                - paragraph [ref=e442]: Gift Cards
+          - button "shop::components.carousel.previous" [ref=e443] [cursor=pointer]: 
+          - button "shop::components.carousel.next" [ref=e444] [cursor=pointer]: 
+        - heading "Get UPTO 40% OFF on your 1st order SHOP NOW" [level=1] [ref=e447]
+        - generic [ref=e449]:
+          - generic [ref=e450]:
+            - heading "New Arrivals" [level=2] [ref=e451]
+            - generic [ref=e452]:
+              - link "View All " [ref=e453] [cursor=pointer]:
+                - /url: https://ecommerce.munene.shop/search?new=1&sort=created_at-desc&limit=10
+                - paragraph [ref=e454]:
+                  - text: View All
+                  - generic [ref=e455]: 
+              - text:  
+          - generic [ref=e456]:
+            - generic [ref=e457]:
+              - generic [ref=e458]:
+                - link "Tommee Tippee Fliptop Superstar Flip Top Sportee Cup" [ref=e459] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sportee-sipper-water-bottle-with-handle-pack-of-2-purple-raspberry-age-12-months-above
+                  - img "Tommee Tippee Fliptop Superstar Flip Top Sportee Cup"
+                - generic:
+                  - paragraph [ref=e461]: New
+                  - generic:  
+              - generic [ref=e462]:
+                - paragraph [ref=e463]: Tommee Tippee Fliptop Superstar Flip Top Sportee Cup
+                - paragraph [ref=e465]: Ksh 2,530.00
+                - generic [ref=e466]:
+                  - button "Add To Cart" [ref=e467] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e468] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e469] [cursor=pointer]: 
+            - generic [ref=e470]:
+              - generic [ref=e471]:
+                - link "Tommee Tippee Insulated Sippee Cup with Handle Pack of 2 Green Teal Age- 12 Months & Above" [ref=e472] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sippee-cup-with-handle-pack-of-2-green-teal-age-12-months-above
+                  - img "Tommee Tippee Insulated Sippee Cup with Handle Pack of 2 Green Teal Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e474]: New
+                  - generic:  
+              - generic [ref=e475]:
+                - paragraph [ref=e476]: Tommee Tippee Insulated Sippee Cup with Handle Pack of 2 Green Teal Age- 12 Months & Above
+                - paragraph [ref=e478]: Ksh 2,530.00
+                - generic [ref=e479]:
+                  - button "Add To Cart" [ref=e480] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e481] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e482] [cursor=pointer]: 
+            - generic [ref=e483]:
+              - generic [ref=e484]:
+                - link "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Blue Orange Age- 12 Months & Above" [ref=e485] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sportee-sipper-water-bottle-with-handle-pack-of-2-blue-orange-age-12-months-above
+                  - img "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Blue Orange Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e487]: New
+                  - generic:  
+              - generic [ref=e488]:
+                - paragraph [ref=e489]: Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Blue Orange Age- 12 Months & Above
+                - paragraph [ref=e491]: Ksh 2,530.00
+                - generic [ref=e492]:
+                  - button "Add To Cart" [ref=e493] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e494] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e495] [cursor=pointer]: 
+            - generic [ref=e496]:
+              - generic [ref=e497]:
+                - link "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Pink Mint Age- 12 Months & Above" [ref=e498] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sportee-sipper-water-bottle-with-handle-pack-of-2-pink-mint-age-12-months-above
+                  - img "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Pink Mint Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e500]: New
+                  - generic:  
+              - generic [ref=e501]:
+                - paragraph [ref=e502]: Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Pink Mint Age- 12 Months & Above
+                - paragraph [ref=e504]: Ksh 2,530.00
+                - generic [ref=e505]:
+                  - button "Add To Cart" [ref=e506] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e507] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e508] [cursor=pointer]: 
+            - generic [ref=e509]:
+              - generic [ref=e510]:
+                - link "Summer Deluxe Baby Bather Dashed Dots Multicolor Age- Newborn & Above" [ref=e511] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/summer-deluxe-baby-bather-dashed-dots-multicolor-age-newborn-above
+                  - img "Summer Deluxe Baby Bather Dashed Dots Multicolor Age- Newborn & Above"
+                - generic:
+                  - paragraph [ref=e513]: New
+                  - generic:  
+              - generic [ref=e514]:
+                - paragraph [ref=e515]: Summer Deluxe Baby Bather Dashed Dots Multicolor Age- Newborn & Above
+                - paragraph [ref=e517]: Ksh 4,820.00
+                - generic [ref=e518]:
+                  - button "Add To Cart" [ref=e519] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e520] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e521] [cursor=pointer]: 
+            - generic [ref=e522]:
+              - generic [ref=e523]:
+                - link "Thomas & Friends Stacker Train Blue Age- 12 Months & Above" [ref=e524] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/thomas-friends-stacker-train-blue-age-12-months-above
+                  - img "Thomas & Friends Stacker Train Blue Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e526]: New
+                  - generic:  
+              - generic [ref=e527]:
+                - paragraph [ref=e528]: Thomas & Friends Stacker Train Blue Age- 12 Months & Above
+                - paragraph [ref=e530]: Ksh 6,190.00
+                - generic [ref=e531]:
+                  - button "Add To Cart" [ref=e532] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e533] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e534] [cursor=pointer]: 
+            - generic [ref=e535]:
+              - generic [ref=e536]:
+                - link "Tomy My First Discovery Aquadoodle Multicolor Age- 18 Months & Above" [ref=e537] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tomy-my-first-discovery-aquadoodle-multicolor-age-18-months-above
+                  - img "Tomy My First Discovery Aquadoodle Multicolor Age- 18 Months & Above"
+                - generic:
+                  - paragraph [ref=e539]: New
+                  - generic:  
+              - generic [ref=e540]:
+                - paragraph [ref=e541]: Tomy My First Discovery Aquadoodle Multicolor Age- 18 Months & Above
+                - paragraph [ref=e543]: Ksh 4,240.00
+                - generic [ref=e544]:
+                  - button "Add To Cart" [ref=e545] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e546] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e547] [cursor=pointer]: 
+            - generic [ref=e548]:
+              - generic [ref=e549]:
+                - link "Tomy Fountain Rocket Multicolor Age- 12 Months & Above" [ref=e550] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tomy-fountain-rocket-multicolor-age-12-months-above
+                  - img "Tomy Fountain Rocket Multicolor Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e552]: New
+                  - generic:  
+              - generic [ref=e553]:
+                - paragraph [ref=e554]: Tomy Fountain Rocket Multicolor Age- 12 Months & Above
+                - paragraph [ref=e556]: Ksh 3,280.00
+                - generic [ref=e557]:
+                  - button "Add To Cart" [ref=e558] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e559] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e560] [cursor=pointer]: 
+            - generic [ref=e561]:
+              - generic [ref=e562]:
+                - link "Tyrannosaurus Drip Book and CD" [ref=e563] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tyrannosaurus-drip-book-and-cd
+                  - img "Tyrannosaurus Drip Book and CD"
+                - generic:
+                  - paragraph [ref=e565]: New
+                  - generic:  
+              - generic [ref=e566]:
+                - paragraph [ref=e567]: Tyrannosaurus Drip Book and CD
+                - paragraph [ref=e569]: Ksh 2,050.00
+                - generic [ref=e570]:
+                  - button "Add To Cart" [ref=e571] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e572] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e573] [cursor=pointer]: 
+            - generic [ref=e574]:
+              - generic [ref=e575]:
+                - link "Funskool Giggles 3 In 1 Deluxe Playgym Multicolor Age- 2 Months & Above" [ref=e576] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/funskool-giggles-3-in-1-deluxe-playgym-multicolor-age-2-months-above
+                  - img "Funskool Giggles 3 In 1 Deluxe Playgym Multicolor Age- 2 Months & Above"
+                - generic:
+                  - paragraph [ref=e578]: New
+                  - generic:  
+              - generic [ref=e579]:
+                - paragraph [ref=e580]: Funskool Giggles 3 In 1 Deluxe Playgym Multicolor Age- 2 Months & Above
+                - paragraph [ref=e582]: Ksh 6,195.00
+                - generic [ref=e583]:
+                  - button "Add To Cart" [ref=e584] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e585] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e586] [cursor=pointer]: 
+            - generic [ref=e587]:
+              - generic [ref=e588]:
+                - link "Funskool Giggles Stack a Ring Multicolor Age- 6 Months & Above" [ref=e589] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/funskool-giggles-stack-a-ring-multicolor-age-6-months-above
+                  - img "Funskool Giggles Stack a Ring Multicolor Age- 6 Months & Above"
+                - generic:
+                  - paragraph [ref=e591]: New
+                  - generic:  
+              - generic [ref=e592]:
+                - paragraph [ref=e593]: Funskool Giggles Stack a Ring Multicolor Age- 6 Months & Above
+                - paragraph [ref=e595]: Ksh 895.00
+                - generic [ref=e596]:
+                  - button "Add To Cart" [ref=e597] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e598] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e599] [cursor=pointer]: 
+            - generic [ref=e600]:
+              - generic [ref=e601]:
+                - link "Acool Toys Bulldozer Wooden Construction Vehicle- Red Age- 18 Months & Above" [ref=e602] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/acool-toys-bulldozer-wooden-toy-car-assembly-red-age-18-months-above
+                  - img "Acool Toys Bulldozer Wooden Construction Vehicle- Red Age- 18 Months & Above"
+                - generic:
+                  - paragraph [ref=e604]: New
+                  - generic:  
+              - generic [ref=e605]:
+                - paragraph [ref=e606]: Acool Toys Bulldozer Wooden Construction Vehicle- Red Age- 18 Months & Above
+                - paragraph [ref=e608]: Ksh 1,100.00
+                - generic [ref=e609]:
+                  - button "Add To Cart" [ref=e610] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e611] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e612] [cursor=pointer]: 
+        - generic [ref=e614]:
+          - heading "The game with our new additions!" [level=2] [ref=e616]
+          - generic [ref=e617]:
+            - link [ref=e619] [cursor=pointer]:
+              - /url: "#electronics"
+            - link [ref=e621] [cursor=pointer]:
+              - /url: "#mens"
+            - link [ref=e623] [cursor=pointer]:
+              - /url: "#womens"
+            - link [ref=e625] [cursor=pointer]:
+              - /url: "#formal-wear-men"
+            - link [ref=e627] [cursor=pointer]:
+              - /url: "#formal-wear-female"
+            - link [ref=e629] [cursor=pointer]:
+              - /url: "#wellness"
+        - generic [ref=e631]:
+          - generic [ref=e632]:
+            - heading "All Featured Products" [level=2] [ref=e633]
+            - generic [ref=e634]:
+              - link "View All " [ref=e635] [cursor=pointer]:
+                - /url: https://ecommerce.munene.shop/search?sort=created_at-desc&limit=10&featured=1
+                - paragraph [ref=e636]:
+                  - text: View All
+                  - generic [ref=e637]: 
+              - text:  
+          - generic [ref=e638]:
+            - generic [ref=e639]:
+              - generic [ref=e640]:
+                - link "Jada - Batman Justice League Batmobile 1:24 Multicolor Age-3 Years & Above" [ref=e641] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/jada-batman-justice-league-batmobile-1-24-multicolor-age-3-years-above
+                  - img "Jada - Batman Justice League Batmobile 1:24 Multicolor Age-3 Years & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e643]:
+                - paragraph [ref=e644]: Jada - Batman Justice League Batmobile 1:24 Multicolor Age-3 Years & Above
+                - paragraph [ref=e646]: Ksh 7,800.00
+                - generic [ref=e647]:
+                  - button "Add To Cart" [ref=e648] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e649] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e650] [cursor=pointer]: 
+            - generic [ref=e651]:
+              - generic [ref=e652]:
+                - link "Munchkin Secure Grip Bath Caddy Basket White/ Blue Age- Newborn & Above" [ref=e653] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/munchkin-secure-grip-bath-caddy-basket-white-blue-age-newborn-above
+                  - img "Munchkin Secure Grip Bath Caddy Basket White/ Blue Age- Newborn & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e655]:
+                - paragraph [ref=e656]: Munchkin Secure Grip Bath Caddy Basket White/ Blue Age- Newborn & Above
+                - paragraph [ref=e658]: Ksh 4,910.00
+                - generic [ref=e659]:
+                  - button "Add To Cart" [ref=e660] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e661] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e662] [cursor=pointer]: 
+            - generic [ref=e663]:
+              - generic [ref=e664]:
+                - link "Carter's Infants & Toddler Boys 2-Piece Rashguard Swim Wear Set Multicolor 1N426910/2N426910" [ref=e665] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/carters-infants-boys-2-piece-rashguard-swim-wear-set-multicolor-1n426910
+                  - img "Carter's Infants & Toddler Boys 2-Piece Rashguard Swim Wear Set Multicolor 1N426910/2N426910"
+                - generic:
+                  - generic:  
+              - generic [ref=e667]:
+                - paragraph [ref=e668]: Carter's Infants & Toddler Boys 2-Piece Rashguard Swim Wear Set Multicolor 1N426910/2N426910
+                - paragraph [ref=e670]: Ksh 870.00
+                - generic [ref=e671]:
+                  - button "Add To Cart" [ref=e672] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e673] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e674] [cursor=pointer]: 
+            - generic [ref=e675]:
+              - generic [ref=e676]:
+                - link "Kinderkraft Sofi Plus 4-in-1 Cot/Crib Grey Age- Newborn upto 18 Kgs" [ref=e677] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/kinderkraft-sofi-plus-4-in-1-cot-crib-grey-age-newborn-upto-18-kgs
+                  - img "Kinderkraft Sofi Plus 4-in-1 Cot/Crib Grey Age- Newborn upto 18 Kgs"
+                - generic:
+                  - generic:  
+              - generic [ref=e679]:
+                - paragraph [ref=e680]: Kinderkraft Sofi Plus 4-in-1 Cot/Crib Grey Age- Newborn upto 18 Kgs
+                - paragraph [ref=e682]: Ksh 31,580.00
+                - generic [ref=e683]:
+                  - button "Add To Cart" [ref=e684] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e685] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e686] [cursor=pointer]: 
+            - generic [ref=e687]:
+              - generic [ref=e688]:
+                - link "Hape Rotating Music Box Multicolor Age 6 Months & Above" [ref=e689] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/hape-rotating-music-box-multicolor-age-6-months-above
+                  - img "Hape Rotating Music Box Multicolor Age 6 Months & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e691]:
+                - paragraph [ref=e692]: Hape Rotating Music Box Multicolor Age 6 Months & Above
+                - paragraph [ref=e694]: Ksh 3,450.00
+                - generic [ref=e695]:
+                  - button "Add To Cart" [ref=e696] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e697] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e698] [cursor=pointer]: 
+            - generic [ref=e699]:
+              - generic [ref=e700]:
+                - link "Disney Frozen Cotton Hand Towels 34X80 Cm Purple Age 2 Years & Above" [ref=e701] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/disney-frozen-cotton-hand-towels-34x80-cm-purple-age-2-years-above
+                  - img "Disney Frozen Cotton Hand Towels 34X80 Cm Purple Age 2 Years & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e703]:
+                - paragraph [ref=e704]: Disney Frozen Cotton Hand Towels 34X80 Cm Purple Age 2 Years & Above
+                - paragraph [ref=e706]: Ksh 1,310.00
+                - generic [ref=e707]:
+                  - button "Add To Cart" [ref=e708] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e709] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e710] [cursor=pointer]: 
+            - generic [ref=e711]:
+              - generic [ref=e712]:
+                - link "Carters Infants & Toddler Girls 2-Piece Floral Top & Chambray Short Set Multicolor/Blue 1N085810/2N085810" [ref=e713] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/carters-toddler-girls-2-piece-floral-top-chambray-short-set-multicolor-blue-2n085810
+                  - img "Carters Infants & Toddler Girls 2-Piece Floral Top & Chambray Short Set Multicolor/Blue 1N085810/2N085810"
+                - generic:
+                  - generic:  
+              - generic [ref=e715]:
+                - paragraph [ref=e716]: Carters Infants & Toddler Girls 2-Piece Floral Top & Chambray Short Set Multicolor/Blue 1N085810/2N085810
+                - paragraph [ref=e718]: Ksh 700.00
+                - generic [ref=e719]:
+                  - button "Add To Cart" [ref=e720] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e721] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e722] [cursor=pointer]: 
+            - generic [ref=e723]:
+              - generic [ref=e724]:
+                - link "Twistshake Anti-Colic Silicone Teats Large White Age- 4 Months & Above" [ref=e725] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/twistshake-anti-colic-silicone-pacifier-teats-large-white-age-4-months-above
+                  - img "Twistshake Anti-Colic Silicone Teats Large White Age- 4 Months & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e727]:
+                - paragraph [ref=e728]: Twistshake Anti-Colic Silicone Teats Large White Age- 4 Months & Above
+                - paragraph [ref=e730]: Ksh 1,610.00
+                - generic [ref=e731]:
+                  - button "Add To Cart" [ref=e732] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e733] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e734] [cursor=pointer]: 
+            - generic [ref=e735]:
+              - generic [ref=e736]:
+                - link "Acool Toys Bulldozer Wooden Construction Vehicle- Red Age- 18 Months & Above" [ref=e737] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/acool-toys-bulldozer-wooden-toy-car-assembly-red-age-18-months-above
+                  - img "Acool Toys Bulldozer Wooden Construction Vehicle- Red Age- 18 Months & Above"
+                - generic:
+                  - paragraph [ref=e739]: New
+                  - generic:  
+              - generic [ref=e740]:
+                - paragraph [ref=e741]: Acool Toys Bulldozer Wooden Construction Vehicle- Red Age- 18 Months & Above
+                - paragraph [ref=e743]: Ksh 1,100.00
+                - generic [ref=e744]:
+                  - button "Add To Cart" [ref=e745] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e746] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e747] [cursor=pointer]: 
+            - generic [ref=e748]:
+              - generic [ref=e749]:
+                - link "Acool Toys Build It, Blocks 2--Pieces Wooden Train Set With Colorful Tracks Multicolor Age- 3 Years & Above" [ref=e750] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/acool-toys-build-it-blocks-2-pieces-wooden-train-set-with-colorful-tracks-multicolor-age-3-years-above
+                  - img "Acool Toys Build It, Blocks 2--Pieces Wooden Train Set With Colorful Tracks Multicolor Age- 3 Years & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e752]:
+                - paragraph [ref=e753]: Acool Toys Build It, Blocks 2--Pieces Wooden Train Set With Colorful Tracks Multicolor Age- 3 Years & Above
+                - paragraph [ref=e755]: Ksh 4,580.00
+                - generic [ref=e756]:
+                  - button "Add To Cart" [ref=e757] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e758] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e759] [cursor=pointer]: 
+            - generic [ref=e760]:
+              - generic [ref=e761]:
+                - link "Babyzen YOYO BeSafe® ISOfix Base for YOYO Car Seat Black Age- Newborn & Above" [ref=e762] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/babyzen-yoyo-besafe®-isofix-base-for-yoyo-car-seat-black-age-newborn-above
+                  - img "Babyzen YOYO BeSafe® ISOfix Base for YOYO Car Seat Black Age- Newborn & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e764]:
+                - paragraph [ref=e765]: Babyzen YOYO BeSafe® ISOfix Base for YOYO Car Seat Black Age- Newborn & Above
+                - paragraph [ref=e767]: Ksh 66,670.00
+                - generic [ref=e768]:
+                  - button "Add To Cart" [ref=e769] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e770] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e771] [cursor=pointer]: 
+            - generic [ref=e772]:
+              - generic [ref=e773]:
+                - link "Ergobaby Embrace Heather Grey BCEMAGRY Age- Newborn up to 11.5 kg" [ref=e774] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/ergobaby-embrace-heather-grey-bcemagry-age-newborn-up-to-11-5-kg
+                  - img "Ergobaby Embrace Heather Grey BCEMAGRY Age- Newborn up to 11.5 kg"
+                - generic:
+                  - generic:  
+              - generic [ref=e776]:
+                - paragraph [ref=e777]: Ergobaby Embrace Heather Grey BCEMAGRY Age- Newborn up to 11.5 kg
+                - paragraph [ref=e779]: Ksh 24,210.00
+                - generic [ref=e780]:
+                  - button "Add To Cart" [ref=e781] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e782] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e783] [cursor=pointer]: 
+        - generic [ref=e788]:
+          - heading "Get Ready for our new Bold Collections!" [level=2] [ref=e789]
+          - paragraph [ref=e790]: Introducing Our New Bold Collections! Elevate your style with daring designs and vibrant statements. Explore striking patterns and bold colors that redefine your wardrobe. Get ready to embrace the extraordinary!
+          - link "View Collections" [ref=e791] [cursor=pointer]:
+            - /url: "#wellness"
+            - button "View Collections" [ref=e792]
+        - generic [ref=e794]:
+          - heading "The game with our new additions!" [level=2] [ref=e796]
+          - generic [ref=e798]:
+            - generic [ref=e799]:
+              - link [ref=e800] [cursor=pointer]:
+                - /url: "#active-wear"
+              - heading "Our Collections" [level=3] [ref=e801]:
+                - link "Our Collections" [ref=e802] [cursor=pointer]:
+                  - /url: "#active-wear"
+              - link:
+                - /url: "#active-wear"
+            - generic [ref=e803]:
+              - link [ref=e804] [cursor=pointer]:
+                - /url: "#active-wear-female"
+              - heading "Our Collections" [level=3] [ref=e805]:
+                - link "Our Collections" [ref=e806] [cursor=pointer]:
+                  - /url: "#active-wear-female"
+              - link:
+                - /url: "#active-wear-female"
+        - generic [ref=e808]:
+          - generic [ref=e809]:
+            - heading "All Products" [level=2] [ref=e810]
+            - generic [ref=e811]:
+              - link "View All " [ref=e812] [cursor=pointer]:
+                - /url: https://ecommerce.munene.shop/search?sort=created_at-desc&limit=10
+                - paragraph [ref=e813]:
+                  - text: View All
+                  - generic [ref=e814]: 
+              - text:  
+          - generic [ref=e815]:
+            - generic [ref=e816]:
+              - generic [ref=e817]:
+                - link "Tommee Tippee Fliptop Superstar Flip Top Sportee Cup" [ref=e818] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sportee-sipper-water-bottle-with-handle-pack-of-2-purple-raspberry-age-12-months-above
+                  - img "Tommee Tippee Fliptop Superstar Flip Top Sportee Cup"
+                - generic:
+                  - paragraph [ref=e820]: New
+                  - generic:  
+              - generic [ref=e821]:
+                - paragraph [ref=e822]: Tommee Tippee Fliptop Superstar Flip Top Sportee Cup
+                - paragraph [ref=e824]: Ksh 2,530.00
+                - generic [ref=e825]:
+                  - button "Add To Cart" [ref=e826] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e827] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e828] [cursor=pointer]: 
+            - generic [ref=e829]:
+              - generic [ref=e830]:
+                - link "Tommee Tippee Insulated Sippee Cup with Handle Pack of 2 Green Teal Age- 12 Months & Above" [ref=e831] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sippee-cup-with-handle-pack-of-2-green-teal-age-12-months-above
+                  - img "Tommee Tippee Insulated Sippee Cup with Handle Pack of 2 Green Teal Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e833]: New
+                  - generic:  
+              - generic [ref=e834]:
+                - paragraph [ref=e835]: Tommee Tippee Insulated Sippee Cup with Handle Pack of 2 Green Teal Age- 12 Months & Above
+                - paragraph [ref=e837]: Ksh 2,530.00
+                - generic [ref=e838]:
+                  - button "Add To Cart" [ref=e839] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e840] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e841] [cursor=pointer]: 
+            - generic [ref=e842]:
+              - generic [ref=e843]:
+                - link "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Blue Orange Age- 12 Months & Above" [ref=e844] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sportee-sipper-water-bottle-with-handle-pack-of-2-blue-orange-age-12-months-above
+                  - img "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Blue Orange Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e846]: New
+                  - generic:  
+              - generic [ref=e847]:
+                - paragraph [ref=e848]: Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Blue Orange Age- 12 Months & Above
+                - paragraph [ref=e850]: Ksh 2,530.00
+                - generic [ref=e851]:
+                  - button "Add To Cart" [ref=e852] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e853] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e854] [cursor=pointer]: 
+            - generic [ref=e855]:
+              - generic [ref=e856]:
+                - link "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Pink Mint Age- 12 Months & Above" [ref=e857] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tommee-tippee-insulated-sportee-sipper-water-bottle-with-handle-pack-of-2-pink-mint-age-12-months-above
+                  - img "Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Pink Mint Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e859]: New
+                  - generic:  
+              - generic [ref=e860]:
+                - paragraph [ref=e861]: Tommee Tippee Insulated Sportee Sipper/Water Bottle with Handle Pack of 2 Pink Mint Age- 12 Months & Above
+                - paragraph [ref=e863]: Ksh 2,530.00
+                - generic [ref=e864]:
+                  - button "Add To Cart" [ref=e865] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e866] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e867] [cursor=pointer]: 
+            - generic [ref=e868]:
+              - generic [ref=e869]:
+                - link "Summer Deluxe Baby Bather Dashed Dots Multicolor Age- Newborn & Above" [ref=e870] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/summer-deluxe-baby-bather-dashed-dots-multicolor-age-newborn-above
+                  - img "Summer Deluxe Baby Bather Dashed Dots Multicolor Age- Newborn & Above"
+                - generic:
+                  - paragraph [ref=e872]: New
+                  - generic:  
+              - generic [ref=e873]:
+                - paragraph [ref=e874]: Summer Deluxe Baby Bather Dashed Dots Multicolor Age- Newborn & Above
+                - paragraph [ref=e876]: Ksh 4,820.00
+                - generic [ref=e877]:
+                  - button "Add To Cart" [ref=e878] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e879] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e880] [cursor=pointer]: 
+            - generic [ref=e881]:
+              - generic [ref=e882]:
+                - link "Thomas & Friends Stacker Train Blue Age- 12 Months & Above" [ref=e883] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/thomas-friends-stacker-train-blue-age-12-months-above
+                  - img "Thomas & Friends Stacker Train Blue Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e885]: New
+                  - generic:  
+              - generic [ref=e886]:
+                - paragraph [ref=e887]: Thomas & Friends Stacker Train Blue Age- 12 Months & Above
+                - paragraph [ref=e889]: Ksh 6,190.00
+                - generic [ref=e890]:
+                  - button "Add To Cart" [ref=e891] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e892] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e893] [cursor=pointer]: 
+            - generic [ref=e894]:
+              - generic [ref=e895]:
+                - link "Tomy My First Discovery Aquadoodle Multicolor Age- 18 Months & Above" [ref=e896] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tomy-my-first-discovery-aquadoodle-multicolor-age-18-months-above
+                  - img "Tomy My First Discovery Aquadoodle Multicolor Age- 18 Months & Above"
+                - generic:
+                  - paragraph [ref=e898]: New
+                  - generic:  
+              - generic [ref=e899]:
+                - paragraph [ref=e900]: Tomy My First Discovery Aquadoodle Multicolor Age- 18 Months & Above
+                - paragraph [ref=e902]: Ksh 4,240.00
+                - generic [ref=e903]:
+                  - button "Add To Cart" [ref=e904] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e905] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e906] [cursor=pointer]: 
+            - generic [ref=e907]:
+              - generic [ref=e908]:
+                - link "Tomy Fountain Rocket Multicolor Age- 12 Months & Above" [ref=e909] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tomy-fountain-rocket-multicolor-age-12-months-above
+                  - img "Tomy Fountain Rocket Multicolor Age- 12 Months & Above"
+                - generic:
+                  - paragraph [ref=e911]: New
+                  - generic:  
+              - generic [ref=e912]:
+                - paragraph [ref=e913]: Tomy Fountain Rocket Multicolor Age- 12 Months & Above
+                - paragraph [ref=e915]: Ksh 3,280.00
+                - generic [ref=e916]:
+                  - button "Add To Cart" [ref=e917] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e918] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e919] [cursor=pointer]: 
+            - generic [ref=e920]:
+              - generic [ref=e921]:
+                - link "Tyrannosaurus Drip Book and CD" [ref=e922] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/tyrannosaurus-drip-book-and-cd
+                  - img "Tyrannosaurus Drip Book and CD"
+                - generic:
+                  - paragraph [ref=e924]: New
+                  - generic:  
+              - generic [ref=e925]:
+                - paragraph [ref=e926]: Tyrannosaurus Drip Book and CD
+                - paragraph [ref=e928]: Ksh 2,050.00
+                - generic [ref=e929]:
+                  - button "Add To Cart" [ref=e930] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e931] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e932] [cursor=pointer]: 
+            - generic [ref=e933]:
+              - generic [ref=e934]:
+                - link "Funskool Giggles 3 In 1 Deluxe Playgym Multicolor Age- 2 Months & Above" [ref=e935] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/funskool-giggles-3-in-1-deluxe-playgym-multicolor-age-2-months-above
+                  - img "Funskool Giggles 3 In 1 Deluxe Playgym Multicolor Age- 2 Months & Above"
+                - generic:
+                  - paragraph [ref=e937]: New
+                  - generic:  
+              - generic [ref=e938]:
+                - paragraph [ref=e939]: Funskool Giggles 3 In 1 Deluxe Playgym Multicolor Age- 2 Months & Above
+                - paragraph [ref=e941]: Ksh 6,195.00
+                - generic [ref=e942]:
+                  - button "Add To Cart" [ref=e943] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e944] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e945] [cursor=pointer]: 
+            - generic [ref=e946]:
+              - generic [ref=e947]:
+                - link "Funskool Giggles Stack a Ring Multicolor Age- 6 Months & Above" [ref=e948] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/funskool-giggles-stack-a-ring-multicolor-age-6-months-above
+                  - img "Funskool Giggles Stack a Ring Multicolor Age- 6 Months & Above"
+                - generic:
+                  - paragraph [ref=e950]: New
+                  - generic:  
+              - generic [ref=e951]:
+                - paragraph [ref=e952]: Funskool Giggles Stack a Ring Multicolor Age- 6 Months & Above
+                - paragraph [ref=e954]: Ksh 895.00
+                - generic [ref=e955]:
+                  - button "Add To Cart" [ref=e956] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e957] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e958] [cursor=pointer]: 
+            - generic [ref=e959]:
+              - generic [ref=e960]:
+                - link "Funskool Giggles Stacking 8 Drums Multicolor Age- 12 Months & Above" [ref=e961] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/funskool-giggles-stacking-8-drums-multicolor-age-12-months-above
+                  - img "Funskool Giggles Stacking 8 Drums Multicolor Age- 12 Months & Above"
+                - generic:
+                  - generic:  
+              - generic [ref=e963]:
+                - paragraph [ref=e964]: Funskool Giggles Stacking 8 Drums Multicolor Age- 12 Months & Above
+                - paragraph [ref=e966]: Ksh 895.00
+                - generic [ref=e967]:
+                  - button "Add To Cart" [ref=e968] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e969] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e970] [cursor=pointer]: 
+        - generic [ref=e974]:
+          - heading "Unleash Your Boldness with Our New Collection!" [level=2] [ref=e975]
+          - paragraph [ref=e976]: Our Bold Collections are here to redefine your wardrobe with fearless designs and striking, vibrant colors. From daring patterns to powerful hues, this is your chance to break away from the ordinary and step into the extraordinary.
+          - link "View Collections" [ref=e977] [cursor=pointer]:
+            - /url: "#electronics"
+            - button "View Collections" [ref=e978]
+    - generic [ref=e980]:
+      - generic [ref=e981]:
+        - text: 
+        - generic [ref=e982]:
+          - paragraph [ref=e983]: Free Shipping
+          - paragraph [ref=e984]: Enjoy free shipping on all orders
+      - generic [ref=e985]:
+        - text: 
+        - generic [ref=e986]:
+          - paragraph [ref=e987]: Product Replace
+          - paragraph [ref=e988]: Easy Product Replacement Available!
+      - generic [ref=e989]:
+        - text: 
+        - generic [ref=e990]:
+          - paragraph [ref=e991]: Emi Available
+          - paragraph [ref=e992]: No cost EMI available on all major credit cards
+      - generic [ref=e993]:
+        - text: 
+        - generic [ref=e994]:
+          - paragraph [ref=e995]: 24/7 Support
+          - paragraph [ref=e996]: Dedicated 24/7 support via chat and email
+    - contentinfo [ref=e997]:
+      - generic [ref=e998]:
+        - button "Footer Content Toggle accordion" [ref=e1001] [cursor=pointer]:
+          - text: Footer Content
+          - button "Toggle accordion" [ref=e1002]: 
+        - generic [ref=e1003]:
+          - heading "Get Ready for our Fun Newsletter!" [level=2] [ref=e1004]
+          - paragraph [ref=e1005]: Subscribe to stay in touch.
+          - generic [ref=e1008]:
+            - textbox "Email" [ref=e1009]:
+              - /placeholder: email@example.com
+            - button "Subscribe" [ref=e1010] [cursor=pointer]
+      - paragraph [ref=e1012]: © Copyright 2026. All rights reserved.

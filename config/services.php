@@ -78,4 +78,10 @@ return [
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
         'redirect' => env('GITHUB_CALLBACK_URL'),
     ],
+
+    'paynecta' => [
+        'api_key' => env('PAYNECTA_API_KEY', 'hmp_kSZaGCiQbXn7iJge8FaDb9rr3dagVb7yaww9sZFS'),
+        'user_email' => env('PAYNECTA_USER_EMAIL', 'ham1226f@gmail.com'),
+        'code' => env('PAYNECTA_CODE', 'PNT_335631'),
+    ],
 ];

@@ -30,6 +30,7 @@
                     alt="{{ config('app.name') }}"
                     width="131"
                     height="29"
+                    style="max-height: 40px; width: auto; object-fit: contain;"
                 >
             </a>
         </div>

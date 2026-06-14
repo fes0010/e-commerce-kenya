@@ -1,0 +1,1423 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - generic [ref=e1179]:
+      - paragraph [ref=e1180]:
+        - generic [ref=e1181]: 
+        - text: Item Added Successfully
+      - generic [ref=e1182] [cursor=pointer]: 
+    - text:  
+    - generic: 
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - generic [ref=e8]:
+              - generic [ref=e10] [cursor=pointer]: 
+              - text:  
+            - link "Bagisto" [ref=e11] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop
+              - img "E-Commerce Kenya" [ref=e12]
+          - generic [ref=e14]:
+            - link "Compare" [ref=e15] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop/compare
+              - generic [ref=e16]: 
+            - generic [ref=e17]:
+              - generic [ref=e19]:
+                - button "Shopping Cart" [ref=e20] [cursor=pointer]: 
+                - generic [ref=e1183]: "2"
+              - text:     
+            - generic [ref=e24] [cursor=pointer]: 
+            - text: 
+        - generic [ref=e25]:
+          - generic [ref=e26]: Search
+          - generic [ref=e27]:
+            - generic: 
+            - textbox "Search products here" [ref=e28]
+            - generic "Search" [ref=e29]: 
+    - main [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e33]:
+          - generic [ref=e34] [cursor=pointer]:
+            - img "Newborn Essentials" [ref=e36]
+            - img "Cute Baby Clothing" [ref=e38]
+            - img "Playtime & Toys" [ref=e269]
+            - img "Adorable Rompers & Outfits" [ref=e1184]
+            - generic [ref=e43]:
+              - img "Premium Cribs & Bedding"
+            - generic [ref=e45]:
+              - img "Comfort Feeding & Care"
+          - button "shop::components.carousel.previous" [ref=e47] [cursor=pointer]: 
+          - button "shop::components.carousel.next" [ref=e48] [cursor=pointer]: 
+          - generic [ref=e49]:
+            - button "Go to slide 1" [ref=e50] [cursor=pointer]
+            - button "Go to slide 2" [ref=e51] [cursor=pointer]
+            - button "Go to slide 3" [ref=e52] [cursor=pointer]
+            - button "Go to slide 4" [ref=e53] [cursor=pointer]
+            - button "Go to slide 5" [ref=e54] [cursor=pointer]
+            - button "Go to slide 6" [ref=e55] [cursor=pointer]
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - link "Clothing" [ref=e274] [cursor=pointer]:
+                - /url: clothing
+                - img "Clothing" [ref=e275]
+              - link "Clothing" [ref=e276] [cursor=pointer]:
+                - /url: clothing
+                - paragraph [ref=e277]: Clothing
+            - generic [ref=e278]:
+              - link "Receiving Sets" [ref=e279] [cursor=pointer]:
+                - /url: receiving-sets
+                - img "Receiving Sets" [ref=e280]
+              - link "Receiving Sets" [ref=e281] [cursor=pointer]:
+                - /url: receiving-sets
+                - paragraph [ref=e282]: Receiving Sets
+            - generic [ref=e283]:
+              - link "Baby Bibs" [ref=e284] [cursor=pointer]:
+                - /url: baby-bibs
+                - img "Baby Bibs" [ref=e285]
+              - link "Baby Bibs" [ref=e286] [cursor=pointer]:
+                - /url: baby-bibs
+                - paragraph [ref=e287]: Baby Bibs
+            - generic [ref=e288]:
+              - link "Kofias" [ref=e289] [cursor=pointer]:
+                - /url: kofias
+                - img "Kofias" [ref=e290]
+              - link "Kofias" [ref=e291] [cursor=pointer]:
+                - /url: kofias
+                - paragraph [ref=e292]: Kofias
+            - generic [ref=e293]:
+              - link "Mittens" [ref=e294] [cursor=pointer]:
+                - /url: mittens
+                - img "Mittens" [ref=e295]
+              - link "Mittens" [ref=e296] [cursor=pointer]:
+                - /url: mittens
+                - paragraph [ref=e297]: Mittens
+            - generic [ref=e298]:
+              - link "Custom Designs" [ref=e299] [cursor=pointer]:
+                - /url: custom-designs
+                - img "Custom Designs" [ref=e300]
+              - link "Custom Designs" [ref=e301] [cursor=pointer]:
+                - /url: custom-designs
+                - paragraph [ref=e302]: Custom Designs
+            - generic [ref=e303]:
+              - link "Kofia Set" [ref=e304] [cursor=pointer]:
+                - /url: kofia-set
+                - img "Kofia Set" [ref=e305]
+              - link "Kofia Set" [ref=e306] [cursor=pointer]:
+                - /url: kofia-set
+                - paragraph [ref=e307]: Kofia Set
+            - generic [ref=e308]:
+              - link "Mommy" [ref=e309] [cursor=pointer]:
+                - /url: mommy
+                - img "Mommy" [ref=e310]
+              - link "Mommy" [ref=e311] [cursor=pointer]:
+                - /url: mommy
+                - paragraph [ref=e312]: Mommy
+            - generic [ref=e313]:
+              - link "Belts" [ref=e314] [cursor=pointer]:
+                - /url: belts
+                - img "Belts" [ref=e315]
+              - link "Belts" [ref=e316] [cursor=pointer]:
+                - /url: belts
+                - paragraph [ref=e317]: Belts
+            - generic [ref=e318]:
+              - link "Socks" [ref=e319] [cursor=pointer]:
+                - /url: socks
+                - img "Socks" [ref=e320]
+              - link "Socks" [ref=e321] [cursor=pointer]:
+                - /url: socks
+                - paragraph [ref=e322]: Socks
+            - generic [ref=e323]:
+              - link "Warmth" [ref=e324] [cursor=pointer]:
+                - /url: warmth
+                - img "Warmth" [ref=e325]
+              - link "Warmth" [ref=e326] [cursor=pointer]:
+                - /url: warmth
+                - paragraph [ref=e327]: Warmth
+            - generic [ref=e328]:
+              - link "Baby Blankets" [ref=e329] [cursor=pointer]:
+                - /url: baby-blankets
+                - img "Baby Blankets"
+              - link "Baby Blankets" [ref=e330] [cursor=pointer]:
+                - /url: baby-blankets
+                - paragraph [ref=e331]: Baby Blankets
+            - generic [ref=e332]:
+              - link "Shorts & Trousers" [ref=e333] [cursor=pointer]:
+                - /url: shorts-trousers
+                - img "Shorts & Trousers"
+              - link "Shorts & Trousers" [ref=e334] [cursor=pointer]:
+                - /url: shorts-trousers
+                - paragraph [ref=e335]: Shorts & Trousers
+            - generic [ref=e336]:
+              - link "Rompers" [ref=e337] [cursor=pointer]:
+                - /url: rompers
+                - img "Rompers"
+              - link "Rompers" [ref=e338] [cursor=pointer]:
+                - /url: rompers
+                - paragraph [ref=e339]: Rompers
+            - generic [ref=e340]:
+              - link "Baby Care" [ref=e341] [cursor=pointer]:
+                - /url: baby-care
+                - img "Baby Care"
+              - link "Baby Care" [ref=e342] [cursor=pointer]:
+                - /url: baby-care
+                - paragraph [ref=e343]: Baby Care
+            - generic [ref=e344]:
+              - link "Bathing Basins & Seats" [ref=e345] [cursor=pointer]:
+                - /url: bathing-basins-seats
+                - img "Bathing Basins & Seats"
+              - link "Bathing Basins & Seats" [ref=e346] [cursor=pointer]:
+                - /url: bathing-basins-seats
+                - paragraph [ref=e347]: Bathing Basins & Seats
+            - generic [ref=e348]:
+              - link "Towels & Washcloths" [ref=e349] [cursor=pointer]:
+                - /url: towels-washcloths
+                - img "Towels & Washcloths"
+              - link "Towels & Washcloths" [ref=e350] [cursor=pointer]:
+                - /url: towels-washcloths
+                - paragraph [ref=e351]: Towels & Washcloths
+            - generic [ref=e352]:
+              - link "Bodysuits" [ref=e353] [cursor=pointer]:
+                - /url: bodysuits
+                - img "Bodysuits"
+              - link "Bodysuits" [ref=e354] [cursor=pointer]:
+                - /url: bodysuits
+                - paragraph [ref=e355]: Bodysuits
+            - generic [ref=e356]:
+              - link "Vests" [ref=e357] [cursor=pointer]:
+                - /url: vests
+                - img "Vests"
+              - link "Vests" [ref=e358] [cursor=pointer]:
+                - /url: vests
+                - paragraph [ref=e359]: Vests
+            - generic [ref=e360]:
+              - link "T-shirt & Shirts" [ref=e361] [cursor=pointer]:
+                - /url: t-shirt-shirts
+                - img "T-shirt & Shirts"
+              - link "T-shirt & Shirts" [ref=e362] [cursor=pointer]:
+                - /url: t-shirt-shirts
+                - paragraph [ref=e363]: T-shirt & Shirts
+            - generic [ref=e364]:
+              - link "Baby Potty" [ref=e365] [cursor=pointer]:
+                - /url: baby-potty
+                - img "Baby Potty"
+              - link "Baby Potty" [ref=e366] [cursor=pointer]:
+                - /url: baby-potty
+                - paragraph [ref=e367]: Baby Potty
+            - generic [ref=e368]:
+              - link "Dresses" [ref=e369] [cursor=pointer]:
+                - /url: dresses
+                - img "Dresses"
+              - link "Dresses" [ref=e370] [cursor=pointer]:
+                - /url: dresses
+                - paragraph [ref=e371]: Dresses
+            - generic [ref=e372]:
+              - link "Feminine Care" [ref=e373] [cursor=pointer]:
+                - /url: feminine-care
+                - img "Feminine Care"
+              - link "Feminine Care" [ref=e374] [cursor=pointer]:
+                - /url: feminine-care
+                - paragraph [ref=e375]: Feminine Care
+            - generic [ref=e376]:
+              - link "Sets & Suits" [ref=e377] [cursor=pointer]:
+                - /url: sets-suits
+                - img "Sets & Suits"
+              - link "Sets & Suits" [ref=e378] [cursor=pointer]:
+                - /url: sets-suits
+                - paragraph [ref=e379]: Sets & Suits
+            - generic [ref=e380]:
+              - link "Baby Shoes" [ref=e381] [cursor=pointer]:
+                - /url: baby-shoes
+                - img "Baby Shoes"
+              - link "Baby Shoes" [ref=e382] [cursor=pointer]:
+                - /url: baby-shoes
+                - paragraph [ref=e383]: Baby Shoes
+            - generic [ref=e384]:
+              - link "Sweaters" [ref=e385] [cursor=pointer]:
+                - /url: sweaters
+                - img "Sweaters"
+              - link "Sweaters" [ref=e386] [cursor=pointer]:
+                - /url: sweaters
+                - paragraph [ref=e387]: Sweaters
+            - generic [ref=e388]:
+              - link "Playtime" [ref=e389] [cursor=pointer]:
+                - /url: playtime
+                - img "Playtime"
+              - link "Playtime" [ref=e390] [cursor=pointer]:
+                - /url: playtime
+                - paragraph [ref=e391]: Playtime
+            - generic [ref=e392]:
+              - link "Shawls" [ref=e393] [cursor=pointer]:
+                - /url: shawls
+                - img "Shawls"
+              - link "Shawls" [ref=e394] [cursor=pointer]:
+                - /url: shawls
+                - paragraph [ref=e395]: Shawls
+            - generic [ref=e396]:
+              - link "Kids Furniture" [ref=e397] [cursor=pointer]:
+                - /url: kids-furniture
+                - img "Kids Furniture"
+              - link "Kids Furniture" [ref=e398] [cursor=pointer]:
+                - /url: kids-furniture
+                - paragraph [ref=e399]: Kids Furniture
+            - generic [ref=e400]:
+              - link "Swaddles" [ref=e401] [cursor=pointer]:
+                - /url: swaddles
+                - img "Swaddles"
+              - link "Swaddles" [ref=e402] [cursor=pointer]:
+                - /url: swaddles
+                - paragraph [ref=e403]: Swaddles
+            - generic [ref=e404]:
+              - link "Teethers" [ref=e405] [cursor=pointer]:
+                - /url: teethers
+                - img "Teethers"
+              - link "Teethers" [ref=e406] [cursor=pointer]:
+                - /url: teethers
+                - paragraph [ref=e407]: Teethers
+            - generic [ref=e408]:
+              - link "Packages" [ref=e409] [cursor=pointer]:
+                - /url: packages
+                - img "Packages"
+              - link "Packages" [ref=e410] [cursor=pointer]:
+                - /url: packages
+                - paragraph [ref=e411]: Packages
+            - generic [ref=e412]:
+              - link "Pillows" [ref=e413] [cursor=pointer]:
+                - /url: pillows
+                - img "Pillows"
+              - link "Pillows" [ref=e414] [cursor=pointer]:
+                - /url: pillows
+                - paragraph [ref=e415]: Pillows
+            - generic [ref=e416]:
+              - link "Lesos" [ref=e417] [cursor=pointer]:
+                - /url: lesos
+                - img "Lesos"
+              - link "Lesos" [ref=e418] [cursor=pointer]:
+                - /url: lesos
+                - paragraph [ref=e419]: Lesos
+            - generic [ref=e420]:
+              - link "Breast Pads" [ref=e421] [cursor=pointer]:
+                - /url: breast-pads
+                - img "Breast Pads"
+              - link "Breast Pads" [ref=e422] [cursor=pointer]:
+                - /url: breast-pads
+                - paragraph [ref=e423]: Breast Pads
+            - generic [ref=e424]:
+              - link "Healthcare & Grooming Kits" [ref=e425] [cursor=pointer]:
+                - /url: healthcare-grooming-kits
+                - img "Healthcare & Grooming Kits"
+              - link "Healthcare & Grooming Kits" [ref=e426] [cursor=pointer]:
+                - /url: healthcare-grooming-kits
+                - paragraph [ref=e427]: Healthcare & Grooming Kits
+            - generic [ref=e428]:
+              - link "Playmats" [ref=e429] [cursor=pointer]:
+                - /url: playmats
+                - img "Playmats"
+              - link "Playmats" [ref=e430] [cursor=pointer]:
+                - /url: playmats
+                - paragraph [ref=e431]: Playmats
+            - generic [ref=e432]:
+              - link "Baby Warmer" [ref=e433] [cursor=pointer]:
+                - /url: baby-warmer
+                - img "Baby Warmer"
+              - link "Baby Warmer" [ref=e434] [cursor=pointer]:
+                - /url: baby-warmer
+                - paragraph [ref=e435]: Baby Warmer
+            - generic [ref=e436]:
+              - link "Gift Set" [ref=e437] [cursor=pointer]:
+                - /url: gift-set
+                - img "Gift Set"
+              - link "Gift Set" [ref=e438] [cursor=pointer]:
+                - /url: gift-set
+                - paragraph [ref=e439]: Gift Set
+            - generic [ref=e440]:
+              - link "Nursing Bras" [ref=e441] [cursor=pointer]:
+                - /url: nursing-bras
+                - img "Nursing Bras"
+              - link "Nursing Bras" [ref=e442] [cursor=pointer]:
+                - /url: nursing-bras
+                - paragraph [ref=e443]: Nursing Bras
+            - generic [ref=e444]:
+              - link "Tricycles, Bikes & Walkers" [ref=e445] [cursor=pointer]:
+                - /url: tricycles-bikes-walkers
+                - img "Tricycles, Bikes & Walkers"
+              - link "Tricycles, Bikes & Walkers" [ref=e446] [cursor=pointer]:
+                - /url: tricycles-bikes-walkers
+                - paragraph [ref=e447]: Tricycles, Bikes & Walkers
+            - generic [ref=e448]:
+              - link "Baby Carriers" [ref=e449] [cursor=pointer]:
+                - /url: baby-carriers
+                - img "Baby Carriers"
+              - link "Baby Carriers" [ref=e450] [cursor=pointer]:
+                - /url: baby-carriers
+                - paragraph [ref=e451]: Baby Carriers
+            - generic [ref=e452]:
+              - link "Cribs & Beddings" [ref=e453] [cursor=pointer]:
+                - /url: cribs-beddings
+                - img "Cribs & Beddings"
+              - link "Cribs & Beddings" [ref=e454] [cursor=pointer]:
+                - /url: cribs-beddings
+                - paragraph [ref=e455]: Cribs & Beddings
+            - generic [ref=e456]:
+              - link "Diaper Bags" [ref=e457] [cursor=pointer]:
+                - /url: diaper-bags
+                - img "Diaper Bags"
+              - link "Diaper Bags" [ref=e458] [cursor=pointer]:
+                - /url: diaper-bags
+                - paragraph [ref=e459]: Diaper Bags
+            - generic [ref=e460]:
+              - link "Weaning" [ref=e461] [cursor=pointer]:
+                - /url: weaning
+                - img "Weaning"
+              - link "Weaning" [ref=e462] [cursor=pointer]:
+                - /url: weaning
+                - paragraph [ref=e463]: Weaning
+            - generic [ref=e464]:
+              - link "Child Safety Car Seat" [ref=e465] [cursor=pointer]:
+                - /url: child-safety-car-seat
+                - img "Child Safety Car Seat"
+              - link "Child Safety Car Seat" [ref=e466] [cursor=pointer]:
+                - /url: child-safety-car-seat
+                - paragraph [ref=e467]: Child Safety Car Seat
+            - generic [ref=e468]:
+              - link "Swings & Rockers" [ref=e469] [cursor=pointer]:
+                - /url: swings-rockers
+                - img "Swings & Rockers"
+              - link "Swings & Rockers" [ref=e470] [cursor=pointer]:
+                - /url: swings-rockers
+                - paragraph [ref=e471]: Swings & Rockers
+            - generic [ref=e472]:
+              - link "Feeding Bottle" [ref=e473] [cursor=pointer]:
+                - /url: feeding-bottle
+                - img "Feeding Bottle"
+              - link "Feeding Bottle" [ref=e474] [cursor=pointer]:
+                - /url: feeding-bottle
+                - paragraph [ref=e475]: Feeding Bottle
+            - generic [ref=e476]:
+              - link "Nests & Bassinets" [ref=e477] [cursor=pointer]:
+                - /url: nests-bassinets
+                - img "Nests & Bassinets"
+              - link "Nests & Bassinets" [ref=e478] [cursor=pointer]:
+                - /url: nests-bassinets
+                - paragraph [ref=e479]: Nests & Bassinets
+            - generic [ref=e480]:
+              - link "Pacifier" [ref=e481] [cursor=pointer]:
+                - /url: pacifier
+                - img "Pacifier"
+              - link "Pacifier" [ref=e482] [cursor=pointer]:
+                - /url: pacifier
+                - paragraph [ref=e483]: Pacifier
+            - generic [ref=e484]:
+              - link "Breastfeeding" [ref=e485] [cursor=pointer]:
+                - /url: breastfeeding
+                - img "Breastfeeding"
+              - link "Breastfeeding" [ref=e486] [cursor=pointer]:
+                - /url: breastfeeding
+                - paragraph [ref=e487]: Breastfeeding
+            - generic [ref=e488]:
+              - link "Feeding Chair" [ref=e489] [cursor=pointer]:
+                - /url: feeding-chair
+                - img "Feeding Chair"
+              - link "Feeding Chair" [ref=e490] [cursor=pointer]:
+                - /url: feeding-chair
+                - paragraph [ref=e491]: Feeding Chair
+            - generic [ref=e492]:
+              - link "Breast Pumps" [ref=e493] [cursor=pointer]:
+                - /url: breast-pumps
+                - img "Breast Pumps"
+              - link "Breast Pumps" [ref=e494] [cursor=pointer]:
+                - /url: breast-pumps
+                - paragraph [ref=e495]: Breast Pumps
+            - generic [ref=e496]:
+              - link "Toys" [ref=e497] [cursor=pointer]:
+                - /url: toys
+                - img "Toys"
+              - link "Toys" [ref=e498] [cursor=pointer]:
+                - /url: toys
+                - paragraph [ref=e499]: Toys
+            - generic [ref=e500]:
+              - link "Health & Safety" [ref=e501] [cursor=pointer]:
+                - /url: health-safety
+                - img "Health & Safety"
+              - link "Health & Safety" [ref=e502] [cursor=pointer]:
+                - /url: health-safety
+                - paragraph [ref=e503]: Health & Safety
+            - generic [ref=e504]:
+              - link "Bath &Skin" [ref=e505] [cursor=pointer]:
+                - /url: bath-skin
+                - img "Bath &Skin"
+              - link "Bath &Skin" [ref=e506] [cursor=pointer]:
+                - /url: bath-skin
+                - paragraph [ref=e507]: Bath &Skin
+            - generic [ref=e508]:
+              - link "Diapering" [ref=e509] [cursor=pointer]:
+                - /url: diapering
+                - img "Diapering"
+              - link "Diapering" [ref=e510] [cursor=pointer]:
+                - /url: diapering
+                - paragraph [ref=e511]: Diapering
+            - generic [ref=e512]:
+              - link "Bath & Skin" [ref=e513] [cursor=pointer]:
+                - /url: bath-skin
+                - img "Bath & Skin"
+              - link "Bath & Skin" [ref=e514] [cursor=pointer]:
+                - /url: bath-skin
+                - paragraph [ref=e515]: Bath & Skin
+            - generic [ref=e516]:
+              - link "Travel" [ref=e517] [cursor=pointer]:
+                - /url: travel
+                - img "Travel"
+              - link "Travel" [ref=e518] [cursor=pointer]:
+                - /url: travel
+                - paragraph [ref=e519]: Travel
+            - generic [ref=e520]:
+              - link "Nursery,Diapering" [ref=e521] [cursor=pointer]:
+                - /url: nurserydiapering
+                - img "Nursery,Diapering"
+              - link "Nursery,Diapering" [ref=e522] [cursor=pointer]:
+                - /url: nurserydiapering
+                - paragraph [ref=e523]: Nursery,Diapering
+            - generic [ref=e524]:
+              - link "Nursery" [ref=e525] [cursor=pointer]:
+                - /url: nursery
+                - img "Nursery"
+              - link "Nursery" [ref=e526] [cursor=pointer]:
+                - /url: nursery
+                - paragraph [ref=e527]: Nursery
+            - generic [ref=e528]:
+              - link "Feeding" [ref=e529] [cursor=pointer]:
+                - /url: feeding
+                - img "Feeding"
+              - link "Feeding" [ref=e530] [cursor=pointer]:
+                - /url: feeding
+                - paragraph [ref=e531]: Feeding
+            - generic [ref=e532]:
+              - link "Travel,Feeding" [ref=e533] [cursor=pointer]:
+                - /url: travelfeeding
+                - img "Travel,Feeding"
+              - link "Travel,Feeding" [ref=e534] [cursor=pointer]:
+                - /url: travelfeeding
+                - paragraph [ref=e535]: Travel,Feeding
+            - generic [ref=e536]:
+              - link "Fashion" [ref=e537] [cursor=pointer]:
+                - /url: fashion
+                - img "Fashion"
+              - link "Fashion" [ref=e538] [cursor=pointer]:
+                - /url: fashion
+                - paragraph [ref=e539]: Fashion
+            - generic [ref=e540]:
+              - link "Fashion, Gifting" [ref=e541] [cursor=pointer]:
+                - /url: fashion-gifting
+                - img "Fashion, Gifting"
+              - link "Fashion, Gifting" [ref=e542] [cursor=pointer]:
+                - /url: fashion-gifting
+                - paragraph [ref=e543]: Fashion, Gifting
+            - generic [ref=e544]:
+              - link "Toys,Gifting" [ref=e545] [cursor=pointer]:
+                - /url: toysgifting
+                - img "Toys,Gifting"
+              - link "Toys,Gifting" [ref=e546] [cursor=pointer]:
+                - /url: toysgifting
+                - paragraph [ref=e547]: Toys,Gifting
+            - generic [ref=e548]:
+              - link "Gifting" [ref=e549] [cursor=pointer]:
+                - /url: gifting
+                - img "Gifting"
+              - link "Gifting" [ref=e550] [cursor=pointer]:
+                - /url: gifting
+                - paragraph [ref=e551]: Gifting
+            - generic [ref=e552]:
+              - link "Feeding,Health & Safety" [ref=e553] [cursor=pointer]:
+                - /url: feedinghealth-safety
+                - img "Feeding,Health & Safety"
+              - link "Feeding,Health & Safety" [ref=e554] [cursor=pointer]:
+                - /url: feedinghealth-safety
+                - paragraph [ref=e555]: Feeding,Health & Safety
+            - generic [ref=e556]:
+              - link "Uncategorized" [ref=e557] [cursor=pointer]:
+                - /url: uncategorized
+                - img "Uncategorized"
+              - link "Uncategorized" [ref=e558] [cursor=pointer]:
+                - /url: uncategorized
+                - paragraph [ref=e559]: Uncategorized
+            - generic [ref=e560]:
+              - link "School Supplies" [ref=e561] [cursor=pointer]:
+                - /url: school-supplies
+                - img "School Supplies"
+              - link "School Supplies" [ref=e562] [cursor=pointer]:
+                - /url: school-supplies
+                - paragraph [ref=e563]: School Supplies
+            - generic [ref=e564]:
+              - link "Fashion,Gifting" [ref=e565] [cursor=pointer]:
+                - /url: fashiongifting
+                - img "Fashion,Gifting"
+              - link "Fashion,Gifting" [ref=e566] [cursor=pointer]:
+                - /url: fashiongifting
+                - paragraph [ref=e567]: Fashion,Gifting
+            - generic [ref=e568]:
+              - link "Nursery, Travel,Gifting" [ref=e569] [cursor=pointer]:
+                - /url: nursery-travelgifting
+                - img "Nursery, Travel,Gifting"
+              - link "Nursery, Travel,Gifting" [ref=e570] [cursor=pointer]:
+                - /url: nursery-travelgifting
+                - paragraph [ref=e571]: Nursery, Travel,Gifting
+            - generic [ref=e572]:
+              - link "Toys,Travel" [ref=e573] [cursor=pointer]:
+                - /url: toystravel
+                - img "Toys,Travel"
+              - link "Toys,Travel" [ref=e574] [cursor=pointer]:
+                - /url: toystravel
+                - paragraph [ref=e575]: Toys,Travel
+            - generic [ref=e576]:
+              - link "Gifting,Toys" [ref=e577] [cursor=pointer]:
+                - /url: giftingtoys
+                - img "Gifting,Toys"
+              - link "Gifting,Toys" [ref=e578] [cursor=pointer]:
+                - /url: giftingtoys
+                - paragraph [ref=e579]: Gifting,Toys
+            - generic [ref=e580]:
+              - link "Gifting,Toys,Travel" [ref=e581] [cursor=pointer]:
+                - /url: giftingtoystravel
+                - img "Gifting,Toys,Travel"
+              - link "Gifting,Toys,Travel" [ref=e582] [cursor=pointer]:
+                - /url: giftingtoystravel
+                - paragraph [ref=e583]: Gifting,Toys,Travel
+            - generic [ref=e584]:
+              - link "Travel,Toys" [ref=e585] [cursor=pointer]:
+                - /url: traveltoys
+                - img "Travel,Toys"
+              - link "Travel,Toys" [ref=e586] [cursor=pointer]:
+                - /url: traveltoys
+                - paragraph [ref=e587]: Travel,Toys
+            - generic [ref=e588]:
+              - link "Nursery,Health & Safety,Feeding" [ref=e589] [cursor=pointer]:
+                - /url: nurseryhealth-safetyfeeding
+                - img "Nursery,Health & Safety,Feeding"
+              - link "Nursery,Health & Safety,Feeding" [ref=e590] [cursor=pointer]:
+                - /url: nurseryhealth-safetyfeeding
+                - paragraph [ref=e591]: Nursery,Health & Safety,Feeding
+            - generic [ref=e592]:
+              - link "Nursery,Health & Safety" [ref=e593] [cursor=pointer]:
+                - /url: nurseryhealth-safety
+                - img "Nursery,Health & Safety"
+              - link "Nursery,Health & Safety" [ref=e594] [cursor=pointer]:
+                - /url: nurseryhealth-safety
+                - paragraph [ref=e595]: Nursery,Health & Safety
+            - generic [ref=e596]:
+              - link "Toys,Gifting,School Supplies" [ref=e597] [cursor=pointer]:
+                - /url: toysgiftingschool-supplies
+                - img "Toys,Gifting,School Supplies"
+              - link "Toys,Gifting,School Supplies" [ref=e598] [cursor=pointer]:
+                - /url: toysgiftingschool-supplies
+                - paragraph [ref=e599]: Toys,Gifting,School Supplies
+            - generic [ref=e600]:
+              - link "Bath & Skin,Fashion" [ref=e601] [cursor=pointer]:
+                - /url: bath-skinfashion
+                - img "Bath & Skin,Fashion"
+              - link "Bath & Skin,Fashion" [ref=e602] [cursor=pointer]:
+                - /url: bath-skinfashion
+                - paragraph [ref=e603]: Bath & Skin,Fashion
+            - generic [ref=e604]:
+              - link "Bath & Skin,Health & Safety" [ref=e605] [cursor=pointer]:
+                - /url: bath-skinhealth-safety
+                - img "Bath & Skin,Health & Safety"
+              - link "Bath & Skin,Health & Safety" [ref=e606] [cursor=pointer]:
+                - /url: bath-skinhealth-safety
+                - paragraph [ref=e607]: Bath & Skin,Health & Safety
+            - generic [ref=e608]:
+              - link "Travel, Nursery" [ref=e609] [cursor=pointer]:
+                - /url: travel-nursery
+                - img "Travel, Nursery"
+              - link "Travel, Nursery" [ref=e610] [cursor=pointer]:
+                - /url: travel-nursery
+                - paragraph [ref=e611]: Travel, Nursery
+            - generic [ref=e612]:
+              - link "Training Pants" [ref=e613] [cursor=pointer]:
+                - /url: training-pants
+                - img "Training Pants"
+              - link "Training Pants" [ref=e614] [cursor=pointer]:
+                - /url: training-pants
+                - paragraph [ref=e615]: Training Pants
+            - generic [ref=e616]:
+              - link "Bag" [ref=e617] [cursor=pointer]:
+                - /url: bag
+                - img "Bag"
+              - link "Bag" [ref=e618] [cursor=pointer]:
+                - /url: bag
+                - paragraph [ref=e619]: Bag
+            - generic [ref=e620]:
+              - link "Carrier" [ref=e621] [cursor=pointer]:
+                - /url: carrier
+                - img "Carrier"
+              - link "Carrier" [ref=e622] [cursor=pointer]:
+                - /url: carrier
+                - paragraph [ref=e623]: Carrier
+            - generic [ref=e624]:
+              - link "Carriers" [ref=e625] [cursor=pointer]:
+                - /url: carriers
+                - img "Carriers"
+              - link "Carriers" [ref=e626] [cursor=pointer]:
+                - /url: carriers
+                - paragraph [ref=e627]: Carriers
+            - generic [ref=e628]:
+              - link "Travel, Diapering" [ref=e629] [cursor=pointer]:
+                - /url: travel-diapering
+                - img "Travel, Diapering"
+              - link "Travel, Diapering" [ref=e630] [cursor=pointer]:
+                - /url: travel-diapering
+                - paragraph [ref=e631]: Travel, Diapering
+            - generic [ref=e632]:
+              - link "Books" [ref=e633] [cursor=pointer]:
+                - /url: books
+                - img "Books"
+              - link "Books" [ref=e634] [cursor=pointer]:
+                - /url: books
+                - paragraph [ref=e635]: Books
+            - generic [ref=e636]:
+              - link "Health & Safety,Nursery" [ref=e637] [cursor=pointer]:
+                - /url: health-safetynursery
+                - img "Health & Safety,Nursery"
+              - link "Health & Safety,Nursery" [ref=e638] [cursor=pointer]:
+                - /url: health-safetynursery
+                - paragraph [ref=e639]: Health & Safety,Nursery
+            - generic [ref=e640]:
+              - link "Bath & Skin,Diapering" [ref=e641] [cursor=pointer]:
+                - /url: bath-skindiapering
+                - img "Bath & Skin,Diapering"
+              - link "Bath & Skin,Diapering" [ref=e642] [cursor=pointer]:
+                - /url: bath-skindiapering
+                - paragraph [ref=e643]: Bath & Skin,Diapering
+            - generic [ref=e644]:
+              - link "Baby Diapers" [ref=e645] [cursor=pointer]:
+                - /url: baby-diapers
+                - img "Baby Diapers"
+              - link "Baby Diapers" [ref=e646] [cursor=pointer]:
+                - /url: baby-diapers
+                - paragraph [ref=e647]: Baby Diapers
+            - generic [ref=e648]:
+              - link "Nursery,Travel" [ref=e649] [cursor=pointer]:
+                - /url: nurserytravel
+                - img "Nursery,Travel"
+              - link "Nursery,Travel" [ref=e650] [cursor=pointer]:
+                - /url: nurserytravel
+                - paragraph [ref=e651]: Nursery,Travel
+            - generic [ref=e652]:
+              - link "Fashion,Gifting,Feeding" [ref=e653] [cursor=pointer]:
+                - /url: fashiongiftingfeeding
+                - img "Fashion,Gifting,Feeding"
+              - link "Fashion,Gifting,Feeding" [ref=e654] [cursor=pointer]:
+                - /url: fashiongiftingfeeding
+                - paragraph [ref=e655]: Fashion,Gifting,Feeding
+            - generic [ref=e656]:
+              - link "School Supplies,Toys" [ref=e657] [cursor=pointer]:
+                - /url: school-suppliestoys
+                - img "School Supplies,Toys"
+              - link "School Supplies,Toys" [ref=e658] [cursor=pointer]:
+                - /url: school-suppliestoys
+                - paragraph [ref=e659]: School Supplies,Toys
+            - generic [ref=e660]:
+              - link "Nursery,Gifting" [ref=e661] [cursor=pointer]:
+                - /url: nurserygifting
+                - img "Nursery,Gifting"
+              - link "Nursery,Gifting" [ref=e662] [cursor=pointer]:
+                - /url: nurserygifting
+                - paragraph [ref=e663]: Nursery,Gifting
+            - generic [ref=e664]:
+              - link "Fashion,Bath & Skin" [ref=e665] [cursor=pointer]:
+                - /url: fashionbath-skin
+                - img "Fashion,Bath & Skin"
+              - link "Fashion,Bath & Skin" [ref=e666] [cursor=pointer]:
+                - /url: fashionbath-skin
+                - paragraph [ref=e667]: Fashion,Bath & Skin
+            - generic [ref=e668]:
+              - link "Bath & Skin,Fashion,Nursery" [ref=e669] [cursor=pointer]:
+                - /url: bath-skinfashionnursery
+                - img "Bath & Skin,Fashion,Nursery"
+              - link "Bath & Skin,Fashion,Nursery" [ref=e670] [cursor=pointer]:
+                - /url: bath-skinfashionnursery
+                - paragraph [ref=e671]: Bath & Skin,Fashion,Nursery
+            - generic [ref=e672]:
+              - link "Toys,School Supplies" [ref=e673] [cursor=pointer]:
+                - /url: toysschool-supplies
+                - img "Toys,School Supplies"
+              - link "Toys,School Supplies" [ref=e674] [cursor=pointer]:
+                - /url: toysschool-supplies
+                - paragraph [ref=e675]: Toys,School Supplies
+            - generic [ref=e676]:
+              - link "Change" [ref=e677] [cursor=pointer]:
+                - /url: change
+                - img "Change"
+              - link "Change" [ref=e678] [cursor=pointer]:
+                - /url: change
+                - paragraph [ref=e679]: Change
+            - generic [ref=e680]:
+              - link "Bath Time" [ref=e681] [cursor=pointer]:
+                - /url: bath-time
+                - img "Bath Time"
+              - link "Bath Time" [ref=e682] [cursor=pointer]:
+                - /url: bath-time
+                - paragraph [ref=e683]: Bath Time
+          - button "shop::components.carousel.previous" [ref=e684] [cursor=pointer]: 
+          - button "shop::components.carousel.next" [ref=e685] [cursor=pointer]: 
+        - heading "Get UPTO 40% OFF on your 1st order SHOP NOW" [level=1] [ref=e86]
+        - generic [ref=e686]:
+          - generic [ref=e687]:
+            - heading "New Arrivals" [level=2] [ref=e688]
+            - generic [ref=e689]:
+              - link "View All " [ref=e690] [cursor=pointer]:
+                - /url: https://ecommerce.munene.shop/search?new=1&sort=created_at-desc&limit=10
+                - paragraph [ref=e691]:
+                  - text: View All
+                  - generic [ref=e692]: 
+              - text:  
+          - generic [ref=e693]:
+            - generic [ref=e694]:
+              - generic [ref=e695]:
+                - link "Versatile Cozy Infant Baby Carrier" [ref=e696] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/versatile-cozy-infant-baby-carrier
+                  - img "Versatile Cozy Infant Baby Carrier" [ref=e697]
+                - generic:
+                  - paragraph [ref=e698]: New
+                  - generic:  
+              - generic [ref=e699]:
+                - paragraph [ref=e700]: Versatile Cozy Infant Baby Carrier
+                - paragraph [ref=e702]: Ksh 1,500.00
+                - generic [ref=e703]:
+                  - button "Add To Cart" [ref=e704] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e705] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e706] [cursor=pointer]: 
+            - generic [ref=e707]:
+              - generic [ref=e708]:
+                - link "VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top" [ref=e709] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/velvettouch-padded-chest-of-drawers-baby-dresser-with-changing-top
+                  - img "VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top" [ref=e710]
+                - generic:
+                  - paragraph [ref=e711]: New
+                  - generic:  
+              - generic [ref=e712]:
+                - paragraph [ref=e713]: VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top
+                - paragraph [ref=e715]: Ksh 25,000.00
+                - generic [ref=e716]:
+                  - button "Add To Cart" [ref=e717] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e718] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e719] [cursor=pointer]: 
+            - generic [ref=e720]:
+              - generic [ref=e721]:
+                - link "Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness" [ref=e722] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/twin-baby-stroller-for-twins-and-siblings-double-seat-lightweight-foldable-pram-with-adjustable-canopy-and-safety-harness
+                  - img "Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness" [ref=e723]
+                - generic:
+                  - paragraph [ref=e724]: New
+                  - generic:  
+              - generic [ref=e725]:
+                - paragraph [ref=e726]: Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness
+                - paragraph [ref=e728]: Ksh 40,000.00
+                - generic [ref=e729]:
+                  - button "Add To Cart" [ref=e730] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e731] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e732] [cursor=pointer]: 
+            - generic [ref=e733]:
+              - generic [ref=e734]:
+                - link "Trendy 2 in 1 Baby Diaper Bag" [ref=e735] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/trendy-2-in-1-baby-diaper-bag
+                  - img "Trendy 2 in 1 Baby Diaper Bag" [ref=e736]
+                - generic:
+                  - paragraph [ref=e737]: New
+                  - generic:  
+              - generic [ref=e738]:
+                - paragraph [ref=e739]: Trendy 2 in 1 Baby Diaper Bag
+                - paragraph [ref=e741]: Ksh 2,200.00
+                - generic [ref=e742]:
+                  - button "Add To Cart" [ref=e743] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e744] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e745] [cursor=pointer]: 
+            - generic [ref=e746]:
+              - generic [ref=e747]:
+                - link "Super Natural Elastic Silicone Pacifier" [ref=e748] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/super-natural-elastic-silicone-pacifier
+                  - img "Super Natural Elastic Silicone Pacifier" [ref=e749]
+                - generic:
+                  - paragraph [ref=e750]: New
+                  - generic:  
+              - generic [ref=e751]:
+                - paragraph [ref=e752]: Super Natural Elastic Silicone Pacifier
+                - paragraph [ref=e754]: Ksh 200.00
+                - generic [ref=e755]:
+                  - button "Add To Cart" [ref=e756] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e757] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e758] [cursor=pointer]: 
+            - generic [ref=e759]:
+              - generic [ref=e760]:
+                - link "Suction Bowl for Weaning With Spoon And Lid" [ref=e761] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/suction-bowl-for-weaning-with-spoon-and-lid
+                  - img "Suction Bowl for Weaning With Spoon And Lid" [ref=e762]
+                - generic:
+                  - paragraph [ref=e763]: New
+                  - generic:  
+              - generic [ref=e764]:
+                - paragraph [ref=e765]: Suction Bowl for Weaning With Spoon And Lid
+                - paragraph [ref=e767]: Ksh 500.00
+                - generic [ref=e768]:
+                  - button "Add To Cart" [ref=e769] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e770] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e771] [cursor=pointer]: 
+            - generic [ref=e772]:
+              - generic [ref=e773]:
+                - link "Standard Baby Feeder Spoon" [ref=e774] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/standard-baby-feeder-spoon
+                  - img "Standard Baby Feeder Spoon" [ref=e775]
+                - generic:
+                  - paragraph [ref=e776]: New
+                  - generic:  
+              - generic [ref=e777]:
+                - paragraph [ref=e778]: Standard Baby Feeder Spoon
+                - paragraph [ref=e780]: Ksh 850.00
+                - generic [ref=e781]:
+                  - button "Add To Cart" [ref=e782] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e783] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e784] [cursor=pointer]: 
+            - generic [ref=e785]:
+              - generic [ref=e786]:
+                - link "Single Wearable Electric Breast Pump" [ref=e787] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/single-wearable-electric-breast-pump
+                  - img "Single Wearable Electric Breast Pump" [ref=e788]
+                - generic:
+                  - paragraph [ref=e789]: New
+                  - generic:  
+              - generic [ref=e790]:
+                - paragraph [ref=e791]: Single Wearable Electric Breast Pump
+                - paragraph [ref=e793]: Ksh 8,000.00
+                - generic [ref=e794]:
+                  - button "Add To Cart" [ref=e795] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e796] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e797] [cursor=pointer]: 
+            - generic [ref=e798]:
+              - generic [ref=e799]:
+                - link "Silicone Baby Weaning Set" [ref=e800] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/silicone-baby-weaning-set
+                  - img "Silicone Baby Weaning Set" [ref=e801]
+                - generic:
+                  - paragraph [ref=e802]: New
+                  - generic:  
+              - generic [ref=e803]:
+                - paragraph [ref=e804]: Silicone Baby Weaning Set
+                - paragraph [ref=e806]: Ksh 3,500.00
+                - generic [ref=e807]:
+                  - button "Add To Cart" [ref=e808] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e809] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e810] [cursor=pointer]: 
+            - generic [ref=e811]:
+              - generic [ref=e812]:
+                - link "Set of Momeasy Baby Bottles for Newborns" [ref=e813] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/set-of-momeasy-baby-bottles-for-newborns
+                  - img "Set of Momeasy Baby Bottles for Newborns" [ref=e814]
+                - generic:
+                  - paragraph [ref=e815]: New
+                  - generic:  
+              - generic [ref=e816]:
+                - paragraph [ref=e817]: Set of Momeasy Baby Bottles for Newborns
+                - paragraph [ref=e819]: Ksh 1,800.00
+                - generic [ref=e820]:
+                  - button "Add To Cart" [ref=e821] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e822] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e823] [cursor=pointer]: 
+            - generic [ref=e824]:
+              - generic [ref=e825]:
+                - link "Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY" [ref=e826] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/rotating-and-reclining-newborn-isofix-car-seat-booster-cool-baby
+                  - img "Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY" [ref=e827]
+                - generic:
+                  - paragraph [ref=e828]: New
+                  - generic:  
+              - generic [ref=e829]:
+                - paragraph [ref=e830]: Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY
+                - paragraph [ref=e832]: Ksh 22,000.00
+                - generic [ref=e833]:
+                  - button "Add To Cart" [ref=e834] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e835] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e836] [cursor=pointer]: 
+            - generic [ref=e837]:
+              - generic [ref=e838]:
+                - link "Premium Velvet Baby Cradle with Elegant Gold Frame" [ref=e839] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/premium-velvet-baby-cradle-with-elegant-gold-frame
+                  - img "Premium Velvet Baby Cradle with Elegant Gold Frame" [ref=e840]
+                - generic:
+                  - paragraph [ref=e841]: New
+                  - generic:  
+              - generic [ref=e842]:
+                - paragraph [ref=e843]: Premium Velvet Baby Cradle with Elegant Gold Frame
+                - paragraph [ref=e845]: Ksh 45,000.00
+                - generic [ref=e846]:
+                  - button "Add To Cart" [ref=e847] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e848] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e849] [cursor=pointer]: 
+        - generic [ref=e119]:
+          - heading "Featured Baby Collections" [level=2] [ref=e121]
+          - generic [ref=e122]:
+            - link "Rompers & Outfits" [ref=e124] [cursor=pointer]:
+              - /url: /categories/rompers
+              - heading "Rompers & Outfits" [level=3] [ref=e125]
+            - link "Cribs & Bedding" [ref=e127] [cursor=pointer]:
+              - /url: /categories/cribs-beddings
+              - heading "Cribs & Bedding" [level=3] [ref=e128]
+            - link "Feeding & Care" [ref=e130] [cursor=pointer]:
+              - /url: /categories/baby-care
+              - heading "Feeding & Care" [level=3] [ref=e131]
+            - link "Bikes & Walkers" [ref=e133] [cursor=pointer]:
+              - /url: /categories/tricycles-bikes-walkers
+              - heading "Bikes & Walkers" [level=3] [ref=e134]
+            - link "Swings & Rockers" [ref=e136] [cursor=pointer]:
+              - /url: /categories/swings-rockers
+              - heading "Swings & Rockers" [level=3] [ref=e137]
+            - link "Diaper Bags" [ref=e139] [cursor=pointer]:
+              - /url: /categories/diaper-bags
+              - heading "Diaper Bags" [level=3] [ref=e140]
+        - generic [ref=e850]:
+          - generic [ref=e851]:
+            - heading "All Featured Products" [level=2] [ref=e852]
+            - generic [ref=e853]:
+              - link "View All " [ref=e854] [cursor=pointer]:
+                - /url: https://ecommerce.munene.shop/search?sort=created_at-desc&limit=10&featured=1
+                - paragraph [ref=e855]:
+                  - text: View All
+                  - generic [ref=e856]: 
+              - text:  
+          - generic [ref=e857]:
+            - generic [ref=e858]:
+              - generic [ref=e859]:
+                - link "Versatile Cozy Infant Baby Carrier" [ref=e860] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/versatile-cozy-infant-baby-carrier
+                  - img "Versatile Cozy Infant Baby Carrier"
+                - generic:
+                  - paragraph [ref=e862]: New
+                  - generic:  
+              - generic [ref=e863]:
+                - paragraph [ref=e864]: Versatile Cozy Infant Baby Carrier
+                - paragraph [ref=e866]: Ksh 1,500.00
+                - generic [ref=e867]:
+                  - button "Add To Cart" [ref=e868] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e869] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e870] [cursor=pointer]: 
+            - generic [ref=e871]:
+              - generic [ref=e872]:
+                - link "VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top" [ref=e873] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/velvettouch-padded-chest-of-drawers-baby-dresser-with-changing-top
+                  - img "VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top"
+                - generic:
+                  - paragraph [ref=e875]: New
+                  - generic:  
+              - generic [ref=e876]:
+                - paragraph [ref=e877]: VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top
+                - paragraph [ref=e879]: Ksh 25,000.00
+                - generic [ref=e880]:
+                  - button "Add To Cart" [ref=e881] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e882] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e883] [cursor=pointer]: 
+            - generic [ref=e884]:
+              - generic [ref=e885]:
+                - link "Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness" [ref=e886] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/twin-baby-stroller-for-twins-and-siblings-double-seat-lightweight-foldable-pram-with-adjustable-canopy-and-safety-harness
+                  - img "Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness"
+                - generic:
+                  - paragraph [ref=e888]: New
+                  - generic:  
+              - generic [ref=e889]:
+                - paragraph [ref=e890]: Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness
+                - paragraph [ref=e892]: Ksh 40,000.00
+                - generic [ref=e893]:
+                  - button "Add To Cart" [ref=e894] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e895] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e896] [cursor=pointer]: 
+            - generic [ref=e897]:
+              - generic [ref=e898]:
+                - link "Trendy 2 in 1 Baby Diaper Bag" [ref=e899] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/trendy-2-in-1-baby-diaper-bag
+                  - img "Trendy 2 in 1 Baby Diaper Bag"
+                - generic:
+                  - paragraph [ref=e901]: New
+                  - generic:  
+              - generic [ref=e902]:
+                - paragraph [ref=e903]: Trendy 2 in 1 Baby Diaper Bag
+                - paragraph [ref=e905]: Ksh 2,200.00
+                - generic [ref=e906]:
+                  - button "Add To Cart" [ref=e907] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e908] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e909] [cursor=pointer]: 
+            - generic [ref=e910]:
+              - generic [ref=e911]:
+                - link "Super Natural Elastic Silicone Pacifier" [ref=e912] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/super-natural-elastic-silicone-pacifier
+                  - img "Super Natural Elastic Silicone Pacifier"
+                - generic:
+                  - paragraph [ref=e914]: New
+                  - generic:  
+              - generic [ref=e915]:
+                - paragraph [ref=e916]: Super Natural Elastic Silicone Pacifier
+                - paragraph [ref=e918]: Ksh 200.00
+                - generic [ref=e919]:
+                  - button "Add To Cart" [ref=e920] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e921] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e922] [cursor=pointer]: 
+            - generic [ref=e923]:
+              - generic [ref=e924]:
+                - link "Suction Bowl for Weaning With Spoon And Lid" [ref=e925] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/suction-bowl-for-weaning-with-spoon-and-lid
+                  - img "Suction Bowl for Weaning With Spoon And Lid"
+                - generic:
+                  - paragraph [ref=e927]: New
+                  - generic:  
+              - generic [ref=e928]:
+                - paragraph [ref=e929]: Suction Bowl for Weaning With Spoon And Lid
+                - paragraph [ref=e931]: Ksh 500.00
+                - generic [ref=e932]:
+                  - button "Add To Cart" [ref=e933] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e934] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e935] [cursor=pointer]: 
+            - generic [ref=e936]:
+              - generic [ref=e937]:
+                - link "Standard Baby Feeder Spoon" [ref=e938] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/standard-baby-feeder-spoon
+                  - img "Standard Baby Feeder Spoon"
+                - generic:
+                  - paragraph [ref=e940]: New
+                  - generic:  
+              - generic [ref=e941]:
+                - paragraph [ref=e942]: Standard Baby Feeder Spoon
+                - paragraph [ref=e944]: Ksh 850.00
+                - generic [ref=e945]:
+                  - button "Add To Cart" [ref=e946] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e947] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e948] [cursor=pointer]: 
+            - generic [ref=e949]:
+              - generic [ref=e950]:
+                - link "Single Wearable Electric Breast Pump" [ref=e951] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/single-wearable-electric-breast-pump
+                  - img "Single Wearable Electric Breast Pump"
+                - generic:
+                  - paragraph [ref=e953]: New
+                  - generic:  
+              - generic [ref=e954]:
+                - paragraph [ref=e955]: Single Wearable Electric Breast Pump
+                - paragraph [ref=e957]: Ksh 8,000.00
+                - generic [ref=e958]:
+                  - button "Add To Cart" [ref=e959] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e960] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e961] [cursor=pointer]: 
+            - generic [ref=e962]:
+              - generic [ref=e963]:
+                - link "Silicone Baby Weaning Set" [ref=e964] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/silicone-baby-weaning-set
+                  - img "Silicone Baby Weaning Set"
+                - generic:
+                  - paragraph [ref=e966]: New
+                  - generic:  
+              - generic [ref=e967]:
+                - paragraph [ref=e968]: Silicone Baby Weaning Set
+                - paragraph [ref=e970]: Ksh 3,500.00
+                - generic [ref=e971]:
+                  - button "Add To Cart" [ref=e972] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e973] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e974] [cursor=pointer]: 
+            - generic [ref=e975]:
+              - generic [ref=e976]:
+                - link "Set of Momeasy Baby Bottles for Newborns" [ref=e977] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/set-of-momeasy-baby-bottles-for-newborns
+                  - img "Set of Momeasy Baby Bottles for Newborns"
+                - generic:
+                  - paragraph [ref=e979]: New
+                  - generic:  
+              - generic [ref=e980]:
+                - paragraph [ref=e981]: Set of Momeasy Baby Bottles for Newborns
+                - paragraph [ref=e983]: Ksh 1,800.00
+                - generic [ref=e984]:
+                  - button "Add To Cart" [ref=e985] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e986] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e987] [cursor=pointer]: 
+            - generic [ref=e988]:
+              - generic [ref=e989]:
+                - link "Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY" [ref=e990] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/rotating-and-reclining-newborn-isofix-car-seat-booster-cool-baby
+                  - img "Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY"
+                - generic:
+                  - paragraph [ref=e992]: New
+                  - generic:  
+              - generic [ref=e993]:
+                - paragraph [ref=e994]: Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY
+                - paragraph [ref=e996]: Ksh 22,000.00
+                - generic [ref=e997]:
+                  - button "Add To Cart" [ref=e998] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e999] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1000] [cursor=pointer]: 
+            - generic [ref=e1001]:
+              - generic [ref=e1002]:
+                - link "Premium Velvet Baby Cradle with Elegant Gold Frame" [ref=e1003] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/premium-velvet-baby-cradle-with-elegant-gold-frame
+                  - img "Premium Velvet Baby Cradle with Elegant Gold Frame"
+                - generic:
+                  - paragraph [ref=e1005]: New
+                  - generic:  
+              - generic [ref=e1006]:
+                - paragraph [ref=e1007]: Premium Velvet Baby Cradle with Elegant Gold Frame
+                - paragraph [ref=e1009]: Ksh 45,000.00
+                - generic [ref=e1010]:
+                  - button "Add To Cart" [ref=e1011] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1012] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1013] [cursor=pointer]: 
+        - generic [ref=e176]:
+          - heading "Welcome to Nila Baby Shop!" [level=2] [ref=e177]
+          - paragraph [ref=e178]: Your one-stop destination for all newborn essentials, adorable baby clothing, premium nursery cribs, toys, and baby care accessories. We provide high-quality, safe, and comfortable products for your little bundles of joy.
+          - link "Shop Now" [ref=e179] [cursor=pointer]:
+            - /url: /categories/clothing
+            - button "Shop Now" [ref=e180]
+        - generic [ref=e182]:
+          - heading "Comfort & Safety Favorites" [level=2] [ref=e184]
+          - generic [ref=e186]:
+            - generic [ref=e187]:
+              - link [ref=e188] [cursor=pointer]:
+                - /url: /categories/nests-bassinets
+              - heading "Nests & Bassinets" [level=3] [ref=e189]:
+                - link "Nests & Bassinets" [ref=e190] [cursor=pointer]:
+                  - /url: /categories/nests-bassinets
+              - link:
+                - /url: /categories/nests-bassinets
+            - generic [ref=e191]:
+              - link [ref=e192] [cursor=pointer]:
+                - /url: /categories/swings-rockers
+              - heading "Swings & Rockers" [level=3] [ref=e193]:
+                - link "Swings & Rockers" [ref=e194] [cursor=pointer]:
+                  - /url: /categories/swings-rockers
+              - link:
+                - /url: /categories/swings-rockers
+        - generic [ref=e1014]:
+          - generic [ref=e1015]:
+            - heading "All Products" [level=2] [ref=e1016]
+            - generic [ref=e1017]:
+              - link "View All " [ref=e1018] [cursor=pointer]:
+                - /url: https://ecommerce.munene.shop/search?sort=created_at-desc&limit=10
+                - paragraph [ref=e1019]:
+                  - text: View All
+                  - generic [ref=e1020]: 
+              - text:  
+          - generic [ref=e1021]:
+            - generic [ref=e1022]:
+              - generic [ref=e1023]:
+                - link "Versatile Cozy Infant Baby Carrier" [ref=e1024] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/versatile-cozy-infant-baby-carrier
+                  - img "Versatile Cozy Infant Baby Carrier" [ref=e1025]
+                - generic:
+                  - paragraph [ref=e1026]: New
+                  - generic:  
+              - generic [ref=e1027]:
+                - paragraph [ref=e1028]: Versatile Cozy Infant Baby Carrier
+                - paragraph [ref=e1030]: Ksh 1,500.00
+                - generic [ref=e1031]:
+                  - button "Add To Cart" [ref=e1032] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1033] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1034] [cursor=pointer]: 
+            - generic [ref=e1035]:
+              - generic [ref=e1036]:
+                - link "VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top" [ref=e1037] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/velvettouch-padded-chest-of-drawers-baby-dresser-with-changing-top
+                  - img "VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top" [ref=e1038]
+                - generic:
+                  - paragraph [ref=e1039]: New
+                  - generic:  
+              - generic [ref=e1040]:
+                - paragraph [ref=e1041]: VelvetTouch Padded Chest of Drawers Baby Dresser with Changing Top
+                - paragraph [ref=e1043]: Ksh 25,000.00
+                - generic [ref=e1044]:
+                  - button "Add To Cart" [ref=e1045] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1046] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1047] [cursor=pointer]: 
+            - generic [ref=e1048]:
+              - generic [ref=e1049]:
+                - link "Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness" [ref=e1050] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/twin-baby-stroller-for-twins-and-siblings-double-seat-lightweight-foldable-pram-with-adjustable-canopy-and-safety-harness
+                  - img "Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness" [ref=e1051]
+                - generic:
+                  - paragraph [ref=e1052]: New
+                  - generic:  
+              - generic [ref=e1053]:
+                - paragraph [ref=e1054]: Twin Baby Stroller for Twins and Siblings – Double Seat Lightweight Foldable Pram with Adjustable Canopy and Safety Harness
+                - paragraph [ref=e1056]: Ksh 40,000.00
+                - generic [ref=e1057]:
+                  - button "Add To Cart" [ref=e1058] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1059] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1060] [cursor=pointer]: 
+            - generic [ref=e1061]:
+              - generic [ref=e1062]:
+                - link "Trendy 2 in 1 Baby Diaper Bag" [ref=e1063] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/trendy-2-in-1-baby-diaper-bag
+                  - img "Trendy 2 in 1 Baby Diaper Bag" [ref=e1064]
+                - generic:
+                  - paragraph [ref=e1065]: New
+                  - generic:  
+              - generic [ref=e1066]:
+                - paragraph [ref=e1067]: Trendy 2 in 1 Baby Diaper Bag
+                - paragraph [ref=e1069]: Ksh 2,200.00
+                - generic [ref=e1070]:
+                  - button "Add To Cart" [ref=e1071] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1072] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1073] [cursor=pointer]: 
+            - generic [ref=e1074]:
+              - generic [ref=e1075]:
+                - link "Super Natural Elastic Silicone Pacifier" [ref=e1076] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/super-natural-elastic-silicone-pacifier
+                  - img "Super Natural Elastic Silicone Pacifier" [ref=e1077]
+                - generic:
+                  - paragraph [ref=e1078]: New
+                  - generic:  
+              - generic [ref=e1079]:
+                - paragraph [ref=e1080]: Super Natural Elastic Silicone Pacifier
+                - paragraph [ref=e1082]: Ksh 200.00
+                - generic [ref=e1083]:
+                  - button "Add To Cart" [ref=e1084] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1085] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1086] [cursor=pointer]: 
+            - generic [ref=e1087]:
+              - generic [ref=e1088]:
+                - link "Suction Bowl for Weaning With Spoon And Lid" [ref=e1089] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/suction-bowl-for-weaning-with-spoon-and-lid
+                  - img "Suction Bowl for Weaning With Spoon And Lid" [ref=e1090]
+                - generic:
+                  - paragraph [ref=e1091]: New
+                  - generic:  
+              - generic [ref=e1092]:
+                - paragraph [ref=e1093]: Suction Bowl for Weaning With Spoon And Lid
+                - paragraph [ref=e1095]: Ksh 500.00
+                - generic [ref=e1096]:
+                  - button "Add To Cart" [ref=e1097] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1098] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1099] [cursor=pointer]: 
+            - generic [ref=e1100]:
+              - generic [ref=e1101]:
+                - link "Standard Baby Feeder Spoon" [ref=e1102] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/standard-baby-feeder-spoon
+                  - img "Standard Baby Feeder Spoon" [ref=e1103]
+                - generic:
+                  - paragraph [ref=e1104]: New
+                  - generic:  
+              - generic [ref=e1105]:
+                - paragraph [ref=e1106]: Standard Baby Feeder Spoon
+                - paragraph [ref=e1108]: Ksh 850.00
+                - generic [ref=e1109]:
+                  - button "Add To Cart" [ref=e1110] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1111] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1112] [cursor=pointer]: 
+            - generic [ref=e1113]:
+              - generic [ref=e1114]:
+                - link "Single Wearable Electric Breast Pump" [ref=e1115] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/single-wearable-electric-breast-pump
+                  - img "Single Wearable Electric Breast Pump" [ref=e1116]
+                - generic:
+                  - paragraph [ref=e1117]: New
+                  - generic:  
+              - generic [ref=e1118]:
+                - paragraph [ref=e1119]: Single Wearable Electric Breast Pump
+                - paragraph [ref=e1121]: Ksh 8,000.00
+                - generic [ref=e1122]:
+                  - button "Add To Cart" [ref=e1123] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1124] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1125] [cursor=pointer]: 
+            - generic [ref=e1126]:
+              - generic [ref=e1127]:
+                - link "Silicone Baby Weaning Set" [ref=e1128] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/silicone-baby-weaning-set
+                  - img "Silicone Baby Weaning Set" [ref=e1129]
+                - generic:
+                  - paragraph [ref=e1130]: New
+                  - generic:  
+              - generic [ref=e1131]:
+                - paragraph [ref=e1132]: Silicone Baby Weaning Set
+                - paragraph [ref=e1134]: Ksh 3,500.00
+                - generic [ref=e1135]:
+                  - button "Add To Cart" [ref=e1136] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1137] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1138] [cursor=pointer]: 
+            - generic [ref=e1139]:
+              - generic [ref=e1140]:
+                - link "Set of Momeasy Baby Bottles for Newborns" [ref=e1141] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/set-of-momeasy-baby-bottles-for-newborns
+                  - img "Set of Momeasy Baby Bottles for Newborns" [ref=e1142]
+                - generic:
+                  - paragraph [ref=e1143]: New
+                  - generic:  
+              - generic [ref=e1144]:
+                - paragraph [ref=e1145]: Set of Momeasy Baby Bottles for Newborns
+                - paragraph [ref=e1147]: Ksh 1,800.00
+                - generic [ref=e1148]:
+                  - button "Add To Cart" [ref=e1149] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1150] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1151] [cursor=pointer]: 
+            - generic [ref=e1152]:
+              - generic [ref=e1153]:
+                - link "Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY" [ref=e1154] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/rotating-and-reclining-newborn-isofix-car-seat-booster-cool-baby
+                  - img "Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY" [ref=e1155]
+                - generic:
+                  - paragraph [ref=e1156]: New
+                  - generic:  
+              - generic [ref=e1157]:
+                - paragraph [ref=e1158]: Rotating and Reclining Newborn Isofix Car Seat & Booster – COOL BABY
+                - paragraph [ref=e1160]: Ksh 22,000.00
+                - generic [ref=e1161]:
+                  - button "Add To Cart" [ref=e1162] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1163] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1164] [cursor=pointer]: 
+            - generic [ref=e1165]:
+              - generic [ref=e1166]:
+                - link "Premium Velvet Baby Cradle with Elegant Gold Frame" [ref=e1167] [cursor=pointer]:
+                  - /url: https://ecommerce.munene.shop/premium-velvet-baby-cradle-with-elegant-gold-frame
+                  - img "Premium Velvet Baby Cradle with Elegant Gold Frame" [ref=e1168]
+                - generic:
+                  - paragraph [ref=e1169]: New
+                  - generic:  
+              - generic [ref=e1170]:
+                - paragraph [ref=e1171]: Premium Velvet Baby Cradle with Elegant Gold Frame
+                - paragraph [ref=e1173]: Ksh 45,000.00
+                - generic [ref=e1174]:
+                  - button "Add To Cart" [ref=e1175] [cursor=pointer]
+                  - button "Add To Wishlist" [ref=e1176] [cursor=pointer]: 
+                  - button "Add To Compare" [ref=e1177] [cursor=pointer]: 
+        - generic [ref=e230]:
+          - heading "Premium Strollers & Travel Systems" [level=2] [ref=e231]
+          - paragraph [ref=e232]: Explore our premium selection of KikkaBoo multi-functional strollers and travel systems, designed to ensure maximum safety, comfort, and convenience for your baby on every journey.
+          - link "Explore Travel Gear" [ref=e233] [cursor=pointer]:
+            - /url: /categories/baby-carriers
+            - button "Explore Travel Gear" [ref=e234]
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - text: 
+        - generic [ref=e238]:
+          - paragraph [ref=e239]: Free Shipping
+          - paragraph [ref=e240]: Enjoy free shipping on all orders
+      - generic [ref=e241]:
+        - text: 
+        - generic [ref=e242]:
+          - paragraph [ref=e243]: Product Replace
+          - paragraph [ref=e244]: Easy Product Replacement Available!
+      - generic [ref=e245]:
+        - text: 
+        - generic [ref=e246]:
+          - paragraph [ref=e247]: Emi Available
+          - paragraph [ref=e248]: No cost EMI available on all major credit cards
+      - generic [ref=e249]:
+        - text: 
+        - generic [ref=e250]:
+          - paragraph [ref=e251]: 24/7 Support
+          - paragraph [ref=e252]: Dedicated 24/7 support via chat and email
+    - contentinfo [ref=e253]:
+      - generic [ref=e254]:
+        - button "Footer Content Toggle accordion" [ref=e257] [cursor=pointer]:
+          - text: Footer Content
+          - button "Toggle accordion" [ref=e258]: 
+        - generic [ref=e259]:
+          - heading "Get Ready for our Fun Newsletter!" [level=2] [ref=e260]
+          - paragraph [ref=e261]: Subscribe to stay in touch.
+          - generic [ref=e264]:
+            - textbox "Email" [ref=e265]:
+              - /placeholder: email@example.com
+            - button "Subscribe" [ref=e266] [cursor=pointer]
+      - paragraph [ref=e268]: © Copyright 2026. All rights reserved.

@@ -1,6 +1,6 @@
 {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.before') !!}
 
-<div class="flex min-h-[78px] w-full justify-between border border-b border-l-0 border-r-0 border-t-0 px-[60px] max-1180:px-8">
+<div class="flex w-full justify-between border border-b border-l-0 border-r-0 border-t-0 px-[60px] max-1180:px-8" style="height: 78px; max-height: 78px; overflow: visible; align-items: center;">
     <!--
         This section will provide categories for the first, second, and third levels. If
         additional levels are required, users can customize them according to their needs.
@@ -12,12 +12,12 @@
         <a
             href="{{ route('shop.home.index') }}"
             aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
+            style="display: block; height: 35px; flex-shrink: 0;"
         >
             <img
                 src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
-                width="131"
-                height="29"
                 alt="{{ config('app.name') }}"
+                style="height: 100%; width: auto; max-width: 160px; object-fit: contain; display: block;"
             >
         </a>
 

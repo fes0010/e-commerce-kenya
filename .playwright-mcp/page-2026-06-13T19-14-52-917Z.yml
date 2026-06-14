@@ -1,0 +1,15 @@
+- generic [active]:
+  - link "Skip to main content" [ref=e1] [cursor=pointer]:
+    - /url: "#main"
+  - generic:
+    - generic: 
+    - main:
+      - generic [ref=e3]:
+        - generic [ref=e4]:
+          - generic [ref=e5]: "404"
+          - generic [ref=e6]: "404"
+        - generic [ref=e7]:
+          - heading "404 Page Not Found" [level=1] [ref=e8]
+          - paragraph [ref=e9]: Oops! The page you're looking for is on vacation. It seems we couldn't find what you were searching for.
+          - link "Go To Home" [ref=e10] [cursor=pointer]:
+            - /url: https://ecommerce.munene.shop

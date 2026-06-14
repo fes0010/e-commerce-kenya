@@ -1,0 +1,126 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - generic: 
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - generic [ref=e8]:
+              - generic [ref=e10] [cursor=pointer]: 
+              - text:  
+            - link "Bagisto" [ref=e11] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop
+              - img "E-Commerce Kenya" [ref=e12]
+          - generic [ref=e14]:
+            - link "Compare" [ref=e15] [cursor=pointer]:
+              - /url: https://ecommerce.munene.shop/compare
+              - generic [ref=e16]: 
+            - generic [ref=e17]:
+              - button "Shopping Cart" [ref=e20] [cursor=pointer]: 
+              - text: 
+            - generic [ref=e24] [cursor=pointer]: 
+            - text: 
+        - generic [ref=e25]:
+          - generic [ref=e26]: Search
+          - generic [ref=e27]:
+            - generic: 
+            - textbox "Search products here" [ref=e28]
+            - generic "Search" [ref=e29]: 
+    - main [ref=e30]:
+      - generic [ref=e35]:
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - paragraph [ref=e39]
+            - paragraph [ref=e40]
+          - generic [ref=e41]:
+            - paragraph [ref=e43]
+            - generic [ref=e47]:
+              - paragraph [ref=e48]
+              - paragraph [ref=e49]
+          - generic [ref=e54]:
+            - paragraph [ref=e56]
+            - paragraph [ref=e59]
+          - generic [ref=e74]:
+            - paragraph [ref=e76]
+            - paragraph [ref=e79]
+        - generic [ref=e94]:
+          - generic [ref=e97]:
+            - button "Expensive First " [ref=e100] [cursor=pointer]
+            - generic [ref=e101]:
+              - button "12 " [ref=e104] [cursor=pointer]
+              - generic [ref=e105]:
+                - button "List" [ref=e106] [cursor=pointer]: 
+                - button "Grid" [ref=e107] [cursor=pointer]: 
+          - generic [ref=e109]:
+            - generic [ref=e113]:
+              - paragraph [ref=e114]
+              - paragraph [ref=e115]
+            - generic [ref=e119]:
+              - paragraph [ref=e120]
+              - paragraph [ref=e121]
+            - generic [ref=e125]:
+              - paragraph [ref=e126]
+              - paragraph [ref=e127]
+            - generic [ref=e131]:
+              - paragraph [ref=e132]
+              - paragraph [ref=e133]
+            - generic [ref=e137]:
+              - paragraph [ref=e138]
+              - paragraph [ref=e139]
+            - generic [ref=e143]:
+              - paragraph [ref=e144]
+              - paragraph [ref=e145]
+            - generic [ref=e149]:
+              - paragraph [ref=e150]
+              - paragraph [ref=e151]
+            - generic [ref=e155]:
+              - paragraph [ref=e156]
+              - paragraph [ref=e157]
+            - generic [ref=e161]:
+              - paragraph [ref=e162]
+              - paragraph [ref=e163]
+            - generic [ref=e167]:
+              - paragraph [ref=e168]
+              - paragraph [ref=e169]
+            - generic [ref=e173]:
+              - paragraph [ref=e174]
+              - paragraph [ref=e175]
+            - generic [ref=e179]:
+              - paragraph [ref=e180]
+              - paragraph [ref=e181]
+    - generic [ref=e183]:
+      - generic [ref=e184]:
+        - text: 
+        - generic [ref=e185]:
+          - paragraph [ref=e186]: Free Shipping
+          - paragraph [ref=e187]: Enjoy free shipping on all orders
+      - generic [ref=e188]:
+        - text: 
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: Product Replace
+          - paragraph [ref=e191]: Easy Product Replacement Available!
+      - generic [ref=e192]:
+        - text: 
+        - generic [ref=e193]:
+          - paragraph [ref=e194]: Emi Available
+          - paragraph [ref=e195]: No cost EMI available on all major credit cards
+      - generic [ref=e196]:
+        - text: 
+        - generic [ref=e197]:
+          - paragraph [ref=e198]: 24/7 Support
+          - paragraph [ref=e199]: Dedicated 24/7 support via chat and email
+    - contentinfo [ref=e200]:
+      - generic [ref=e201]:
+        - button "Footer Content Toggle accordion" [ref=e204] [cursor=pointer]:
+          - text: Footer Content
+          - button "Toggle accordion" [ref=e205]: 
+        - generic [ref=e206]:
+          - heading "Get Ready for our Fun Newsletter!" [level=2] [ref=e207]
+          - paragraph [ref=e208]: Subscribe to stay in touch.
+          - generic [ref=e211]:
+            - textbox "Email" [ref=e212]:
+              - /placeholder: email@example.com
+            - button "Subscribe" [ref=e213] [cursor=pointer]
+      - paragraph [ref=e215]: © Copyright 2026. All rights reserved.

@@ -126,6 +126,48 @@
                     }
 
                     this.activeIndex = index;
+
+                    const container = this.$refs.mobileSwiper;
+                    if (container) {
+                        container.scrollLeft = index * container.clientWidth;
+                    }
+                },
+
+                onMobileScroll(event) {
+                    const container = event.target;
+                    const index = Math.round(container.scrollLeft / container.clientWidth);
+                    const mediaItems = [...this.media.images, ...this.media.videos];
+                    if (index !== this.activeIndex && index >= 0 && index < mediaItems.length) {
+                        this.activeIndex = index;
+                        const mediaItem = mediaItems[index];
+                        if (mediaItem.type === 'videos') {
+                            this.baseFile.type = 'video';
+                            this.baseFile.path = mediaItem.video_url;
+                        } else {
+                            this.baseFile.type = 'image';
+                            this.baseFile.path = mediaItem.large_image_url;
+                        }
+                    }
+                },
+
+                scrollToMedia(index) {
+                    this.activeIndex = index;
+                    const mediaItems = [...this.media.images, ...this.media.videos];
+                    if (index >= 0 && index < mediaItems.length) {
+                        const mediaItem = mediaItems[index];
+                        if (mediaItem.type === 'videos') {
+                            this.baseFile.type = 'video';
+                            this.baseFile.path = mediaItem.video_url;
+                        } else {
+                            this.baseFile.type = 'image';
+                            this.baseFile.path = mediaItem.large_image_url;
+                        }
+                    }
+
+                    const container = this.$refs.mobileSwiper;
+                    if (container) {
+                        container.scrollLeft = index * container.clientWidth;
+                    }
                 },
 
                 swipeTop() {

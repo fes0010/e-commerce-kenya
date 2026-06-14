@@ -1,0 +1,60 @@
+=============================================================
+Nila Baby Shop Scraping Summary
+=============================================================
+
+Website: https://nilababyshop.com/
+Date: June 13, 2026
+Total Products Scraped: 458
+
+Data Extracted Per Product:
+- Product URL (unique identifier)
+- Product Name
+- Price (where available, many products have variable pricing)
+- Brand (not available on this site)
+- Categories (full category path)
+- Description (cleaned text, up to 500 characters)
+- Features (bullet points when available)
+- All product images (full resolution URLs)
+
+Categories Covered:
+- Baby Care
+- Clothing (Bodysuits, Rompers, etc.)
+- Carriers (Diaper Bags, Baby Carriers)
+- Travel (Car Seats, Strollers, Walkers)
+- Nursery (Cribs, Bassinets)
+- Feeding
+- Mommy products
+- And many more...
+
+Output File: nila_products.json
+
+File Format: JSON array with complete product objects
+
+Example Product Structure:
+{
+  "url": "...",
+  "name": "...",
+  "price": "KShs X,XXX.XX" or null,
+  "brand": null,
+  "categories": ["Category", "Subcategory"],
+  "description": "...",
+  "features": ["feature1", "feature2"],
+  "images": ["url1", "url2", ...]
+}
+
+Statistics:
+- Total products: 458
+- Products with images: 458 (100%)
+- Products with descriptions: 447 (98%)
+- Total images: 3,451
+- Average images per product: 7.5
+- Total shop pages crawled: ~3 pages
+
+Notes:
+- Many products have variable pricing (Select options) so price may be null
+- Brand information is not available on the website
+- All images are captured in high resolution (600x600px or larger)
+- Descriptions are cleaned of HTML and truncated to 500 chars
+- Features are extracted from bullet points when available
+
+=============================================================

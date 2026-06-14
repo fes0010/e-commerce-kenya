@@ -533,9 +533,13 @@
 
                     this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
                         .then((response) => {
-                            // response.data is the relative URL e.g. /storage/theme/1/abc.webp
-                            const relativeUrl = response.data.replace(/^\//, '');
-                            const imgTag = `<img class="lazy" src="" data-src="/${relativeUrl}">`;
+                            // response.data could be http://localhost/storage/theme/1/abc.webp
+                            // We need to strip the domain and leading slash so it is just "storage/theme/1/abc.webp"
+                            const barePath = response.data
+                                .replace(/^https?:\/\/[^\/]+\/?/, '')
+                                .replace(/^\//, '');
+                            
+                            const imgTag = `<img class="lazy" src="" data-src="` + barePath + `">`;
 
                             this.options.html += '\n' + imgTag + '\n';
                             this.extractUploadedImages();
@@ -556,9 +560,11 @@
                 },
 
                 insertImageToHTML(url) {
-                    // Strip domain to get bare path e.g. /storage/theme/1/abc.webp
-                    const relative = url.replace(/^https?:\/\/[^\/]+/, '');
-                    const imgTag = `<img class="lazy" src="" data-src="${relative}">`;
+                    // Strip domain to get bare path e.g. storage/theme/1/abc.webp
+                    const barePath = url
+                        .replace(/^https?:\/\/[^\/]+\/?/, '')
+                        .replace(/^\//, '');
+                    const imgTag = `<img class="lazy" src="" data-src="` + barePath + `">`;
 
                     navigator.clipboard.writeText(imgTag).catch(() => {});
 
@@ -592,19 +598,23 @@
                     this.$axios.post('{{ route('admin.settings.themes.store') }}', formData)
                         .then((response) => {
                             const oldFullUrl = this.uploadedImages[index].url;
-                            const newRelative = response.data.replace(/^\//, ''); // e.g. storage/theme/1/new.webp
-
-                            // Get old bare path (without domain, without leading slash)
-                            const oldRelative = oldFullUrl
+                            
+                            // Ensure the new path is just the bare relative path e.g. storage/theme/1/new.webp
+                            const newBarePath = response.data
                                 .replace(/^https?:\/\/[^\/]+\/?/, '')
                                 .replace(/^\//, '');
 
-                            const esc = oldRelative.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                            // Get old bare path (without domain, without leading slash)
+                            const oldBarePath = oldFullUrl
+                                .replace(/^https?:\/\/[^\/]+\/?/, '')
+                                .replace(/^\//, '');
+
+                            const esc = oldBarePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
                             // Replace both /storage/theme/... and storage/theme/... variants
                             let html = this.options.html;
-                            html = html.replace(new RegExp('\\/' + esc, 'g'), '/' + newRelative);
-                            html = html.replace(new RegExp('(?<!\\/|\\w)' + esc, 'g'), newRelative);
+                            html = html.replace(new RegExp('\\/' + esc, 'g'), '/' + newBarePath);
+                            html = html.replace(new RegExp('(?<!\\/|\\w)' + esc, 'g'), newBarePath);
                             this.options.html = html;
                             this.extractUploadedImages();
 

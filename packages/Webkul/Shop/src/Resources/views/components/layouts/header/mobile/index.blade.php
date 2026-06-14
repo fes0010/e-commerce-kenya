@@ -23,15 +23,13 @@
 
             <a
                 href="{{ route('shop.home.index') }}"
-                class="flex max-h-[30px] items-center"
                 aria-label="@lang('shop::app.components.layouts.header.mobile.bagisto')"
+                style="display: block; height: 30px; flex-shrink: 0;"
             >
                 <img
-                    class="block"
                     src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                     alt="{{ config('app.name') }}"
-                    width="131"
-                    height="29"
+                    style="height: 100%; width: auto; max-width: 140px; object-fit: contain; display: block;"
                 >
             </a>
 
@@ -246,12 +244,11 @@
 
                 <x-slot:header>
                     <div class="flex items-center justify-between">
-                        <a href="{{ route('shop.home.index') }}">
+                        <a href="{{ route('shop.home.index') }}" style="display: block; height: 30px;">
                             <img
                                 src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                                 alt="{{ config('app.name') }}"
-                                width="131"
-                                height="29"
+                                style="height: 100%; width: auto; max-width: 140px; object-fit: contain; display: block;"
                             >
                         </a>
                     </div>

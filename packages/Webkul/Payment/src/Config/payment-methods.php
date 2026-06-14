@@ -2,8 +2,18 @@
 
 use Webkul\Payment\Payment\CashOnDelivery;
 use Webkul\Payment\Payment\MoneyTransfer;
+use Webkul\Payment\Payment\Mpesa;
 
 return [
+    'mpesa' => [
+        'class' => Mpesa::class,
+        'code' => 'mpesa',
+        'title' => 'M-Pesa',
+        'description' => 'Pay via M-Pesa',
+        'active' => true,
+        'sort' => 1,
+    ],
+
     'cashondelivery' => [
         'class' => CashOnDelivery::class,
         'code' => 'cashondelivery',

@@ -29,7 +29,8 @@ class CategoryRepository extends Repository
     {
         $queryBuilder = $this->query()
             ->select('categories.*')
-            ->leftJoin('category_translations', 'category_translations.category_id', '=', 'categories.id');
+            ->leftJoin('category_translations', 'category_translations.category_id', '=', 'categories.id')
+            ->orderBy('categories.position', 'asc');
 
         foreach ($params as $key => $value) {
             switch ($key) {

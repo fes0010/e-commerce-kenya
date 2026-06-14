@@ -2,6 +2,7 @@
 
 namespace Webkul\Shop\Http\Controllers\API;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 use Webkul\CartRule\Exceptions\CouponUsageLimitExceededException;
@@ -32,6 +33,10 @@ class OnepageController extends APIController
     public function summary(): JsonResource
     {
         $cart = Cart::getCart();
+
+        if (! $cart) {
+            return new JsonResource([]);
+        }
 
         return new CartResource($cart);
     }
@@ -161,10 +166,15 @@ class OnepageController extends APIController
         } catch (\Exception $e) {
             return response()->json([
                 'message' => $e->getMessage(),
-            ], 500);
+            ], 400);
         }
 
         $cart = Cart::getCart();
+
+        if ($cart && request()->has('notes')) {
+            $cart->notes = request()->input('notes');
+            $cart->save();
+        }
 
         if ($redirectUrl = Payment::getRedirectUrl($cart)) {
             return new JsonResource([
@@ -186,6 +196,10 @@ class OnepageController extends APIController
                 'redirect' => false,
                 'message' => trans('shop::app.checkout.coupon.usage-limit-exceeded'),
             ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 500);
         }
 
         Cart::deActivateCart();
@@ -249,5 +263,24 @@ class OnepageController extends APIController
         if ($cart->payment->method === 'paypal_smart_button') {
             throw new \Exception(trans('shop::app.checkout.cart.specify-payment-method'));
         }
+    }
+
+    /**
+     * Store order notes.
+     *
+     * @return JsonResponse
+     */
+    public function storeNotes()
+    {
+        $cart = Cart::getCart();
+
+        if ($cart) {
+            $cart->notes = request()->input('notes');
+            $cart->save();
+        }
+
+        return response()->json([
+            'message' => 'Notes saved successfully.',
+        ]);
     }
 }

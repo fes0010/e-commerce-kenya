@@ -66,11 +66,11 @@
         <div class="relative m-auto flex w-full overflow-hidden">
             <!-- Slider -->
             <div
-                class="inline-flex translate-x-0 cursor-pointer transition-transform duration-700 ease-out will-change-transform"
+                class="flex w-full translate-x-0 cursor-pointer transition-transform duration-700 ease-out will-change-transform"
                 ref="sliderContainer"
             >
                 <div
-                    class="max-h-screen w-full flex-shrink-0 bg-cover bg-no-repeat"
+                    class="w-full flex-shrink-0 bg-cover bg-no-repeat overflow-hidden"
                     :style="{ width: slideWidth > 0 ? slideWidth + 'px' : '100%' }"
                     v-for="(image, index) in images"
                     :key="index"

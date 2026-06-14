@@ -179,6 +179,24 @@
 
     {!! view_render_event('bagisto.shop.checkout.onepage.summary.coupon.after') !!}
 
+    <!-- Order Notes -->
+    <div class="mt-6 border-t border-zinc-200 pt-6">
+        <label
+            for="order-note"
+            class="block text-base font-semibold text-navyBlue mb-2"
+        >
+            Order Notes / Special Instructions
+        </label>
+        <textarea
+            id="order-note"
+            v-model="notes"
+            @change="saveNotes"
+            class="block w-full rounded-xl border border-zinc-200 p-3 text-sm focus:border-navyBlue focus:outline-none dark:bg-white dark:text-navyBlue transition duration-200"
+            rows="3"
+            placeholder="Add any specific instructions for delivery, gift notes, or additional order details..."
+        ></textarea>
+    </div>
+
     <!-- Shipping Rates -->
     {!! view_render_event('bagisto.shop.checkout.onepage.summary.delivery_charges.before') !!}
         
