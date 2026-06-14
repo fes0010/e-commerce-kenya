@@ -3,17 +3,17 @@
 </p>
 
 @if (isset($prices['final']) && $prices['final']['price'] < $prices['regular']['price'])
-    <p class="regular-price text-lg font-semibold text-gray-500 line-through max-sm:text-sm max-sm:leading-4">
-        {{ $prices['regular']['formatted_price'] }}
+    <p class="final-price font-semibold text-blue-900 max-sm:leading-4">
+        {{ $prices['final']['formatted_price'] }}
     </p>
 
-    <p class="final-price font-semibold max-sm:leading-4">
-        {{ $prices['final']['formatted_price'] }}
+    <p class="regular-price text-lg font-medium text-gray-500 line-through max-sm:text-sm max-sm:leading-4">
+        {{ $prices['regular']['formatted_price'] }}
     </p>
 @else
     <p class="regular-price text-lg font-semibold text-gray-500 line-through max-sm:text-sm max-sm:leading-4" style="display: none;"></p>
 
-    <p class="final-price font-semibold max-sm:leading-4">
+    <p class="final-price font-semibold text-blue-900 max-sm:leading-4">
         {{ $prices['regular']['formatted_price'] }}
     </p>
 @endif

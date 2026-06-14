@@ -50,7 +50,7 @@ def run():
         try:
             # ── Step 1: Homepage ──────────────────────────────────────────────
             print("\n[1] Loading homepage...")
-            page.goto("https://ecommerce.munene.shop/", wait_until="networkidle", timeout=30000)
+            page.goto("https://nilababyshop.store/", wait_until="networkidle", timeout=30000)
             save_shot(page, "s01_home")
 
             # ── Step 2: Search for a product ─────────────────────────────────
@@ -83,13 +83,13 @@ def run():
 
             # ── Step 4: Cart page ─────────────────────────────────────────────
             print("[4] Going to cart...")
-            page.goto("https://ecommerce.munene.shop/checkout/cart", wait_until="networkidle", timeout=20000)
+            page.goto("https://nilababyshop.store/checkout/cart", wait_until="networkidle", timeout=20000)
             save_shot(page, "s05_cart_page")
             print(f"    Cart page HTML snippet:\n{page.content()[:2000]}\n")
 
             # ── Step 5: Proceed to checkout ───────────────────────────────────
             print("[5] Proceeding to checkout...")
-            page.goto("https://ecommerce.munene.shop/checkout/onepage", wait_until="networkidle", timeout=30000)
+            page.goto("https://nilababyshop.store/checkout/onepage", wait_until="networkidle", timeout=30000)
             save_shot(page, "s06_checkout_onepage")
 
             # Capture full page text for error analysis

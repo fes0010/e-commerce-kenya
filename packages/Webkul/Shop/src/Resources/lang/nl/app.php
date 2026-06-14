@@ -5,10 +5,10 @@ return [
         'forgot-password' => [
             'already-sent' => 'Wachtwoord al opnieuw ingesteld E-mail verzonden.',
             'back' => 'Terug naar Aanmelden?',
-            'bagisto' => 'Bagisto',
+            'bagisto' => config('app.name'),
             'email' => 'E-mail',
             'email-not-exist' => 'We kunnen geen gebruiker vinden met dat e-mailadres.',
-            'footer' => '© Auteursrecht 2010 - :current_year, Webkul Software (geregistreerd in India). Alle rechten voorbehouden.',
+            'footer' => '© :current_year All rights reserved.',
             'forgot-password-text' => 'Als u uw wachtwoord bent vergeten, kunt u het herstellen door uw e-mailadres in te voeren.',
             'page-title' => 'Bent u uw wachtwoord vergeten?',
             'reset-link-sent' => 'We hebben de resetlink voor uw wachtwoord per e-mail verzonden.',
@@ -19,21 +19,21 @@ return [
 
         'reset-password' => [
             'back-link-title' => 'Terug naar Aanmelden',
-            'bagisto' => 'Bagisto',
+            'bagisto' => config('app.name'),
             'confirm-password' => 'Bevestig Wachtwoord',
             'email' => 'Geregistreerde E-mail',
-            'footer' => '© Auteursrecht 2010 - :current_year, Webkul Software (geregistreerd in India). Alle rechten voorbehouden.',
+            'footer' => '© :current_year All rights reserved.',
             'password' => 'Wachtwoord',
             'submit-btn-title' => 'Wachtwoord Resetten',
             'title' => 'Wachtwoord Resetten',
         ],
 
         'login-form' => [
-            'bagisto' => 'Bagisto',
+            'bagisto' => config('app.name'),
             'button-title' => 'Aanmelden',
             'create-your-account' => 'Maak uw account aan',
             'email' => 'E-mail',
-            'footer' => '© Auteursrecht 2010 - :current_year, Webkul Software (geregistreerd in India). Alle rechten voorbehouden.',
+            'footer' => '© :current_year All rights reserved.',
             'forgot-pass' => 'Wachtwoord Vergeten?',
             'form-login-text' => 'Als u een account heeft, meld u dan aan met uw e-mailadres.',
             'invalid-credentials' => 'Controleer uw referenties en probeer het opnieuw.',
@@ -49,13 +49,13 @@ return [
 
         'signup-form' => [
             'account-exists' => 'Heeft u al een account?',
-            'bagisto' => 'Bagisto',
+            'bagisto' => config('app.name'),
             'button-title' => 'Registreren',
             'click-here' => 'Klik Hier',
             'confirm-pass' => 'Bevestig Wachtwoord',
             'email' => 'E-mail',
             'first-name' => 'Voornaam',
-            'footer' => '© Auteursrecht 2010 - :current_year, Webkul Software (geregistreerd in India). Alle rechten voorbehouden.',
+            'footer' => '© :current_year All rights reserved.',
             'form-signup-text' => 'Als u nieuw bent in onze winkel, zijn we blij u als lid te hebben.',
             'last-name' => 'Achternaam',
             'page-title' => 'Word Gebruiker',
@@ -562,7 +562,7 @@ return [
                     'bottom' => [
                         'all' => 'Alles',
                         'back-button' => 'Terug naar hoofdmenu',
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => config('app.name'),
                         'categories' => 'Categorieën',
                         'compare' => 'Vergelijken',
                         'dropdown-text' => 'Winkelwagen, bestellingen & verlanglijst beheren',
@@ -583,7 +583,7 @@ return [
                 'mobile' => [
                     'account' => 'Account',
                     'back-button' => 'Terug naar hoofdmenu',
-                    'bagisto' => 'Bagisto',
+                    'bagisto' => config('app.name'),
                     'compare' => 'Vergelijken',
                     'currencies' => 'Valuta',
                     'dropdown-text' => 'Winkelwagen, bestellingen & verlanglijst beheren',
@@ -609,7 +609,7 @@ return [
                 'customer-service' => 'Klantenservice',
                 'email' => 'E-mail',
                 'footer-content' => 'Voettekst inhoud',
-                'footer-text' => '© Auteursrecht 2010 - :current_year, Webkul Software (geregistreerd in India). Alle rechten voorbehouden.',
+                'footer-text' => '© Copyright :current_year. All rights reserved.',
                 'locale' => 'Taal',
                 'newsletter-text' => 'Maak je klaar voor onze leuke nieuwsbrief!',
                 'order-return' => 'Bestelling en Retourneren',
@@ -1061,7 +1061,7 @@ return [
             'suspended-account-message' => 'Uw account is opgeschort.',
 
             'index' => [
-                'bagisto' => 'Bagisto',
+                'bagisto' => config('app.name'),
                 'cart' => 'Winkelwagen',
                 'continue-shopping' => 'Doorgaan met winkelen',
                 'empty-product' => 'U heeft geen product in uw winkelwagen.',
