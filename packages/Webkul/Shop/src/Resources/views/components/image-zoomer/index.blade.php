@@ -18,7 +18,7 @@
         >
             <div
                 ref="parentContainer" 
-                class="fixed inset-0 z-10 flex transform flex-col gap-4 overflow-y-auto transition"
+                class="fixed inset-0 z-10 flex transform flex-col gap-4 overflow-y-auto overflow-x-hidden transition"
                 v-show="isOpen"
             >
                 <!-- Close -->
@@ -57,13 +57,14 @@
                         <div
                             v-for="(attachment, index) in attachments"
                             class="h-full items-center justify-center"
+                            style="display: none"
                             ref="slides"
                         >
                             <video 
                                 class="max-h-full max-w-full transition-transform duration-300 ease-out"
                                 controls 
                                 v-if="attachment.type == 'video'"
-                            >
+                             >
                                 <source :src="attachment.url" type="video/mp4">
                                 <source :src="attachment.url" type="video/ogg">
                                     Your browser does not support HTML video.
@@ -105,10 +106,10 @@
                 </div>
 
                 <!-- Thumbnails -->
-                <div class="mb-4 flex justify-center gap-x-2">
+                <div class="mb-4 flex justify-start md:justify-center gap-x-2 max-w-full overflow-x-auto px-4 scrollbar-hide">
                     <template v-for="(attachment, index) in attachments">
                         <img
-                            class="h-16 w-16 transform cursor-pointer rounded-md border border-navyBlue border-transparent object-cover transition-transform hover:!border-navyBlue"
+                            class="h-16 w-16 transform cursor-pointer rounded-md border border-navyBlue border-transparent object-cover transition-transform hover:!border-navyBlue flex-shrink-0"
                             :class="{
                                 '!border-navyBlue': currentIndex === index + 1,
                             }"
@@ -119,7 +120,7 @@
                         />
 
                         <video
-                            class="h-16 w-16 transform cursor-pointer rounded-md border border-navyBlue border-transparent object-cover transition-transform hover:!border-navyBlue"
+                            class="h-16 w-16 transform cursor-pointer rounded-md border border-navyBlue border-transparent object-cover transition-transform hover:!border-navyBlue flex-shrink-0"
                             :class="{
                                 '!border-navyBlue': currentIndex === index + 1,
                             }"
