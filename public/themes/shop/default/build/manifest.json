@@ -15,7 +15,7 @@
     "name": "vue"
   },
   "src/Resources/assets/css/app.css": {
-    "file": "assets/app-BR62xE9H.css",
+    "file": "assets/app-1DqufJRE.css",
     "src": "src/Resources/assets/css/app.css",
     "isEntry": true
   },
@@ -66,6 +66,10 @@
   "src/Resources/assets/images/money-transfer.png": {
     "file": "assets/money-transfer-BNjtOcYo.png",
     "src": "src/Resources/assets/images/money-transfer.png"
+  },
+  "src/Resources/assets/images/mpesa.svg": {
+    "file": "assets/mpesa-IURo6gTz.svg",
+    "src": "src/Resources/assets/images/mpesa.svg"
   },
   "src/Resources/assets/images/mpesa.png": {
     "file": "assets/mpesa-DfCV2sfL.png",
