@@ -102,7 +102,7 @@ Route::group(['prefix' => 'api'], function () {
      * Login routes.
      */
     Route::controller(CustomerController::class)->prefix('customer')->group(function () {
-        Route::post('login', 'login')->name('shop.api.customers.session.create');
+        Route::post('login', 'login')->middleware('throttle:5,1')->name('shop.api.customers.session.create');
     });
 
     Route::group(['middleware' => ['customer'], 'prefix' => 'customer'], function () {

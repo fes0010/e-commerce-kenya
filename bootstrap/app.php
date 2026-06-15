@@ -46,7 +46,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->replaceInGroup('web', BaseEncryptCookies::class, EncryptCookies::class);
 
         $middleware->validateCsrfTokens(except: [
-            'stripe/*',
+            'stripe/webhook',
         ]);
 
         $middleware->trustProxies(at: ['0.0.0.0/0', '::/0']);

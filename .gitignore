@@ -3,6 +3,7 @@
 .claude
 .cursor
 .env
+.env.dokploy
 .env.testing
 .idea
 .mcp.json
