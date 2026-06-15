@@ -40,12 +40,13 @@ class SecureHeaders
      */
     private function setHeaders($response)
     {
-        $response->headers->set('Referrer-Policy', 'no-referrer-when-downgrade');
+        $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
         $response->headers->set('X-Content-Type-Options', 'nosniff');
-        $response->headers->set('X-XSS-Protection', '1; mode=block');
         $response->headers->set('X-Frame-Options', 'DENY');
-        $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-        $response->headers->set('X-Built-With', 'Bagisto');
+        $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+        $response->headers->set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+        $response->headers->set('X-Permitted-Cross-Domain-Policies', 'none');
+        $response->headers->set('Content-Security-Policy-Report-Only', "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';");
     }
 
     /**
