@@ -20,6 +20,7 @@ class DashboardController extends Controller
         'total-sales' => 'getSalesStats',
         'top-selling-products' => 'getTopSellingProducts',
         'top-customers' => 'getTopCustomers',
+        'visitors' => 'getVisitorStats',
     ];
 
     /**

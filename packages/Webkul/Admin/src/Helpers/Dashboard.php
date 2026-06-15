@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use Webkul\Admin\Helpers\Reporting\Customer;
 use Webkul\Admin\Helpers\Reporting\Product;
 use Webkul\Admin\Helpers\Reporting\Sale;
+use Webkul\Admin\Helpers\Reporting\Visitor;
 
 class Dashboard
 {
@@ -19,7 +20,8 @@ class Dashboard
     public function __construct(
         protected Sale $saleReporting,
         protected Product $productReporting,
-        protected Customer $customerReporting
+        protected Customer $customerReporting,
+        protected Visitor $visitorReporting
     ) {}
 
     /**
@@ -68,6 +70,7 @@ class Dashboard
             'total_sales' => $this->saleReporting->getTodaySalesProgress(),
             'total_orders' => $this->saleReporting->getTodayOrdersProgress(),
             'total_customers' => $this->customerReporting->getTodayCustomersProgress(),
+            'today_visitors' => $this->visitorReporting->getTodayVisitors(),
             'orders' => $orders,
         ];
     }
@@ -128,6 +131,26 @@ class Dashboard
         });
 
         return $customers;
+    }
+
+    /**
+     * Returns visitor statistics for the dashboard.
+     */
+    public function getVisitorStats(): array
+    {
+        return [
+            'total_visitors' => $this->visitorReporting->getTotalVisitorsProgress(),
+            'total_page_views' => $this->visitorReporting->getTotalPageViewsProgress(),
+            'device_breakdown' => $this->visitorReporting->getDeviceBreakdown(),
+            'top_pages' => $this->visitorReporting->getTopPages(5),
+            'recent_visitors' => $this->visitorReporting->getRecentVisitors(10)->map(fn ($v) => [
+                'ip_address' => $v->ip_address,
+                'url' => $v->url,
+                'device_type' => $v->device_type,
+                'referer' => $v->referer,
+                'visited_at' => $v->created_at->format('d M Y, H:i'),
+            ]),
+        ];
     }
 
     /**

@@ -125,6 +125,23 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Today's Visitors -->
+                    <div class="flex min-w-[200px] flex-1 gap-2.5">
+                        <div class="flex h-[60px] max-h-[60px] w-full max-w-[60px] items-center justify-center rounded-lg bg-blue-50 text-blue-500 dark:bg-blue-900/30">
+                            <span class="icon-eye text-3xl"></span>
+                        </div>
+
+                        <div class="grid place-content-start gap-1">
+                            <p class="text-base font-semibold leading-none text-gray-800 dark:text-white">
+                                @{{ report.statistics.today_visitors }}
+                            </p>
+
+                            <p class="text-xs font-semibold text-gray-600 dark:text-gray-300">
+                                Today's Visitors
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Today Orders Details -->

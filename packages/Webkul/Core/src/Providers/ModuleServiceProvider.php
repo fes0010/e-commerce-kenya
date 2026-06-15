@@ -12,6 +12,7 @@ use Webkul\Core\Models\Currency;
 use Webkul\Core\Models\CurrencyExchangeRate;
 use Webkul\Core\Models\Locale;
 use Webkul\Core\Models\SubscribersList;
+use Webkul\Core\Models\VisitorLog;
 
 class ModuleServiceProvider extends CoreModuleServiceProvider
 {
@@ -31,5 +32,6 @@ class ModuleServiceProvider extends CoreModuleServiceProvider
         CurrencyExchangeRate::class,
         Locale::class,
         SubscribersList::class,
+        VisitorLog::class,
     ];
 }

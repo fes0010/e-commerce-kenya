@@ -13,6 +13,7 @@ use Webkul\Shop\Http\Middleware\CacheResponse;
 use Webkul\Shop\Http\Middleware\Currency;
 use Webkul\Shop\Http\Middleware\Locale;
 use Webkul\Shop\Http\Middleware\Theme;
+use Webkul\Shop\Http\Middleware\TrackVisitor;
 
 class ShopServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,7 @@ class ShopServiceProvider extends ServiceProvider
             Theme::class,
             Locale::class,
             Currency::class,
+            TrackVisitor::class,
         ]);
 
         $router->aliasMiddleware('theme', Theme::class);

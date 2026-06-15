@@ -58,6 +58,20 @@
 
             {!! view_render_event('bagisto.admin.dashboard.todays_details.after') !!}
 
+            {!! view_render_event('bagisto.admin.dashboard.visitors.before') !!}
+
+            <!-- Visitors Section -->
+            <div class="flex flex-col gap-2">
+                <p class="text-base font-semibold text-gray-600 dark:text-gray-300">
+                    Site Visitors
+                </p>
+
+                <!-- Visitors Component -->
+                @include('admin::dashboard.visitors')
+            </div>
+
+            {!! view_render_event('bagisto.admin.dashboard.visitors.after') !!}
+
             {!! view_render_event('bagisto.admin.dashboard.stock_threshold.before') !!}
 
             <!-- Stock Threshold -->
