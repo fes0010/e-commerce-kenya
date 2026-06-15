@@ -128,8 +128,11 @@
 
                     <!-- Today's Visitors -->
                     <div class="flex min-w-[200px] flex-1 gap-2.5">
-                        <div class="flex h-[60px] max-h-[60px] w-full max-w-[60px] items-center justify-center rounded-lg bg-blue-50 text-blue-500 dark:bg-blue-900/30">
-                            <span class="icon-eye text-3xl"></span>
+                        <div class="h-[60px] max-h-[60px] w-full max-w-[60px] dark:mix-blend-exclusion dark:invert">
+                            <img
+                                src="{{ bagisto_asset('images/customers.svg') }}"
+                                title="Today's Visitors"
+                            >
                         </div>
 
                         <div class="grid place-content-start gap-1">

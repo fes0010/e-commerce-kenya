@@ -169,9 +169,52 @@
 
                 mounted() {
                     this.getCart();
+                    this.setupMobileKeyboardScroll();
+                },
+
+                beforeUnmount() {
+                    let container = document.getElementById('steps-container');
+                    if (container && this._focusHandler) {
+                        container.removeEventListener('focusin', this._focusHandler);
+                    }
                 },
 
                 methods: {
+                    /**
+                     * On mobile, when an input is focused the virtual keyboard opens
+                     * and can cover the focused field. This listener waits 320ms for the
+                     * keyboard to finish opening, then scrolls the element into view so
+                     * it sits above the keyboard.
+                     */
+                    setupMobileKeyboardScroll() {
+                        if (window.innerWidth > 768) {
+                            return;
+                        }
+
+                        let container = document.getElementById('steps-container');
+
+                        if (! container) {
+                            return;
+                        }
+
+                        this._focusHandler = function(e) {
+                            let el = e.target;
+
+                            if (! ['INPUT', 'SELECT', 'TEXTAREA'].includes(el.tagName)) {
+                                return;
+                            }
+
+                            setTimeout(function() {
+                                el.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center',
+                                });
+                            }, 320);
+                        };
+
+                        container.addEventListener('focusin', this._focusHandler);
+                    },
+
                     getCart() {
                         this.$axios.get("{{ route('shop.checkout.onepage.summary') }}")
                             .then(response => {
@@ -233,7 +276,7 @@
 
                         container.scrollIntoView({
                             behavior: 'smooth',
-                            block: 'end'
+                            block: 'start'
                         });
                     },
 

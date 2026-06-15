@@ -77,11 +77,13 @@
                         </label>
                         <div class="relative">
                             <input 
-                                type="text" 
+                                type="tel" 
                                 id="retry-phone" 
                                 name="phone" 
                                 value="{{ $order->payment->additional['phone'] ?? '' }}" 
                                 placeholder="e.g. 0712345678" 
+                                inputmode="tel"
+                                autocomplete="tel"
                                 class="w-full rounded-2xl border border-zinc-200 px-4 py-3.5 text-zinc-800 focus:outline-none focus:ring-2 focus:ring-[#34A853]/20 focus:border-[#34A853] transition-all duration-200 font-medium"
                                 required
                             >

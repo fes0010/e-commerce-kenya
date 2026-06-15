@@ -1,7 +1,7 @@
 <!-- Visitors Section Vue Component -->
 <v-dashboard-visitors>
     <!-- Shimmer -->
-    <div class="shimmer h-[300px] w-full rounded-xl"></div>
+    <x-admin::shimmer.dashboard.over-all-details />
 </v-dashboard-visitors>
 
 @pushOnce('scripts')
@@ -11,18 +11,21 @@
     >
         <!-- Shimmer -->
         <template v-if="isLoading">
-            <div class="shimmer h-[300px] w-full rounded-xl"></div>
+            <x-admin::shimmer.dashboard.over-all-details />
         </template>
 
         <template v-else>
-            <!-- Visitor Stats Row -->
+            <!-- Stats Row -->
             <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
                 <div class="flex flex-wrap gap-4">
 
                     <!-- Unique Visitors -->
                     <div class="flex min-w-[200px] flex-1 gap-2.5">
-                        <div class="flex h-[60px] max-h-[60px] w-full max-w-[60px] items-center justify-center rounded-lg bg-blue-50 text-blue-500 dark:bg-blue-900/30">
-                            <span class="icon-customers text-3xl"></span>
+                        <div class="h-[60px] max-h-[60px] w-full max-w-[60px] dark:mix-blend-exclusion dark:invert">
+                            <img
+                                src="{{ bagisto_asset('images/customers.svg') }}"
+                                title="Unique Visitors"
+                            >
                         </div>
 
                         <div class="grid place-content-start gap-1">
@@ -52,8 +55,11 @@
 
                     <!-- Total Page Views -->
                     <div class="flex min-w-[200px] flex-1 gap-2.5">
-                        <div class="flex h-[60px] max-h-[60px] w-full max-w-[60px] items-center justify-center rounded-lg bg-purple-50 text-purple-500 dark:bg-purple-900/30">
-                            <span class="icon-eye text-3xl"></span>
+                        <div class="h-[60px] max-h-[60px] w-full max-w-[60px] dark:mix-blend-exclusion dark:invert">
+                            <img
+                                src="{{ bagisto_asset('images/total-orders.svg') }}"
+                                title="Page Views"
+                            >
                         </div>
 
                         <div class="grid place-content-start gap-1">
@@ -88,73 +94,64 @@
                         </p>
 
                         <div class="flex flex-wrap gap-2">
-                            <template v-for="(count, device) in report.statistics.device_breakdown">
-                                <div class="flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs dark:border-gray-700">
-                                    <span
-                                        :class="{
-                                            'icon-laptop': device === 'desktop',
-                                            'icon-mobile': device === 'mobile',
-                                            'icon-tablet': device === 'tablet',
-                                            'icon-cancel': device === 'unknown',
-                                        }"
-                                        class="text-sm text-gray-500"
-                                    ></span>
-                                    <span class="capitalize text-gray-700 dark:text-gray-300">@{{ device }}</span>
-                                    <span class="font-semibold text-gray-800 dark:text-white">@{{ count }}</span>
-                                </div>
+                            <template v-for="(count, device) in report.statistics.device_breakdown" :key="device">
+                                <span class="inline-flex items-center gap-1 rounded-full border border-gray-200 px-2.5 py-1 text-xs capitalize text-gray-700 dark:border-gray-700 dark:text-gray-300">
+                                    @{{ device }}: <strong class="text-gray-800 dark:text-white">@{{ count }}</strong>
+                                </span>
                             </template>
                         </div>
                     </div>
                 </div>
 
-                <!-- Recent Visitors Table -->
-                <div class="mt-4">
-                    <p class="mb-2 text-sm font-semibold text-gray-600 dark:text-gray-300">
-                        Recent Visitors
-                    </p>
+                <!-- Divider -->
+                <div class="my-4 border-t border-gray-100 dark:border-gray-800"></div>
 
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-xs">
-                            <thead>
-                                <tr class="border-b text-left text-gray-500 dark:border-gray-700 dark:text-gray-400">
-                                    <th class="pb-2 pr-4 font-semibold">IP Address</th>
-                                    <th class="pb-2 pr-4 font-semibold">Page</th>
-                                    <th class="pb-2 pr-4 font-semibold">Device</th>
-                                    <th class="pb-2 font-semibold">Time</th>
-                                </tr>
-                            </thead>
+                <!-- Recent Visitors -->
+                <p class="mb-3 text-sm font-semibold text-gray-600 dark:text-gray-300">
+                    Recent Visitors
+                </p>
 
-                            <tbody>
-                                <tr
-                                    v-for="visitor in report.statistics.recent_visitors"
-                                    class="border-b transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
-                                >
-                                    <td class="py-2 pr-4 font-mono text-gray-700 dark:text-gray-300">
-                                        @{{ visitor.ip_address }}
-                                    </td>
+                <!-- Empty state -->
+                <p
+                    v-if="! report.statistics.recent_visitors || ! report.statistics.recent_visitors.length"
+                    class="py-4 text-center text-xs text-gray-400"
+                >
+                    No visitors recorded yet.
+                </p>
 
-                                    <td class="max-w-[260px] truncate py-2 pr-4 text-gray-600 dark:text-gray-400" :title="visitor.url">
-                                        @{{ visitor.url }}
-                                    </td>
+                <!-- Visitor rows -->
+                <template v-else>
+                    <div class="overflow-hidden rounded border border-gray-100 dark:border-gray-800">
+                        <!-- Header row -->
+                        <div class="grid grid-cols-4 gap-2 border-b border-gray-100 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-500 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400">
+                            <span>IP Address</span>
+                            <span class="col-span-2">Page</span>
+                            <span>Time</span>
+                        </div>
 
-                                    <td class="py-2 pr-4 capitalize text-gray-600 dark:text-gray-400">
-                                        @{{ visitor.device_type }}
-                                    </td>
+                        <!-- Data rows -->
+                        <div
+                            v-for="(visitor, index) in report.statistics.recent_visitors"
+                            :key="index"
+                            class="grid grid-cols-4 gap-2 border-b border-gray-100 px-3 py-2 text-xs last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                        >
+                            <span class="font-mono text-gray-700 dark:text-gray-300">
+                                @{{ visitor.ip_address }}
+                            </span>
 
-                                    <td class="py-2 text-gray-500 dark:text-gray-500">
-                                        @{{ visitor.visited_at }}
-                                    </td>
-                                </tr>
+                            <span
+                                class="col-span-2 truncate text-gray-500 dark:text-gray-400"
+                                :title="visitor.url"
+                            >
+                                @{{ visitor.url }}
+                            </span>
 
-                                <tr v-if="! report.statistics.recent_visitors.length">
-                                    <td colspan="4" class="py-4 text-center text-gray-400">
-                                        No visitors recorded yet.
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <span class="text-gray-400">
+                                @{{ visitor.visited_at }}
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </template>
             </div>
         </template>
     </script>

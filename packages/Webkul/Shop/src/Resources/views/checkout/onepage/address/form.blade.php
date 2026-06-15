@@ -28,6 +28,7 @@
                         rules="required"
                         :label="trans('shop::app.checkout.onepage.address.first-name')"
                         :placeholder="trans('shop::app.checkout.onepage.address.first-name')"
+                        autocomplete="given-name"
                     />
 
                     <x-shop::form.control-group.error ::name="controlName + '.first_name'" />
@@ -48,6 +49,7 @@
                         rules="required"
                         :label="trans('shop::app.checkout.onepage.address.last-name')"
                         :placeholder="trans('shop::app.checkout.onepage.address.last-name')"
+                        autocomplete="family-name"
                     />
 
                     <x-shop::form.control-group.error ::name="controlName + '.last_name'" />
@@ -69,6 +71,8 @@
                     rules="email"
                     :label="trans('shop::app.checkout.onepage.address.email')"
                     placeholder="email@example.com"
+                    inputmode="email"
+                    autocomplete="email"
                 />
 
                 <x-shop::form.control-group.error ::name="controlName + '.email'" />
@@ -89,6 +93,7 @@
                     rules="required|address"
                     :label="trans('shop::app.checkout.onepage.address.street-address')"
                     :placeholder="trans('shop::app.checkout.onepage.address.street-address')"
+                    autocomplete="address-line1"
                 />
 
                 <x-shop::form.control-group.error
@@ -209,6 +214,7 @@
                     rules="required"
                     label="Town"
                     placeholder="Town"
+                    autocomplete="address-level2"
                 />
 
                 <x-shop::form.control-group.error ::name="controlName + '.city'" />
@@ -224,12 +230,14 @@
                 </x-shop::form.control-group.label>
 
                 <x-shop::form.control-group.control
-                    type="text"
+                    type="tel"
                     ::name="controlName + '.phone'"
                     ::value="address.phone"
                     rules="required|phone"
                     :label="trans('shop::app.checkout.onepage.address.telephone')"
                     :placeholder="trans('shop::app.checkout.onepage.address.telephone')"
+                    inputmode="tel"
+                    autocomplete="tel"
                 />
 
                 <x-shop::form.control-group.error ::name="controlName + '.phone'" />
