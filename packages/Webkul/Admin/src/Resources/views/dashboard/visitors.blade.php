@@ -121,34 +121,36 @@
 
                 <!-- Visitor rows -->
                 <template v-else>
-                    <div class="overflow-hidden rounded border border-gray-100 dark:border-gray-800">
-                        <!-- Header row -->
-                        <div class="grid grid-cols-4 gap-2 border-b border-gray-100 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-500 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400">
-                            <span>IP Address</span>
-                            <span class="col-span-2">Page</span>
-                            <span>Time</span>
-                        </div>
+                    <div class="overflow-y-auto overflow-x-auto rounded border border-gray-100 dark:border-gray-800" style="max-height: 320px;">
+                        <div class="min-w-[600px]">
+                            <!-- Header row -->
+                            <div class="sticky top-0 z-10 grid grid-cols-4 gap-2 border-b border-gray-100 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-500 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400">
+                                <span>IP Address</span>
+                                <span class="col-span-2">Page</span>
+                                <span>Time</span>
+                            </div>
 
-                        <!-- Data rows -->
-                        <div
-                            v-for="(visitor, index) in report.statistics.recent_visitors"
-                            :key="index"
-                            class="grid grid-cols-4 gap-2 border-b border-gray-100 px-3 py-2 text-xs last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
-                        >
-                            <span class="font-mono text-gray-700 dark:text-gray-300">
-                                @{{ visitor.ip_address }}
-                            </span>
-
-                            <span
-                                class="col-span-2 truncate text-gray-500 dark:text-gray-400"
-                                :title="visitor.url"
+                            <!-- Data rows -->
+                            <div
+                                v-for="(visitor, index) in report.statistics.recent_visitors"
+                                :key="index"
+                                class="grid grid-cols-4 gap-2 border-b border-gray-100 px-3 py-2 text-xs last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
                             >
-                                @{{ visitor.url }}
-                            </span>
+                                <span class="font-mono text-gray-700 dark:text-gray-300">
+                                    @{{ visitor.ip_address }}
+                                </span>
 
-                            <span class="text-gray-400">
-                                @{{ visitor.visited_at }}
-                            </span>
+                                <span
+                                    class="col-span-2 truncate text-gray-500 dark:text-gray-400"
+                                    :title="visitor.url"
+                                >
+                                    @{{ visitor.url }}
+                                </span>
+
+                                <span class="text-gray-400">
+                                    @{{ visitor.visited_at }}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </template>
