@@ -81,7 +81,7 @@
                     </div>
 
                     <div
-                        class="overflow-y-auto max-md:grid max-md:gap-4 max-md:pb-[300px]"
+                        class="overflow-y-auto max-md:grid max-md:gap-4 pb-[300px]"
                         id="steps-container"
                     >
                         <!-- Included Addresses Blade File -->
