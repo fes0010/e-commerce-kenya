@@ -186,5 +186,15 @@ VOLUME ["/var/www/bagisto/storage"]
 
 EXPOSE 80
 
+# ---------------------------------------------------------------------------
+# Health check — used by Docker/Swarm to gate traffic to this container
+# until the app can actually serve requests (DB, Redis, storage all up).
+# Swarm's "start-first" rolling update relies on this to avoid routing
+# traffic to a container that isn't ready yet, and to avoid a window
+# where both the old and new container write to the database at once.
+# ---------------------------------------------------------------------------
+HEALTHCHECK --interval=10s --timeout=5s --start-period=45s --retries=5 \
+    CMD curl -f http://localhost/health || exit 1
+
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
