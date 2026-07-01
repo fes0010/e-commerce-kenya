@@ -147,7 +147,9 @@ abstract class AbstractType
     {
         $product = $this->productRepository->getModel()->create($data);
 
-        $product->channels()->sync(core()->getDefaultChannel()->id);
+        $channels = ! empty($data['channels']) ? $data['channels'] : [core()->getDefaultChannel()->id];
+
+        $product->channels()->sync($channels);
 
         return $product;
     }
