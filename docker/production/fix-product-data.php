@@ -96,28 +96,32 @@ DB::table('product_flat')->whereNull('new')->update(['new' => 0]);
 DB::table('product_flat')->whereNull('featured')->update(['featured' => 0]);
 echo "[fix-product-data] product_flat boolean columns synced\n";
 
-// Fix 5: Backfill missing product_channels rows
-// Without these, the ProductRepository query filter on channel_id matches nothing.
-$channelId = DB::table('channels')->value('id') ?? 1;
-$existingChannels = DB::table('product_channels')
-    ->where('channel_id', $channelId)
-    ->pluck('product_id');
+// Fix 5: Backfill product_channels rows ONLY for products with zero channel
+// assignments at all (i.e. products that would otherwise be invisible on
+// every storefront). Products that already belong to any channel are left
+// alone -- this used to unconditionally force channel_id=1 onto every
+// product missing *that specific* channel, which silently re-added the
+// default channel to products that were intentionally scoped to channel 2
+// or 3 only, corrupting multi-storefront channel assignments on every
+// container restart/deploy.
+$defaultChannelId = DB::table('channels')->orderBy('id')->value('id') ?? 1;
 
-$missingChannels = $productIds->diff($existingChannels);
+$productsWithAnyChannel = DB::table('product_channels')->pluck('product_id')->unique();
+$productsWithNoChannel = $productIds->diff($productsWithAnyChannel);
 
-if ($missingChannels->isNotEmpty()) {
-    foreach ($missingChannels->chunk(500) as $chunk) {
+if ($productsWithNoChannel->isNotEmpty()) {
+    foreach ($productsWithNoChannel->chunk(500) as $chunk) {
         $rows = $chunk->map(fn ($pid) => [
             'product_id' => $pid,
-            'channel_id' => $channelId,
+            'channel_id' => $defaultChannelId,
         ])->values()->toArray();
 
         DB::table('product_channels')->insertOrIgnore($rows);
     }
 
-    echo "[fix-product-data] product_channels: backfilled {$missingChannels->count()} rows\n";
+    echo "[fix-product-data] product_channels: backfilled {$productsWithNoChannel->count()} products that had zero channel assignments\n";
 } else {
-    echo "[fix-product-data] product_channels: all {$productIds->count()} rows present\n";
+    echo "[fix-product-data] product_channels: all {$productIds->count()} products already have at least one channel\n";
 }
 
 // Fix 6: Assign category images from product images (for category carousel)
